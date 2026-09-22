@@ -2,12 +2,70 @@ import { isPnUser, jidNormalizedUser } from "@whiskeysockets/baileys";
 
 import { cleanText, isGroupJid } from "../core/utils.js";
 
-const BULK_MESSAGE_DELAY_MS = 6000;
+/*
+ * ============================================================================
+ * BULK MESSAGE SAFETY
+ * ============================================================================
+ *
+ * This is the minimum interval between ACTUAL outbound bulk send attempts.
+ *
+ * First message:
+ *   send immediately
+ *
+ * Next message:
+ *   at least 6 seconds after the previous send started
+ *
+ * The value can never be reduced below this minimum.
+ *
+ * This is intended to prevent accidental application-level message bursts.
+ * It is not an anti-detection mechanism.
+ */
+const MIN_BULK_MESSAGE_DELAY_MS = 6000;
+
+/*
+ * Prevent an unreasonably large number of recipients from being handled
+ * accidentally because of a malformed payload or database query.
+ *
+ * Set to 0 to disable this application-level guard.
+ */
+const MAX_BULK_RECIPIENTS = 5000;
 
 function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
+}
+
+function normalizeJid(jid) {
+  if (!jid) {
+    return null;
+  }
+
+  const value = String(jid).trim();
+
+  if (!value) {
+    return null;
+  }
+
+  return jidNormalizedUser(value) || value;
+}
+
+function isProbablyValidJid(jid) {
+  if (!jid) {
+    return false;
+  }
+
+  /*
+   * We intentionally keep this check conservative.
+   *
+   * Baileys supports different JID forms, so we do not try to
+   * invent a stricter JID parser here.
+   */
+  return jid.includes("@") || /^\d+$/.test(jid);
+}
+
+function nowMs() {
+  return Date.now();
 }
 
 export class MessageHandler {
@@ -20,19 +78,62 @@ export class MessageHandler {
     this.settings = settings;
 
     /*
-     * Only one bulk broadcast may run at a time.
+     * ------------------------------------------------------------------------
+     * BULK QUEUE STATE
+     * ------------------------------------------------------------------------
      *
-     * This prevents two separate broadcast jobs from doing:
+     * `bulkQueueTail` is a promise representing the end of the currently
+     * queued bulk operations.
      *
-     * Job A -> recipient 1
-     * Job B -> recipient 1
-     * Job A -> recipient 2
-     * Job B -> recipient 2
+     * This means if code calls:
      *
-     * which would defeat the intended delay.
+     *   sendBulkMessages(A)
+     *   sendBulkMessages(B)
+     *   sendBulkMessages(C)
+     *
+     * the jobs become:
+     *
+     *   A -> B -> C
+     *
+     * rather than:
+     *
+     *   A + B + C simultaneously.
+     */
+    this.bulkQueueTail = Promise.resolve();
+
+    /*
+     * Whether a job is currently actively sending.
      */
     this.bulkSending = false;
+
+    /*
+     * Current active bulk job.
+     *
+     * This contains only local execution state.
+     */
+    this.activeBulkJob = null;
+
+    /*
+     * Identifier assigned to every bulk job.
+     */
+    this.nextBulkJobId = 1;
+
+    /*
+     * Timestamp at which the previous actual outbound bulk message
+     * started.
+     *
+     * This is deliberately preserved between bulk jobs so a newly started
+     * broadcast cannot immediately follow the last message of the previous
+     * broadcast.
+     */
+    this.lastBulkSendAt = 0;
   }
+
+  /*
+   * ==========================================================================
+   * INCOMING MESSAGE HANDLING
+   * ==========================================================================
+   */
 
   async handle(message) {
     if (!message?.message || message?.key?.fromMe) {
@@ -111,167 +212,390 @@ export class MessageHandler {
   }
 
   /*
-   * --------------------------------------------------------------------------
+   * ==========================================================================
+   * STOP ACTIVE BULK MESSAGE
+   * ==========================================================================
+   *
+   * This stops the active job before its next recipient.
+   *
+   * A message already passed to Baileys cannot be retroactively cancelled.
+   */
+  stopBulkMessages() {
+    if (!this.bulkSending || !this.activeBulkJob) {
+      return false;
+    }
+
+    this.activeBulkJob.stopRequested = true;
+
+    return true;
+  }
+
+  /*
+   * ==========================================================================
+   * BULK STATUS
+   * ==========================================================================
+   */
+
+  getBulkStatus() {
+    const job = this.activeBulkJob;
+
+    return {
+      sending: this.bulkSending,
+
+      jobId: job?.id ?? null,
+
+      queuedAt: job?.queuedAt ?? null,
+
+      startedAt: job?.startedAt ?? null,
+
+      stopRequested: Boolean(job?.stopRequested),
+
+      currentIndex: job?.currentIndex ?? null,
+
+      total: job?.total ?? 0,
+
+      sent: job?.sent ?? 0,
+
+      failed: job?.failed ?? 0,
+
+      skipped: job?.skipped ?? 0,
+
+      lastBulkSendAt: this.lastBulkSendAt || null,
+    };
+  }
+
+  /*
+   * ==========================================================================
    * BULK MESSAGE SENDING
-   * --------------------------------------------------------------------------
+   * ==========================================================================
    *
-   * Sends messages strictly one recipient at a time.
+   * This is intentionally a QUEUED operation.
    *
-   * Recipient 1
-   *      ↓
-   * wait 6 seconds
-   *      ↓
-   * Recipient 2
-   *      ↓
-   * wait 6 seconds
-   *      ↓
-   * Recipient 3
+   * Calling this multiple times does not create concurrent broadcasts.
    *
-   * IMPORTANT:
+   * Example:
    *
-   * Promise.all() is deliberately NOT used.
+   *   await handler.sendBulkMessages(A, payload);
+   *   await handler.sendBulkMessages(B, payload);
    *
-   * The delay can be configured to something longer than 6 seconds,
-   * but never shorter than 6 seconds.
+   * becomes:
    *
-   * This method also prevents a second bulk operation from running
-   * concurrently with an existing one.
+   *   A completely finishes
+   *            ↓
+   *   B completely finishes
    *
-   * `payloadFactory` may either be:
+   * And even when the calls are initiated without awaiting them:
    *
-   *   1. A single payload object shared by everyone.
+   *   const a = handler.sendBulkMessages(A, payload);
+   *   const b = handler.sendBulkMessages(B, payload);
    *
-   *   2. A function:
-   *
-   *      async (jid, index) => payload
-   *
-   * This allows personalized bulk messages.
+   * the internal queue still serializes them.
    */
   async sendBulkMessages(
     recipients,
     payloadFactory,
-    { delayMs = BULK_MESSAGE_DELAY_MS, onSent, onError } = {},
+    { delayMs = MIN_BULK_MESSAGE_DELAY_MS, onSent, onError, onSkipped } = {},
   ) {
     if (!Array.isArray(recipients) || recipients.length === 0) {
       return {
         total: 0,
+        requested: 0,
         sent: 0,
         failed: 0,
+        skipped: 0,
+        stopped: false,
         results: [],
       };
     }
 
-    if (this.bulkSending) {
-      throw new Error("A bulk message send is already in progress.");
+    if (MAX_BULK_RECIPIENTS > 0 && recipients.length > MAX_BULK_RECIPIENTS) {
+      throw new Error(
+        `Bulk recipient count ${recipients.length} exceeds the configured maximum of ${MAX_BULK_RECIPIENTS}.`,
+      );
     }
 
     /*
-     * Never allow a caller to reduce the delay below 6 seconds.
-     *
-     * Examples:
-     *
-     * delayMs = 0       -> 6000
-     * delayMs = 1000    -> 6000
-     * delayMs = 6000    -> 6000
-     * delayMs = 10000   -> 10000
+     * We accept a larger delay, but never a smaller one.
      */
     const requestedDelay = Number(delayMs);
 
-    const safeDelay =
-      Number.isFinite(requestedDelay) && requestedDelay >= BULK_MESSAGE_DELAY_MS
+    const minimumInterval =
+      Number.isFinite(requestedDelay) &&
+      requestedDelay >= MIN_BULK_MESSAGE_DELAY_MS
         ? requestedDelay
-        : BULK_MESSAGE_DELAY_MS;
+        : MIN_BULK_MESSAGE_DELAY_MS;
 
-    let sent = 0;
-    let failed = 0;
+    /*
+     * Capture the recipients and options in a job-local object.
+     */
+    const job = {
+      id: this.nextBulkJobId++,
+
+      queuedAt: new Date().toISOString(),
+
+      startedAt: null,
+
+      stopRequested: false,
+
+      currentIndex: -1,
+
+      total: 0,
+
+      sent: 0,
+
+      failed: 0,
+
+      skipped: 0,
+    };
+
+    /*
+     * ------------------------------------------------------------------------
+     * IMPORTANT
+     * ------------------------------------------------------------------------
+     *
+     * Each queued job is attached to the previous queue tail.
+     *
+     * The `.catch()` ensures one unexpected internal failure does not
+     * permanently poison the queue for all future broadcasts.
+     */
+    const runJob = this.bulkQueueTail
+      .catch(() => {})
+      .then(() =>
+        this.#runBulkMessages(job, recipients, payloadFactory, {
+          minimumInterval,
+          onSent,
+          onError,
+          onSkipped,
+        }),
+      );
+
+    this.bulkQueueTail = runJob.catch(() => {});
+
+    return runJob;
+  }
+
+  /*
+   * ==========================================================================
+   * INTERNAL BULK WORKER
+   * ==========================================================================
+   */
+
+  async #runBulkMessages(
+    job,
+    recipients,
+    payloadFactory,
+    { minimumInterval, onSent, onError, onSkipped },
+  ) {
+    /*
+     * ------------------------------------------------------------------------
+     * NORMALIZE AND DEDUPLICATE RECIPIENTS
+     * ------------------------------------------------------------------------
+     */
+
+    const uniqueRecipients = [];
+
+    const seen = new Set();
+
+    for (const recipient of recipients) {
+      const original = recipient;
+
+      let possibleJid = null;
+
+      if (typeof recipient === "string") {
+        possibleJid = recipient;
+      } else if (recipient && typeof recipient === "object") {
+        possibleJid = recipient.jid || recipient.whatsappJid || recipient.phone;
+      }
+
+      const jid = normalizeJid(possibleJid);
+
+      if (!jid) {
+        continue;
+      }
+
+      if (!isProbablyValidJid(jid)) {
+        continue;
+      }
+
+      if (seen.has(jid)) {
+        continue;
+      }
+
+      seen.add(jid);
+
+      uniqueRecipients.push({
+        original,
+        jid,
+      });
+    }
+
+    job.total = uniqueRecipients.length;
+
+    /*
+     * Make the job active only after it reaches the head of the queue.
+     */
+    this.bulkSending = true;
+
+    this.activeBulkJob = job;
+
+    job.startedAt = new Date().toISOString();
 
     const results = [];
 
-    this.bulkSending = true;
-
     try {
-      for (let index = 0; index < recipients.length; index += 1) {
-        const originalJid = recipients[index];
+      for (let index = 0; index < uniqueRecipients.length; index += 1) {
+        job.currentIndex = index;
 
-        const destination = jidNormalizedUser(originalJid) || originalJid;
+        /*
+         * --------------------------------------------------------------
+         * STOP CHECK
+         * --------------------------------------------------------------
+         */
+        if (job.stopRequested) {
+          break;
+        }
 
-        if (!destination) {
-          failed += 1;
+        const entry = uniqueRecipients[index];
+
+        const destination = entry.jid;
+
+        /*
+         * --------------------------------------------------------------
+         * CREATE PAYLOAD
+         * --------------------------------------------------------------
+         *
+         * We create the payload before waiting so that asynchronous
+         * payload generation does not accidentally cause an additional
+         * uncontrolled delay after the interval begins.
+         */
+        let payload;
+
+        try {
+          payload =
+            typeof payloadFactory === "function"
+              ? await payloadFactory(destination, index, entry.original)
+              : payloadFactory;
+        } catch (error) {
+          job.failed += 1;
 
           const result = {
             index,
-            jid: originalJid,
+            jid: destination,
             success: false,
-            error: "Invalid recipient JID",
+            skipped: false,
+            error: error instanceof Error ? error.message : String(error),
           };
 
           results.push(result);
 
-          if (typeof onError === "function") {
-            try {
-              await onError(result.error, result);
-            } catch {
-              /*
-               * Callback failures must never stop
-               * the bulk send.
-               */
-            }
-          }
+          console.error(
+            `[BulkMessage:${job.id}] Failed to build payload for ${destination}:`,
+            error,
+          );
+
+          await this.#callBulkCallback(onError, error, result);
 
           continue;
         }
 
         /*
-         * Wait ONLY between recipients.
+         * --------------------------------------------------------------
+         * EMPTY PAYLOAD
+         * --------------------------------------------------------------
          *
-         * First recipient:
-         *   send immediately.
-         *
-         * Every following recipient:
-         *   wait at least 6 seconds,
-         *   then send.
+         * Do not contact WhatsApp with an empty payload.
          */
-        if (index > 0) {
-          await sleep(safeDelay);
+        if (!payload) {
+          job.skipped += 1;
+
+          const result = {
+            index,
+            jid: destination,
+            success: false,
+            skipped: true,
+            reason: "Empty message payload",
+          };
+
+          results.push(result);
+
+          await this.#callBulkCallback(onSkipped, destination, result);
+
+          continue;
         }
 
+        /*
+         * --------------------------------------------------------------
+         * INTERVAL CONTROL
+         * --------------------------------------------------------------
+         *
+         * We measure the time from the START of the previous actual
+         * outbound send.
+         *
+         * This means:
+         *
+         * previous send starts at 12:00:00
+         *
+         * next send may not start before:
+         *
+         * 12:00:06
+         *
+         * If a send itself takes 2 seconds, we wait another 4.
+         * If it takes 8 seconds, we do not wait an additional 6.
+         */
+        const elapsed = nowMs() - this.lastBulkSendAt;
+
+        const remaining = minimumInterval - elapsed;
+
+        if (this.lastBulkSendAt > 0 && remaining > 0) {
+          await sleep(remaining);
+        }
+
+        /*
+         * The job could have been stopped during the wait.
+         */
+        if (job.stopRequested) {
+          break;
+        }
+
+        /*
+         * --------------------------------------------------------------
+         * SEND
+         * --------------------------------------------------------------
+         *
+         * Record the start time immediately before the actual send.
+         *
+         * This is the critical serialization point.
+         */
+        this.lastBulkSendAt = nowMs();
+
         try {
-          const payload =
-            typeof payloadFactory === "function"
-              ? await payloadFactory(destination, index)
-              : payloadFactory;
-
-          if (!payload) {
-            throw new Error("Bulk message payload is empty");
-          }
-
           /*
-           * Exactly ONE send operation at a time.
+           * EXACTLY ONE outbound send.
+           *
+           * No Promise.all().
+           * No Promise.race().
+           * No parallel map().
            */
           await this.#sendResult(destination, destination, payload, undefined);
 
-          sent += 1;
+          job.sent += 1;
 
           const result = {
             index,
             jid: destination,
             success: true,
+            skipped: false,
           };
 
           results.push(result);
 
-          if (typeof onSent === "function") {
-            try {
-              await onSent(destination, result);
-            } catch {
-              /*
-               * Callback failures must never stop
-               * the bulk send.
-               */
-            }
-          }
+          console.log(
+            `[BulkMessage:${job.id}] Sent ${index + 1}/${uniqueRecipients.length} -> ${destination}`,
+          );
+
+          await this.#callBulkCallback(onSent, destination, result);
         } catch (error) {
-          failed += 1;
+          job.failed += 1;
 
           const errorMessage =
             error instanceof Error ? error.message : String(error);
@@ -280,43 +604,91 @@ export class MessageHandler {
             index,
             jid: destination,
             success: false,
+            skipped: false,
             error: errorMessage,
           };
 
           results.push(result);
 
           console.error(
-            `[BulkMessage] Failed to send to ${destination}:`,
+            `[BulkMessage:${job.id}] Failed to send to ${destination}:`,
             error,
           );
 
-          if (typeof onError === "function") {
-            try {
-              await onError(error, result);
-            } catch {
-              /*
-               * Callback failures must never stop
-               * the bulk send.
-               */
-            }
-          }
+          /*
+           * ------------------------------------------------------------
+           * NO BLIND RETRY
+           * ------------------------------------------------------------
+           *
+           * We intentionally do not retry here.
+           *
+           * A transport failure does not always tell us whether the
+           * remote service accepted the message before the error
+           * occurred. An automatic retry could therefore duplicate
+           * a message.
+           */
+          await this.#callBulkCallback(onError, error, result);
         }
       }
 
       return {
-        total: recipients.length,
-        sent,
-        failed,
+        jobId: job.id,
+
+        total: uniqueRecipients.length,
+
+        requested: recipients.length,
+
+        sent: job.sent,
+
+        failed: job.failed,
+
+        skipped: job.skipped,
+
+        stopped: job.stopRequested,
+
+        startedAt: job.startedAt,
+
+        completedAt: new Date().toISOString(),
+
         results,
       };
     } finally {
       /*
-       * Always release the bulk lock, even when an
-       * unexpected exception happens.
+       * Release the active-job state no matter how the operation ends.
+       *
+       * Do not clear lastBulkSendAt because it protects the boundary
+       * between this job and the next queued job.
        */
       this.bulkSending = false;
+
+      this.activeBulkJob = null;
     }
   }
+
+  /*
+   * ==========================================================================
+   * SAFE CALLBACK EXECUTION
+   * ==========================================================================
+   *
+   * A UI/progress callback must never be able to break the message queue.
+   */
+  async #callBulkCallback(callback, ...args) {
+    if (typeof callback !== "function") {
+      return;
+    }
+
+    try {
+      await callback(...args);
+    } catch (error) {
+      console.warn("[BulkMessage] Callback failed:", error);
+    }
+  }
+
+  /*
+   * ==========================================================================
+   * ACTOR JID RESOLUTION
+   * ==========================================================================
+   */
 
   async #resolveActorJid(message, remoteJid) {
     const group = isGroupJid(remoteJid);
@@ -342,12 +714,17 @@ export class MessageHandler {
      */
     if (group) {
       add(message.key?.participant);
+
       add(message.key?.participantAlt);
+
       add(message.key?.participantPn);
+
       add(message.key?.senderPn);
     } else {
       add(message.key?.remoteJid);
+
       add(message.key?.remoteJidAlt);
+
       add(message.key?.senderPn);
     }
 
@@ -403,6 +780,12 @@ export class MessageHandler {
     return candidates[0];
   }
 
+  /*
+   * ==========================================================================
+   * MEMBER RESOLUTION
+   * ==========================================================================
+   */
+
   async #memberForMessage(message, actorJid) {
     const candidates = [];
 
@@ -421,10 +804,15 @@ export class MessageHandler {
     add(actorJid);
 
     add(message.key?.remoteJid);
+
     add(message.key?.remoteJidAlt);
+
     add(message.key?.participant);
+
     add(message.key?.participantAlt);
+
     add(message.key?.participantPn);
+
     add(message.key?.senderPn);
 
     /*
@@ -458,6 +846,12 @@ export class MessageHandler {
     return null;
   }
 
+  /*
+   * ==========================================================================
+   * REPLY DESTINATION
+   * ==========================================================================
+   */
+
   #replyDestination(remoteJid, actorJid, id) {
     const privateOnly = new Set([
       "member:view",
@@ -486,6 +880,12 @@ export class MessageHandler {
     return remoteJid;
   }
 
+  /*
+   * ==========================================================================
+   * TEXT EXTRACTION
+   * ==========================================================================
+   */
+
   #text(message) {
     const content = message.message || {};
 
@@ -497,6 +897,12 @@ export class MessageHandler {
       ""
     );
   }
+
+  /*
+   * ==========================================================================
+   * INTERACTION EXTRACTION
+   * ==========================================================================
+   */
 
   #interaction(message) {
     const native =
@@ -547,8 +953,18 @@ export class MessageHandler {
       message.message?.listResponseMessage?.singleSelectReply?.selectedRowId ||
       message.message?.templateButtonReplyMessage?.selectedId;
 
-    return button ? { id: button } : null;
+    return button
+      ? {
+          id: button,
+        }
+      : null;
   }
+
+  /*
+   * ==========================================================================
+   * MENU ACTIONS
+   * ==========================================================================
+   */
 
   async #menuAction(id, remoteJid, actorJid, quoted) {
     const member = await this.#memberForMessage(quoted, actorJid);
@@ -562,6 +978,12 @@ export class MessageHandler {
         payload,
         destination === remoteJid ? quoted : undefined,
       );
+
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER VIEW
+     * ------------------------------------------------------------------------
+     */
 
     if (id === "member:view") {
       return send(
@@ -586,19 +1008,38 @@ export class MessageHandler {
       );
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER REGISTRATION
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "member:register") {
       return send(this.flow.start(actorJid, "register"));
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER UPDATE
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "member:update") {
       return send(this.flow.start(actorJid, "update"));
     }
+
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER REFERENCE
+     * ------------------------------------------------------------------------
+     */
 
     if (id === "member:reference") {
       return send(
         member
           ? {
               kind: "reference",
+
               member,
 
               intro:
@@ -614,6 +1055,12 @@ export class MessageHandler {
             },
       );
     }
+
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER REMINDERS
+     * ------------------------------------------------------------------------
+     */
 
     if (id === "member:reminders") {
       return send(
@@ -649,6 +1096,12 @@ export class MessageHandler {
       );
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * REMINDERS TOGGLE
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "reminders:on" || id === "reminders:off") {
       if (!member) {
         return send({
@@ -668,6 +1121,12 @@ export class MessageHandler {
         text: `✅ Your reminders are now ${enabled ? "on" : "off"}.`,
       });
     }
+
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER DELETE CONFIRMATION
+     * ------------------------------------------------------------------------
+     */
 
     if (id === "member:delete") {
       return send(
@@ -702,6 +1161,12 @@ export class MessageHandler {
       );
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER DELETE YES
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "member:delete_yes") {
       if (!member) {
         return send({
@@ -734,6 +1199,12 @@ export class MessageHandler {
       });
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * MEMBER DELETE NO
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "member:delete_no") {
       return send({
         kind: "text",
@@ -742,6 +1213,12 @@ export class MessageHandler {
       });
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * CLOSE MENU
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "menu:close") {
       return send({
         kind: "text",
@@ -749,6 +1226,12 @@ export class MessageHandler {
         text: `Menu closed. Send ${this.settings().keyword} whenever you need it again.`,
       });
     }
+
+    /*
+     * ------------------------------------------------------------------------
+     * TRANSPORT
+     * ------------------------------------------------------------------------
+     */
 
     if (id === "event:transport") {
       return send({
@@ -759,6 +1242,12 @@ export class MessageHandler {
           `Please follow the organisers' travel instructions shared through this service.`,
       });
     }
+
+    /*
+     * ------------------------------------------------------------------------
+     * EVENT DETAILS
+     * ------------------------------------------------------------------------
+     */
 
     if (id === "event:details") {
       return send({
@@ -771,6 +1260,12 @@ export class MessageHandler {
       });
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * HELP
+     * ------------------------------------------------------------------------
+     */
+
     if (id === "help") {
       return send({
         kind: "text",
@@ -779,9 +1274,21 @@ export class MessageHandler {
       });
     }
 
+    /*
+     * ------------------------------------------------------------------------
+     * OPEN MENU
+     * ------------------------------------------------------------------------
+     */
+
     if (id?.startsWith("open:")) {
       return send(this.menu.main(member));
     }
+
+    /*
+     * ------------------------------------------------------------------------
+     * UNKNOWN ACTION
+     * ------------------------------------------------------------------------
+     */
 
     return send({
       kind: "text",
@@ -791,6 +1298,12 @@ export class MessageHandler {
         `Send ${this.settings().keyword} to open the menu again.`,
     });
   }
+
+  /*
+   * ==========================================================================
+   * RESULT DISPATCHER
+   * ==========================================================================
+   */
 
   async #sendResult(remoteJid, actorJid, payload, quoted) {
     if (!payload) {
@@ -803,10 +1316,16 @@ export class MessageHandler {
       return;
     }
 
+    /*
+     * Interactive menu.
+     */
     if (payload.kind === "interactive-menu") {
       return this.whatsapp.sendMenu(destination, payload, quoted);
     }
 
+    /*
+     * Membership reference.
+     */
     if (payload.kind === "reference") {
       return this.whatsapp.sendReference(
         destination,
@@ -825,6 +1344,9 @@ export class MessageHandler {
       );
     }
 
+    /*
+     * Normal text/image/etc. payload.
+     */
     return this.whatsapp.sendToJid(destination, payload, {
       quoted,
     });
