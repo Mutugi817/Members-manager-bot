@@ -1,5 +1,4 @@
 import Fastify from "fastify";
-import cookie from "@fastify/cookie";
 import helmet from "@fastify/helmet";
 import jwt from "@fastify/jwt";
 import multipart from "@fastify/multipart";
@@ -35,10 +34,6 @@ export async function buildApp({ config, logger }) {
     bodyLimit: 2 * 1024 * 1024,
   });
 
-  await app.register(cookie, {
-    secret: config.cookieSecret,
-  });
-
   await app.register(jwt, {
     secret: config.jwtSecret,
   });
@@ -54,29 +49,12 @@ export async function buildApp({ config, logger }) {
   /*
    * Helmet security configuration.
    *
-   * The application is currently being served directly over HTTP
-   * in production (for example: http://13.222.156.172:4000).
+   * The application is currently served directly over HTTP.
+   * Therefore HSTS and upgrade-insecure-requests are disabled.
    *
-   * Helmet enables `upgrade-insecure-requests` by default.
-   * That directive makes browsers upgrade HTTP resources such as:
-   *
-   *   http://13.222.156.172:4000/styles.css
-   *
-   * into:
-   *
-   *   https://13.222.156.172:4000/styles.css
-   *
-   * Since HTTPS is not configured on this port, the browser cannot
-   * load the stylesheet correctly.
-   *
-   * We therefore explicitly disable that directive until HTTPS
-   * is configured for the production application.
+   * When HTTPS is configured later, these should be restored.
    */
   await app.register(helmet, {
-    /*
-     * HSTS is appropriate once HTTPS is actually configured.
-     * The application is currently served over plain HTTP.
-     */
     hsts: false,
 
     contentSecurityPolicy: {
@@ -103,11 +81,6 @@ export async function buildApp({ config, logger }) {
 
         connectSrc: ["'self'"],
 
-        /*
-         * IMPORTANT:
-         * Remove Helmet's default `upgrade-insecure-requests`
-         * directive while the server is HTTP-only.
-         */
         upgradeInsecureRequests: null,
       },
     },
@@ -160,12 +133,6 @@ export async function buildApp({ config, logger }) {
     logger,
   });
 
-  /*
-   * Automatic WhatsApp group member-list updates.
-   *
-   * These are event-driven. There is no cron job and no
-   * scheduled-message sender involved here.
-   */
   members.on("member:registered", (member) => {
     void memberListNotifier.notify("registered", member);
   });

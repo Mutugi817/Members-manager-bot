@@ -1,3 +1,5 @@
+const AUTH_TOKEN_KEY = "ge_admin_token";
+
 const state = {
   tab: "home",
   dashboard: null,
@@ -26,6 +28,38 @@ const esc = (value) =>
         "'": "&#39;",
       })[c],
   );
+
+/* -------------------------------------------------------
+   Authentication token
+------------------------------------------------------- */
+
+function getAuthToken() {
+  try {
+    return sessionStorage.getItem(AUTH_TOKEN_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function setAuthToken(token) {
+  if (!token) {
+    return;
+  }
+
+  try {
+    sessionStorage.setItem(AUTH_TOKEN_KEY, token);
+  } catch {
+    throw new Error("Could not store the authentication session.");
+  }
+}
+
+function clearAuthToken() {
+  try {
+    sessionStorage.removeItem(AUTH_TOKEN_KEY);
+  } catch {
+    // Ignore storage cleanup failures.
+  }
+}
 
 const icons = {
   home: `
@@ -142,7 +176,11 @@ const icons = {
 };
 
 function icon(name, className = "") {
-  return `<span class="icon ${className}">${icons[name] || ""}</span>`;
+  return `
+    <span class="icon ${className}">
+      ${icons[name] || ""}
+    </span>
+  `;
 }
 
 /* -------------------------------------------------------
@@ -151,7 +189,9 @@ function icon(name, className = "") {
 
 function syncMobileMenu() {
   const button = $("#mobileMenuButton");
+
   const sidebar = $("#sidebar");
+
   const backdrop = $("#sidebarBackdrop");
 
   if (!button || !sidebar || !backdrop) {
@@ -174,11 +214,13 @@ function syncMobileMenu() {
 
 function openMobileMenu() {
   state.mobileMenuOpen = true;
+
   syncMobileMenu();
 }
 
 function closeMobileMenu() {
   state.mobileMenuOpen = false;
+
   syncMobileMenu();
 }
 
@@ -211,7 +253,9 @@ function toast(message, type = "success") {
         ${esc(type === "error" ? "Unable to complete" : "Done")}
       </strong>
 
-      <span>${esc(message)}</span>
+      <span>
+        ${esc(message)}
+      </span>
     </div>
 
     <button
@@ -253,11 +297,13 @@ function busy(button, on, label = "Working…") {
     button.dataset.restore = button.innerHTML;
 
     button.disabled = true;
+
     button.classList.add("is-busy");
 
     button.innerHTML = `<span class="spinner"></span>${esc(label)}`;
   } else {
     button.disabled = false;
+
     button.classList.remove("is-busy");
 
     button.innerHTML = button.dataset.restore || button.innerHTML;
@@ -283,6 +329,16 @@ async function api(url, options = {}) {
 
   headers.set("Accept", "application/json");
 
+  const token = getAuthToken();
+
+  /*
+   * Authentication is now sent explicitly
+   * using the Authorization header.
+   */
+  if (token) {
+    headers.set("Authorization", `Bearer ${token}`);
+  }
+
   const controller = new AbortController();
 
   const timer = setTimeout(() => controller.abort(), 20000);
@@ -293,8 +349,15 @@ async function api(url, options = {}) {
     res = await fetch(url, {
       ...options,
       headers,
-      credentials: "same-origin",
+
+      /*
+       * Cookies are no longer used
+       * for dashboard authentication.
+       */
+      credentials: "omit",
+
       signal: controller.signal,
+
       cache: "no-store",
     });
   } catch (error) {
@@ -319,7 +382,10 @@ async function api(url, options = {}) {
         .catch(() => ({}));
 
   if (res.status === 401) {
+    clearAuthToken();
+
     showLogin();
+
     throw new Error("Please sign in again.");
   }
 
@@ -337,7 +403,10 @@ async function api(url, options = {}) {
 ------------------------------------------------------- */
 
 function showLogin() {
+  clearAuthToken();
+
   $("#loginView").hidden = false;
+
   $("#appView").hidden = true;
 
   closeMobileMenu();
@@ -347,6 +416,7 @@ function showLogin() {
 
 function showApp() {
   $("#loginView").hidden = true;
+
   $("#appView").hidden = false;
 
   refresh();
@@ -458,7 +528,9 @@ function renderStatus() {
   chip.innerHTML = `
     <span class="status-dot"></span>
     <span>WhatsApp</span>
-    <strong>${esc(status)}</strong>
+    <strong>
+      ${esc(status)}
+    </strong>
   `;
 
   const stateText = $("#connectionStateText");
@@ -491,7 +563,6 @@ function renderHome() {
 
   $("#home").innerHTML = `
     <div class="page-head page-head-hero">
-
       <div>
         <div class="eyebrow">
           ${icon("home")}
@@ -509,7 +580,6 @@ function renderHome() {
       </div>
 
       <div class="head-actions">
-
         <button
           class="button button-secondary"
           id="homeRefreshBtn"
@@ -527,16 +597,11 @@ function renderHome() {
           ${icon("broadcast")}
           Confirm all members
         </button>
-
       </div>
-
     </div>
 
-
     <section class="hero-strip">
-
       <div class="hero-strip-copy">
-
         <div class="hero-strip-label">
           ${icon("calendar")}
           Upcoming gathering
@@ -552,12 +617,9 @@ function renderHome() {
               "Set the gathering location in Settings.",
           )}
         </p>
-
       </div>
 
-
       <div class="hero-strip-meta">
-
         <span class="soft-badge">
           Keyword
           <strong>
@@ -577,14 +639,10 @@ function renderHome() {
             ${esc(state.wa?.status || "disconnected")}
           </strong>
         </span>
-
       </div>
-
     </section>
 
-
     <div class="section-heading">
-
       <div>
         <span class="section-label">
           At a glance
@@ -603,45 +661,43 @@ function renderHome() {
         Open members
         ${icon("arrow")}
       </button>
-
     </div>
 
-
     <div class="stats-grid">
-
       <article class="metric metric-highlight">
-
         <div class="metric-top">
           <span>Active members</span>
+
           <span class="metric-icon">
             ${icon("users")}
           </span>
         </div>
 
-        <strong>${esc(total)}</strong>
+        <strong>
+          ${esc(total)}
+        </strong>
 
         <div class="metric-foot">
           <small>
             Current member records
           </small>
         </div>
-
       </article>
 
-
       <article class="metric">
-
         <div class="metric-top">
           <span>WhatsApp linked</span>
+
           <span class="metric-icon">
             ${icon("whatsapp")}
           </span>
         </div>
 
-        <strong>${esc(linked)}</strong>
+        <strong>
+          ${esc(linked)}
+        </strong>
 
         <div class="metric-foot metric-progress">
-
           <div class="progress">
             <span
               style="width:${linkPercent}%"
@@ -651,14 +707,10 @@ function renderHome() {
           <small>
             ${linkPercent}% linked
           </small>
-
         </div>
-
       </article>
 
-
       <article class="metric">
-
         <div class="metric-top">
           <span>Valid records</span>
 
@@ -667,10 +719,11 @@ function renderHome() {
           </span>
         </div>
 
-        <strong>${esc(valid)}</strong>
+        <strong>
+          ${esc(valid)}
+        </strong>
 
         <div class="metric-foot metric-progress">
-
           <div class="progress">
             <span
               style="width:${validPercent}%"
@@ -680,14 +733,10 @@ function renderHome() {
           <small>
             ${validPercent}% valid
           </small>
-
         </div>
-
       </article>
 
-
       <article class="metric">
-
         <div class="metric-top">
           <span>Active reminders</span>
 
@@ -696,21 +745,19 @@ function renderHome() {
           </span>
         </div>
 
-        <strong>${esc(remindersEnabled)}</strong>
+        <strong>
+          ${esc(remindersEnabled)}
+        </strong>
 
         <div class="metric-foot">
           <small>
             Members receiving reminders
           </small>
         </div>
-
       </article>
-
     </div>
 
-
     <div class="section-heading section-heading-spaced">
-
       <div>
         <span class="section-label">
           Workspace
@@ -720,12 +767,9 @@ function renderHome() {
           Quick actions
         </h3>
       </div>
-
     </div>
 
-
     <div class="quick-grid">
-
       <button
         class="quick-card"
         data-go-tab="members"
@@ -736,7 +780,10 @@ function renderHome() {
         </span>
 
         <span class="quick-copy">
-          <strong>Manage members</strong>
+          <strong>
+            Manage members
+          </strong>
+
           <small>
             Search, inspect and confirm member records.
           </small>
@@ -744,7 +791,6 @@ function renderHome() {
 
         ${icon("arrow", "quick-arrow")}
       </button>
-
 
       <button
         class="quick-card"
@@ -756,7 +802,10 @@ function renderHome() {
         </span>
 
         <span class="quick-copy">
-          <strong>Send communication</strong>
+          <strong>
+            Send communication
+          </strong>
+
           <small>
             Messages, posts, events, menus and carousels.
           </small>
@@ -764,7 +813,6 @@ function renderHome() {
 
         ${icon("arrow", "quick-arrow")}
       </button>
-
 
       <button
         class="quick-card"
@@ -776,7 +824,10 @@ function renderHome() {
         </span>
 
         <span class="quick-copy">
-          <strong>Schedule a reminder</strong>
+          <strong>
+            Schedule a reminder
+          </strong>
+
           <small>
             Create one-time or recurring member messages.
           </small>
@@ -784,7 +835,6 @@ function renderHome() {
 
         ${icon("arrow", "quick-arrow")}
       </button>
-
 
       <button
         class="quick-card"
@@ -796,7 +846,10 @@ function renderHome() {
         </span>
 
         <span class="quick-copy">
-          <strong>WhatsApp connection</strong>
+          <strong>
+            WhatsApp connection
+          </strong>
+
           <small>
             Pair the account, load QR and inspect groups.
           </small>
@@ -804,16 +857,11 @@ function renderHome() {
 
         ${icon("arrow", "quick-arrow")}
       </button>
-
     </div>
 
-
     <div class="bottom-grid">
-
       <article class="panel info-panel">
-
         <div class="panel-heading">
-
           <div>
             <span class="section-label">
               Gathering
@@ -827,21 +875,24 @@ function renderHome() {
           <span class="panel-heading-icon">
             ${icon("calendar")}
           </span>
-
         </div>
 
-
         <div class="info-list">
-
           <div>
-            <span>Location</span>
+            <span>
+              Location
+            </span>
+
             <strong>
               ${esc(state.settings?.eventLocation || "Not configured")}
             </strong>
           </div>
 
           <div>
-            <span>Transport</span>
+            <span>
+              Transport
+            </span>
+
             <strong>
               ${esc(
                 state.settings?.transportNotice ||
@@ -849,16 +900,11 @@ function renderHome() {
               )}
             </strong>
           </div>
-
         </div>
-
       </article>
 
-
       <article class="panel info-panel">
-
         <div class="panel-heading">
-
           <div>
             <span class="section-label">
               Member experience
@@ -872,12 +918,9 @@ function renderHome() {
           <span class="panel-heading-icon">
             ${icon("whatsapp")}
           </span>
-
         </div>
 
-
         <div class="keyword-box">
-
           <span class="keyword-pill">
             ${esc(state.settings?.keyword || "gracehelp")}
           </span>
@@ -886,11 +929,8 @@ function renderHome() {
             Members can send this keyword in a private chat or approved
             group to open the WhatsApp menu.
           </p>
-
         </div>
-
       </article>
-
     </div>
   `;
 
@@ -921,6 +961,7 @@ function renderHome() {
 
   $("#homeMembersLink").onclick = () => {
     switchTab("members");
+
     scrollToTop();
   };
 
@@ -951,82 +992,77 @@ function renderMembers() {
         .toUpperCase();
 
       return `
-          <tr>
+            <tr>
+              <td class="select-cell">
+                <input
+                  class="member-select"
+                  type="checkbox"
+                  value="${esc(member.id)}"
+                  ${member.phone ? "" : "disabled"}
+                  aria-label="Select ${esc(member.fullName)}"
+                >
+              </td>
 
-            <td class="select-cell">
-              <input
-                class="member-select"
-                type="checkbox"
-                value="${esc(member.id)}"
-                ${member.phone ? "" : "disabled"}
-                aria-label="Select ${esc(member.fullName)}"
-              >
-            </td>
+              <td>
+                <span class="member-code">
+                  ${esc(member.code)}
+                </span>
+              </td>
 
-            <td>
-              <span class="member-code">
-                ${esc(member.code)}
-              </span>
-            </td>
+              <td>
+                <div class="person-cell">
+                  <div class="avatar">
+                    ${esc(initials)}
+                  </div>
 
-            <td>
-              <div class="person-cell">
+                  <div>
+                    <strong>
+                      ${esc(member.fullName)}
+                    </strong>
 
-                <div class="avatar">
-                  ${esc(initials)}
+                    <small>
+                      ${
+                        member.phone
+                          ? "WhatsApp number available"
+                          : "No WhatsApp number"
+                      }
+                    </small>
+                  </div>
                 </div>
+              </td>
 
-                <div>
-                  <strong>
-                    ${esc(member.fullName)}
-                  </strong>
+              <td>
+                <span class="phone-value">
+                  ${esc(member.phone ? `+${member.phone}` : "—")}
+                </span>
+              </td>
 
-                  <small>
-                    ${
-                      member.phone
-                        ? "WhatsApp number available"
-                        : "No WhatsApp number"
-                    }
-                  </small>
-                </div>
+              <td>
+                <span
+                  class="tag ${valid ? "good" : "warn"}"
+                >
+                  <span class="tag-dot"></span>
+                  ${valid ? "Valid" : "Needs attention"}
+                </span>
+              </td>
 
-              </div>
-            </td>
-
-            <td>
-              <span class="phone-value">
-                ${esc(member.phone ? `+${member.phone}` : "—")}
-              </span>
-            </td>
-
-            <td>
-              <span
-                class="tag ${valid ? "good" : "warn"}"
-              >
-                <span class="tag-dot"></span>
-                ${valid ? "Valid" : "Needs attention"}
-              </span>
-            </td>
-
-            <td>
-              <span
-                class="reminder-state ${
-                  member.remindersEnabled ? "enabled" : "disabled"
-                }"
-              >
-                <span class="status-dot"></span>
-                ${member.remindersEnabled ? "On" : "Off"}
-              </span>
-            </td>
-
-          </tr>
-        `;
+              <td>
+                <span
+                  class="reminder-state ${
+                    member.remindersEnabled ? "enabled" : "disabled"
+                  }"
+                >
+                  <span class="status-dot"></span>
+                  ${member.remindersEnabled ? "On" : "Off"}
+                </span>
+              </td>
+            </tr>
+          `;
     })
     .join("");
 
   $("#members").innerHTML = `
     <div class="page-head">
-
       <div>
         <div class="eyebrow">
           ${icon("users")}
@@ -1043,7 +1079,6 @@ function renderMembers() {
       </div>
 
       <div class="head-actions">
-
         <button
           class="button button-secondary"
           id="membersRefresh"
@@ -1061,14 +1096,10 @@ function renderMembers() {
           ${icon("broadcast")}
           Confirm selected
         </button>
-
       </div>
-
     </div>
 
-
     <div class="directory-toolbar">
-
       <div class="search-box">
         ${icon("search")}
 
@@ -1080,7 +1111,6 @@ function renderMembers() {
           enterkeyhint="search"
         >
       </div>
-
 
       <div class="selection-summary">
         <span id="memberSelectionCount">
@@ -1094,14 +1124,10 @@ function renderMembers() {
           active members
         </span>
       </div>
-
     </div>
 
-
     <div class="table-card directory-card">
-
       <table>
-
         <thead>
           <tr>
             <th class="select-cell">
@@ -1120,9 +1146,7 @@ function renderMembers() {
           </tr>
         </thead>
 
-
         <tbody>
-
           ${
             rows ||
             `
@@ -1145,11 +1169,8 @@ function renderMembers() {
               </tr>
             `
           }
-
         </tbody>
-
       </table>
-
     </div>
   `;
 
@@ -1209,8 +1230,10 @@ function renderMembers() {
       async () => {
         const response = await api("/api/outreach/confirm-members", {
           method: "POST",
+
           body: JSON.stringify({
             mode: "selected",
+
             memberIds,
           }),
         });
@@ -1262,22 +1285,14 @@ function groupOptions() {
     .join("");
 }
 
-/*
- * IMPORTANT:
- * Each audience form now receives its own unique IDs.
- * This prevents Compose and Reminders from fighting
- * over duplicate #targetType / #targetIds elements.
- */
 function targetBlock(prefix) {
   return `
     <div class="field">
-
       <label for="${prefix}-targetType">
         Audience
       </label>
 
       <div class="audience-select-wrap">
-
         <select
           id="${prefix}-targetType"
           data-audience-type="${prefix}"
@@ -1302,7 +1317,6 @@ function targetBlock(prefix) {
             All groups
           </option>
         </select>
-
       </div>
 
       <div
@@ -1311,18 +1325,14 @@ function targetBlock(prefix) {
       >
         This will be sent privately to every active member.
       </div>
-
     </div>
 
-
     <div class="field">
-
       <label for="${prefix}-targetIds">
         Targets
       </label>
 
       <div class="select-shell">
-
         <select
           id="${prefix}-targetIds"
           multiple
@@ -1332,13 +1342,11 @@ function targetBlock(prefix) {
           ${memberOptions()}
           ${groupOptions()}
         </select>
-
       </div>
 
       <small id="${prefix}-targetHelp">
         No manual selection is needed for this audience.
       </small>
-
     </div>
   `;
 }
@@ -1430,15 +1438,18 @@ function renderCompose() {
 
   const titles = {
     text: "Text message",
+
     post: "Image post",
+
     event: "WhatsApp event",
+
     menu: "Interactive menu",
+
     carousel: "Carousel",
   };
 
   $("#compose").innerHTML = `
     <div class="page-head">
-
       <div>
         <div class="eyebrow">
           ${icon("send")}
@@ -1453,12 +1464,9 @@ function renderCompose() {
           Create and send polished WhatsApp communications using the same backend renderer.
         </p>
       </div>
-
     </div>
 
-
     <div class="compose-switcher">
-
       ${types
         .map(
           ([type, label, iconName]) => `
@@ -1469,19 +1477,17 @@ function renderCompose() {
               aria-pressed="${state.composeType === type}"
             >
               ${icon(iconName)}
-              <span>${label}</span>
+              <span>
+                ${label}
+              </span>
             </button>
           `,
         )
         .join("")}
-
     </div>
 
-
     <div class="card compose-card-main">
-
       <div class="compose-topline">
-
         <div>
           <span class="section-label">
             Create message
@@ -1496,11 +1502,9 @@ function renderCompose() {
           <span class="status-dot"></span>
           Ready to send
         </span>
-
       </div>
 
       <form id="composeForm"></form>
-
     </div>
   `;
 
@@ -1528,7 +1532,6 @@ function buildComposeForm() {
       </div>
 
       <div class="field">
-
         <label for="text">
           Message
         </label>
@@ -1549,7 +1552,6 @@ function buildComposeForm() {
             0 / 4096
           </small>
         </div>
-
       </div>
     `;
   }
@@ -1561,7 +1563,6 @@ function buildComposeForm() {
       </div>
 
       <div class="field">
-
         <label for="image">
           Image URL
         </label>
@@ -1576,11 +1577,9 @@ function buildComposeForm() {
         <small>
           Use a publicly reachable image URL.
         </small>
-
       </div>
 
       <div class="field">
-
         <label for="caption">
           Caption
         </label>
@@ -1590,7 +1589,6 @@ function buildComposeForm() {
           required
           placeholder="Write the caption..."
         ></textarea>
-
       </div>
     `;
   }
@@ -1602,9 +1600,7 @@ function buildComposeForm() {
       </div>
 
       <div class="grid-2">
-
         <div class="field">
-
           <label for="eventName">
             Event name
           </label>
@@ -1614,11 +1610,9 @@ function buildComposeForm() {
             required
             placeholder="Sunday Gathering"
           >
-
         </div>
 
         <div class="field">
-
           <label for="locationName">
             Location name
           </label>
@@ -1627,11 +1621,9 @@ function buildComposeForm() {
             id="locationName"
             placeholder="Uhuru Park"
           >
-
         </div>
 
         <div class="field">
-
           <label for="startDate">
             Start
           </label>
@@ -1641,11 +1633,9 @@ function buildComposeForm() {
             type="datetime-local"
             required
           >
-
         </div>
 
         <div class="field">
-
           <label for="endDate">
             End
           </label>
@@ -1655,13 +1645,10 @@ function buildComposeForm() {
             type="datetime-local"
             required
           >
-
         </div>
-
       </div>
 
       <div class="field">
-
         <label for="description">
           Description
         </label>
@@ -1670,7 +1657,6 @@ function buildComposeForm() {
           id="description"
           placeholder="Add useful details about the event..."
         ></textarea>
-
       </div>
     `;
   }
@@ -1682,7 +1668,6 @@ function buildComposeForm() {
       </div>
 
       <div class="field">
-
         <label for="text">
           Message
         </label>
@@ -1691,11 +1676,9 @@ function buildComposeForm() {
           id="text"
           value="Please choose an option below."
         >
-
       </div>
 
       <div class="section-divider">
-
         <div>
           <span class="section-label">
             Interactive choices
@@ -1709,11 +1692,9 @@ function buildComposeForm() {
         <small>
           Up to four quick replies.
         </small>
-
       </div>
 
       <div class="grid-2">
-
         ${[
           "Open member menu|member:view",
           "Open transport|event:transport",
@@ -1723,7 +1704,6 @@ function buildComposeForm() {
           .map(
             (value, index) => `
               <div class="choice-card">
-
                 <span class="choice-number">
                   0${index + 1}
                 </span>
@@ -1739,12 +1719,10 @@ function buildComposeForm() {
                     value="${esc(value)}"
                   >
                 </label>
-
               </div>
             `,
           )
           .join("")}
-
       </div>
     `;
   }
@@ -1756,7 +1734,6 @@ function buildComposeForm() {
       </div>
 
       <div class="field">
-
         <label for="text">
           Intro
         </label>
@@ -1765,11 +1742,9 @@ function buildComposeForm() {
           id="text"
           value="Please browse the cards below."
         >
-
       </div>
 
       <div class="section-divider">
-
         <div>
           <span class="section-label">
             Content
@@ -1783,18 +1758,14 @@ function buildComposeForm() {
         <small>
           Empty cards are ignored.
         </small>
-
       </div>
 
       <div class="carousel-stack">
-
         ${[1, 2, 3, 4]
           .map(
             (i) => `
               <div class="carousel-card">
-
                 <div class="carousel-card-heading">
-
                   <div class="carousel-card-index">
                     0${i}
                   </div>
@@ -1808,14 +1779,10 @@ function buildComposeForm() {
                       Optional content
                     </small>
                   </div>
-
                 </div>
 
-
                 <div class="grid-2">
-
                   <div class="field">
-
                     <label for="c${i}title">
                       Title
                     </label>
@@ -1823,12 +1790,9 @@ function buildComposeForm() {
                     <input
                       id="c${i}title"
                     >
-
                   </div>
 
-
                   <div class="field">
-
                     <label for="c${i}image">
                       Image URL
                     </label>
@@ -1837,14 +1801,10 @@ function buildComposeForm() {
                       id="c${i}image"
                       type="url"
                     >
-
                   </div>
-
                 </div>
 
-
                 <div class="field">
-
                   <label for="c${i}body">
                     Body
                   </label>
@@ -1852,14 +1812,10 @@ function buildComposeForm() {
                   <textarea
                     id="c${i}body"
                   ></textarea>
-
                 </div>
 
-
                 <div class="grid-2">
-
                   <div class="field">
-
                     <label for="c${i}button">
                       Button text
                     </label>
@@ -1868,12 +1824,9 @@ function buildComposeForm() {
                       id="c${i}button"
                       value="Open"
                     >
-
                   </div>
 
-
                   <div class="field">
-
                     <label for="c${i}id">
                       Button ID
                     </label>
@@ -1882,16 +1835,12 @@ function buildComposeForm() {
                       id="c${i}id"
                       value="card_${i}"
                     >
-
                   </div>
-
                 </div>
-
               </div>
             `,
           )
           .join("")}
-
       </div>
     `;
   }
@@ -1901,9 +1850,7 @@ function buildComposeForm() {
       ${fields}
     </div>
 
-
     <div class="form-actions compose-submit-row">
-
       <div class="compose-help">
         ${icon("whatsapp")}
 
@@ -1912,9 +1859,7 @@ function buildComposeForm() {
         </span>
       </div>
 
-
       <div class="compose-send-area">
-
         <span
           id="composeResult"
           class="subtle"
@@ -1927,9 +1872,7 @@ function buildComposeForm() {
           ${icon("send")}
           Send now
         </button>
-
       </div>
-
     </div>
   `;
 
@@ -2137,9 +2080,7 @@ function renderReminders() {
 
   $("#reminders").innerHTML = `
     <div class="page-head">
-
       <div>
-
         <div class="eyebrow">
           ${icon("clock")}
           Automation
@@ -2152,9 +2093,7 @@ function renderReminders() {
         <p class="subtle page-description">
           Schedule messages once or create recurring reminders for your members.
         </p>
-
       </div>
-
 
       <div
         class="system-pill ${
@@ -2164,16 +2103,11 @@ function renderReminders() {
         <span class="status-dot"></span>
         ${schedulerEnabled ? "Scheduler available" : "Scheduler disabled"}
       </div>
-
     </div>
 
-
     <div class="card reminder-create-card">
-
       <div class="compose-topline">
-
         <div>
-
           <span class="section-label">
             Create reminder
           </span>
@@ -2181,26 +2115,20 @@ function renderReminders() {
           <h3>
             Schedule a message
           </h3>
-
         </div>
 
         <span class="small-badge">
           ${icon("clock")}
           Automated delivery
         </span>
-
       </div>
-
 
       <form
         id="reminderForm"
         class="reminder-form"
       >
-
         <div class="grid-2">
-
           <div class="field">
-
             <label for="rTitle">
               Title
             </label>
@@ -2210,12 +2138,9 @@ function renderReminders() {
               required
               placeholder="Sunday reminder"
             >
-
           </div>
 
-
           <div class="field">
-
             <label for="rType">
               Type
             </label>
@@ -2229,15 +2154,12 @@ function renderReminders() {
                 Recurring
               </option>
             </select>
-
           </div>
-
 
           <div
             class="field"
             id="runAtField"
           >
-
             <label for="rRunAt">
               Run at
             </label>
@@ -2246,15 +2168,12 @@ function renderReminders() {
               id="rRunAt"
               type="datetime-local"
             >
-
           </div>
-
 
           <div
             class="field"
             id="cronField"
           >
-
             <label for="rCron">
               Cron expression
             </label>
@@ -2267,16 +2186,11 @@ function renderReminders() {
             <small>
               Example: every Monday at 09:00.
             </small>
-
           </div>
-
         </div>
 
-
         <div class="section-divider">
-
           <div>
-
             <span class="section-label">
               Audience
             </span>
@@ -2284,19 +2198,14 @@ function renderReminders() {
             <h4>
               Who should receive it?
             </h4>
-
           </div>
-
         </div>
-
 
         <div class="grid-2">
           ${targetBlock("reminder")}
         </div>
 
-
         <div class="field full">
-
           <label for="rText">
             Message
           </label>
@@ -2306,12 +2215,9 @@ function renderReminders() {
             required
             placeholder="Write the reminder message..."
           ></textarea>
-
         </div>
 
-
         <div class="form-actions">
-
           <span
             id="rResult"
             class="subtle"
@@ -2324,18 +2230,12 @@ function renderReminders() {
             ${icon("clock")}
             Save reminder
           </button>
-
         </div>
-
       </form>
-
     </div>
 
-
     <div class="section-heading section-heading-spaced">
-
       <div>
-
         <span class="section-label">
           Scheduled
         </span>
@@ -2343,24 +2243,17 @@ function renderReminders() {
         <h3>
           Active reminders
         </h3>
-
       </div>
-
 
       <span class="small-badge">
         ${state.reminders.length}
         total
       </span>
-
     </div>
 
-
     <div class="table-card">
-
       <table>
-
         <thead>
-
           <tr>
             <th>Reminder</th>
             <th>Type</th>
@@ -2368,18 +2261,14 @@ function renderReminders() {
             <th>Status</th>
             <th></th>
           </tr>
-
         </thead>
 
-
         <tbody>
-
           ${
             state.reminders
               .map(
                 (reminder) => `
                   <tr>
-
                     <td>
                       <strong>
                         ${esc(reminder.title)}
@@ -2410,7 +2299,6 @@ function renderReminders() {
                     </td>
 
                     <td class="table-action-cell">
-
                       <button
                         class="button button-quiet button-small stop-reminder"
                         data-id="${esc(reminder.id)}"
@@ -2418,20 +2306,15 @@ function renderReminders() {
                       >
                         Stop
                       </button>
-
                     </td>
-
                   </tr>
                 `,
               )
               .join("") ||
             `
               <tr>
-
                 <td colspan="5">
-
                   <div class="empty-state">
-
                     <div class="empty-icon">
                       ${icon("clock")}
                     </div>
@@ -2443,19 +2326,13 @@ function renderReminders() {
                     <p>
                       Create a reminder above to automate a message.
                     </p>
-
                   </div>
-
                 </td>
-
               </tr>
             `
           }
-
         </tbody>
-
       </table>
-
     </div>
   `;
 
@@ -2566,9 +2443,7 @@ function renderReminders() {
 function renderWhatsApp() {
   $("#whatsapp").innerHTML = `
     <div class="page-head">
-
       <div>
-
         <div class="eyebrow">
           ${icon("whatsapp")}
           WhatsApp
@@ -2582,25 +2457,19 @@ function renderWhatsApp() {
           Connect the account and manage the same WhatsApp renderer used for
           direct messages, groups, menus, events and carousels.
         </p>
-
       </div>
-
     </div>
-
 
     <div class="connection-hero ${
       state.wa?.status === "connected"
         ? "connection-online"
         : "connection-offline"
     }">
-
       <div class="connection-icon">
         ${icon("whatsapp")}
       </div>
 
-
       <div class="connection-copy">
-
         <span class="section-label">
           Connection status
         </span>
@@ -2620,29 +2489,19 @@ function renderWhatsApp() {
               : "Pair the account using a pairing code or QR code."
           }
         </p>
-
       </div>
 
-
       <div class="connection-status-large">
-
         <span class="status-dot"></span>
 
         ${esc(state.wa?.status || "disconnected")}
-
       </div>
-
     </div>
 
-
     <div class="card-grid whatsapp-tools">
-
       <article class="panel">
-
         <div class="panel-heading">
-
           <div>
-
             <span class="section-label">
               Pairing
             </span>
@@ -2650,24 +2509,19 @@ function renderWhatsApp() {
             <h3>
               Phone pairing code
             </h3>
-
           </div>
 
           <span class="panel-heading-icon">
             ${icon("whatsapp")}
           </span>
-
         </div>
-
 
         <p class="panel-description">
           Enter the WhatsApp number in international format to request
           a pairing code.
         </p>
 
-
         <div class="field">
-
           <label for="pairPhone">
             WhatsApp number
           </label>
@@ -2678,14 +2532,10 @@ function renderWhatsApp() {
             inputmode="numeric"
             autocomplete="tel"
           >
-
         </div>
 
-
         <div class="pair-code-area">
-
           <div class="pair-code-box">
-
             <span class="pair-code-label">
               PAIRING CODE
             </span>
@@ -2693,9 +2543,7 @@ function renderWhatsApp() {
             <strong id="pairCode">
               —
             </strong>
-
           </div>
-
 
           <button
             class="icon-button"
@@ -2706,12 +2554,9 @@ function renderWhatsApp() {
           >
             ${icon("copy")}
           </button>
-
         </div>
 
-
         <div class="form-actions">
-
           <button
             class="button button-primary"
             id="pairBtn"
@@ -2720,18 +2565,12 @@ function renderWhatsApp() {
             ${icon("whatsapp")}
             Request code
           </button>
-
         </div>
-
       </article>
 
-
       <article class="panel">
-
         <div class="panel-heading">
-
           <div>
-
             <span class="section-label">
               QR connection
             </span>
@@ -2739,20 +2578,16 @@ function renderWhatsApp() {
             <h3>
               Scan QR code
             </h3>
-
           </div>
 
           <span class="panel-heading-icon">
             ${icon("refresh")}
           </span>
-
         </div>
-
 
         <p class="panel-description">
           Load the current WhatsApp QR code and scan it from your phone.
         </p>
-
 
         <button
           class="button button-secondary"
@@ -2763,14 +2598,11 @@ function renderWhatsApp() {
           Load QR
         </button>
 
-
         <div
           id="qrArea"
           class="qr-area"
         >
-
           <div class="qr-placeholder">
-
             <div class="qr-placeholder-icon">
               ${icon("whatsapp")}
             </div>
@@ -2782,22 +2614,14 @@ function renderWhatsApp() {
             <span>
               Press “Load QR” when the WhatsApp session is ready.
             </span>
-
           </div>
-
         </div>
-
       </article>
-
     </div>
 
-
     <section class="panel groups-panel">
-
       <div class="panel-heading groups-heading">
-
         <div>
-
           <span class="section-label">
             WhatsApp groups
           </span>
@@ -2810,9 +2634,7 @@ function renderWhatsApp() {
             ${state.groups.length}
             groups available to this WhatsApp account.
           </p>
-
         </div>
-
 
         <button
           class="button button-secondary"
@@ -2822,14 +2644,10 @@ function renderWhatsApp() {
           ${icon("refresh")}
           Refresh groups
         </button>
-
       </div>
 
-
       <div class="directory-toolbar group-toolbar">
-
         <div class="search-box">
-
           ${icon("search")}
 
           <input
@@ -2839,17 +2657,13 @@ function renderWhatsApp() {
             autocomplete="off"
             enterkeyhint="search"
           >
-
         </div>
-
       </div>
-
 
       <div
         class="group-list"
         id="groupList"
       >
-
         ${
           state.groups.length
             ? state.groups
@@ -2861,9 +2675,7 @@ function renderWhatsApp() {
                         `${group.subject} ${group.id}`,
                       ).toLowerCase()}"
                     >
-
                       <div class="group-main">
-
                         <div class="group-avatar">
                           ${esc(
                             String(group.subject || "?")
@@ -2874,7 +2686,6 @@ function renderWhatsApp() {
                         </div>
 
                         <div>
-
                           <strong>
                             ${esc(group.subject)}
                           </strong>
@@ -2882,24 +2693,19 @@ function renderWhatsApp() {
                           <small>
                             ${esc(group.id)}
                           </small>
-
                         </div>
-
                       </div>
-
 
                       <span class="group-size">
                         ${esc(group.size)}
                         members
                       </span>
-
                     </div>
                   `,
                 )
                 .join("")
             : `
               <div class="empty-state">
-
                 <div class="empty-icon">
                   ${icon("whatsapp")}
                 </div>
@@ -2911,13 +2717,10 @@ function renderWhatsApp() {
                 <p>
                   Connect WhatsApp and refresh the group list.
                 </p>
-
               </div>
             `
         }
-
       </div>
-
     </section>
   `;
 
@@ -3035,9 +2838,7 @@ function renderSettings() {
 
   $("#settings").innerHTML = `
     <div class="page-head">
-
       <div>
-
         <div class="eyebrow">
           ${icon("settings")}
           Configuration
@@ -3051,16 +2852,11 @@ function renderSettings() {
           Manage the operational wording and gathering details without
           touching the source code.
         </p>
-
       </div>
-
     </div>
 
-
     <div class="settings-layout">
-
       <aside class="settings-intro panel">
-
         <div class="settings-icon">
           ${icon("settings")}
         </div>
@@ -3082,21 +2878,15 @@ function renderSettings() {
           <span class="status-dot"></span>
           Changes are saved directly to the application settings.
         </div>
-
       </aside>
 
-
       <div class="card">
-
         <form
           id="settingsForm"
           class="settings-form"
         >
-
           <div class="section-divider">
-
             <div>
-
               <span class="section-label">
                 Identity
               </span>
@@ -3104,16 +2894,11 @@ function renderSettings() {
               <h4>
                 Organisation details
               </h4>
-
             </div>
-
           </div>
 
-
           <div class="grid-2">
-
             <div class="field">
-
               <label for="sChurch">
                 Church name
               </label>
@@ -3123,12 +2908,9 @@ function renderSettings() {
                 value="${esc(settings.churchName || "")}"
                 placeholder="Grace Encounter"
               >
-
             </div>
 
-
             <div class="field">
-
               <label for="sKeyword">
                 Member keyword
               </label>
@@ -3138,16 +2920,11 @@ function renderSettings() {
                 value="${esc(settings.keyword || "gracehelp")}"
                 placeholder="gracehelp"
               >
-
             </div>
-
           </div>
 
-
           <div class="section-divider">
-
             <div>
-
               <span class="section-label">
                 Gathering
               </span>
@@ -3155,16 +2932,11 @@ function renderSettings() {
               <h4>
                 Event information
               </h4>
-
             </div>
-
           </div>
 
-
           <div class="grid-2">
-
             <div class="field">
-
               <label for="sEvent">
                 Event name
               </label>
@@ -3174,12 +2946,9 @@ function renderSettings() {
                 value="${esc(settings.eventName || "")}"
                 placeholder="Uhuru Park Gathering"
               >
-
             </div>
 
-
             <div class="field">
-
               <label for="sLocation">
                 Event location
               </label>
@@ -3189,14 +2958,10 @@ function renderSettings() {
                 value="${esc(settings.eventLocation || "")}"
                 placeholder="Uhuru Park, Nairobi"
               >
-
             </div>
-
           </div>
 
-
           <div class="field">
-
             <label for="sTransport">
               Transport notice
             </label>
@@ -3205,14 +2970,10 @@ function renderSettings() {
               id="sTransport"
               placeholder="Add transport information for members..."
             >${esc(settings.transportNotice || "")}</textarea>
-
           </div>
 
-
           <div class="section-divider">
-
             <div>
-
               <span class="section-label">
                 WhatsApp experience
               </span>
@@ -3220,16 +2981,11 @@ function renderSettings() {
               <h4>
                 Bot presentation
               </h4>
-
             </div>
-
           </div>
 
-
           <div class="grid-2">
-
             <div class="field">
-
               <label for="sFooter">
                 Bot footer
               </label>
@@ -3239,12 +2995,9 @@ function renderSettings() {
                 value="${esc(settings.botFooter || "")}"
                 placeholder="Grace Encounter"
               >
-
             </div>
 
-
             <div class="field">
-
               <label for="sMenuIntro">
                 Menu introduction
               </label>
@@ -3254,14 +3007,10 @@ function renderSettings() {
                 value="${esc(settings.menuIntro || "")}"
                 placeholder="Choose an option below"
               >
-
             </div>
-
           </div>
 
-
           <div class="settings-actions">
-
             <span class="subtle">
               Keep member-facing wording short and clear.
             </span>
@@ -3273,13 +3022,9 @@ function renderSettings() {
               ${icon("check")}
               Save settings
             </button>
-
           </div>
-
         </form>
-
       </div>
-
     </div>
   `;
 
@@ -3353,20 +3098,17 @@ function openConfirm(title, message, onYes) {
 
   host.innerHTML = `
     <div class="modal-backdrop">
-
       <div
         class="modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modalTitle"
       >
-
         <div class="modal-icon">
           ${icon("check")}
         </div>
 
         <div class="modal-copy">
-
           <h3 id="modalTitle">
             ${esc(title)}
           </h3>
@@ -3374,12 +3116,9 @@ function openConfirm(title, message, onYes) {
           <p>
             ${esc(message)}
           </p>
-
         </div>
 
-
         <div class="modal-actions">
-
           <button
             class="button button-quiet"
             id="modalNo"
@@ -3395,11 +3134,8 @@ function openConfirm(title, message, onYes) {
           >
             Continue
           </button>
-
         </div>
-
       </div>
-
     </div>
   `;
 
@@ -3444,7 +3180,7 @@ $("#loginForm").onsubmit = async (event) => {
   try {
     busy(button, true, "Signing in…");
 
-    await api("/api/auth/login", {
+    const response = await api("/api/auth/login", {
       method: "POST",
 
       body: JSON.stringify({
@@ -3454,8 +3190,20 @@ $("#loginForm").onsubmit = async (event) => {
       }),
     });
 
+    if (!response?.token) {
+      throw new Error("The server did not return an authentication token.");
+    }
+
+    setAuthToken(response.token);
+
+    /*
+     * Only show the application after the
+     * token has successfully been stored.
+     */
     showApp();
   } catch (error) {
+    clearAuthToken();
+
     $("#loginError").textContent = error.message;
   } finally {
     busy(button, false);
@@ -3468,12 +3216,28 @@ $("#logoutBtn").onclick = async (event) => {
   try {
     busy(button, true, "Signing out…");
 
+    /*
+     * Tell the server that the client is
+     * ending the session, then remove the
+     * locally stored JWT.
+     */
     await api("/api/auth/logout", {
       method: "POST",
     });
 
+    clearAuthToken();
+
     showLogin();
   } catch (error) {
+    /*
+     * Even if the logout request fails,
+     * remove the local token so the browser
+     * cannot continue using the old session.
+     */
+    clearAuthToken();
+
+    showLogin();
+
     toast(error.message, "error");
   } finally {
     busy(button, false);
@@ -3506,11 +3270,13 @@ document.addEventListener("keydown", (event) => {
 
     if (modal && !modal.hidden) {
       modal.hidden = true;
+
       return;
     }
 
     if (state.mobileMenuOpen) {
       closeMobileMenu();
+
       return;
     }
   }
@@ -3525,6 +3291,7 @@ document.addEventListener("keydown", (event) => {
 
     if (search) {
       event.preventDefault();
+
       search.focus();
     }
   }
@@ -3548,10 +3315,15 @@ window.addEventListener("resize", () => {
   syncMobileMenu();
 
   try {
+    /*
+     * A valid Bearer JWT is now required.
+     */
     await api("/api/auth/me");
 
     showApp();
   } catch {
+    clearAuthToken();
+
     showLogin();
   }
 })();
