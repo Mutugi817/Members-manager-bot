@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <meta name="theme-color" content="#12372a">
+
+  <meta name="description" content="Grace Encounter members administration">
+
+  <title>Grace Encounter · Members Manager</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <div id="loginView" class="screen auth-screen">
+    <div class="auth-shell">
+
+      <div class="auth-showcase">
+        <div class="auth-showcase-top">
+          <div class="brand-badge brand-badge-large">
+            <span>GE</span>
+          </div>
+
+          <span class="auth-pill">
+            Members Manager
+          </span>
+        </div>
+
+        <div class="auth-showcase-copy">
+          <span class="section-label">
+            Grace Encounter
+          </span>
+
+          <h2>
+            One workspace for your members and communication.
+          </h2>
+
+          <p>
+            Keep member records organised, automate reminders,
+            and manage your WhatsApp communication from one
+            focused administration centre.
+          </p>
+        </div>
+
+        <div class="auth-showcase-footer">
+          <span class="showcase-dot"></span>
+          Secure administration workspace
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-mobile-brand">
+          <div class="brand-badge">
+            <span>GE</span>
+          </div>
+        </div>
+
+        <div class="auth-heading">
+          <span class="section-label">
+            Welcome back
+          </span>
+
+          <h1>
+            Sign in
+          </h1>
+
+          <p class="subtle">
+            Access your members administration workspace.
+          </p>
+        </div>
+
+        <form id="loginForm" class="stack">
+
+          <div class="field">
+            <label for="email">
+              Email
+            </label>
+
+            <input id="email" type="email" autocomplete="username" required placeholder="admin@example.com">
+          </div>
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="password">
+                Password
+              </label>
+
+              <span class="field-hint-inline">
+                Secure access
+              </span>
+            </div>
+
+            <input id="password" type="password" autocomplete="current-password" required placeholder="Your password">
+          </div>
+
+          <button class="button button-primary button-large" type="submit">
+            <span>Sign in</span>
+            <span class="button-arrow">→</span>
+          </button>
+
+          <p id="loginError" class="form-error" aria-live="polite"></p>
+
+        </form>
+
+        <div class="auth-footer">
+          <span class="status-dot"></span>
+          Administration access only
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="appView" hidden>
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+        <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="brand-row">
+          <div class="brand-badge brand-badge-small">
+            <span>GE</span>
+          </div>
+
+          <div class="brand-copy">
+            <strong id="brandName">
+              Grace Encounter
+            </strong>
+
+            <small>
+              Members Manager
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+
+        <div id="waStatus" class="status-chip offline" aria-live="polite">
+          <span class="status-dot"></span>
+          <span>WhatsApp</span>
+          <strong>disconnected</strong>
+        </div>
+
+        <div class="top-separator"></div>
+
+        <button id="logoutBtn" class="button button-quiet button-small">
+          <span class="logout-label">
+            Sign out
+          </span>
+
+          <span class="logout-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M10 17l5-5-5-5"></path>
+              <path d="M15 12H3"></path>
+              <path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"></path>
+            </svg>
+          </span>
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <div class="shell">
+
+      <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+          <span class="section-label">
+            Workspace
+          </span>
+
+          <span class="sidebar-status">
+            <span class="status-dot"></span>
+            Live
+          </span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+
+          <button class="nav-item active" data-tab="home" aria-current="page">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M5.5 9.5V21h13V9.5"></path>
+                <path d="M9.5 21v-6h5v6"></path>
+              </svg>
+            </span>
+
+            <span class="nav-label">
+              Overview
+            </span>
+          </button>
+
+          <button class="nav-item" data-tab="members">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9.5" cy="7" r="4"></circle>
+                <path d="M17 3.2a4 4 0 0 1 0 7.6"></path>
+                <path d="M21 21v-2a4 4 0 0 0-3-3.86"></path>
+              </svg>
+            </span>
+
+            <span class="nav-label">
+              Members
+            </span>
+          </button>
+
+          <button class="nav-item" data-tab="compose">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+            </span>
+
+            <span class="nav-label">
+              Compose
+            </span>
+          </button>
+
+          <button class="nav-item" data-tab="reminders">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
+            </span>
+
+            <span class="nav-label">
+              Reminders
+            </span>
+          </button>
+
+          <button class="nav-item" data-tab="whatsapp">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20.4 11.2a8.4 8.4 0 0 1-12.3 7.4L3 20l1.4-4.9a8.4 8.4 0 1 1 16-3.9Z"></path>
+                <path
+                  d="M8.6 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.1.1-.1.3 0 .5.4.7 1 1.3 1.7 1.7.2.1.4.1.5 0l.7-.7c.2-.2.4-.2.7-.1l1.8.9c.3.1.4.3.4.5v.6c0 .3 0 .5-.4.7-.5.3-1.4.4-2.5.1-1-.3-2.2-1-3.4-2.2-1.1-1.1-1.8-2.3-2.1-3.2-.4-1.1-.2-2 .1-2.5Z">
+                </path>
+              </svg>
+            </span>
+
+            <span class="nav-label">
+              WhatsApp
+            </span>
+          </button>
+
+          <button class="nav-item" data-tab="settings">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="3.2"></circle>
+                <path
+                  d="M19.4 15 .1.1a1.9 1.9 0 0 1-2.7 2.7l-.1-.1a1.9 1.9 0 0 0-3.2 1.3v.2a1.9 1.9 0 0 1-3.8 0V19a1.9 1.9 0 0 0-3.2-1.3l-.1.1a1.9 1.9 0 1 1-2.7-2.7l.1-.1A1.9 1.9 0 0 0 2.5 12H2.3a1.9 1.9 0 0 1 0-3.8h.2a1.9 1.9 0 0 0 1.3-3.2l-.1-.1">
+                </path>
+              </svg>
+            </span>
+
+            <span class="nav-label">
+              Settings
+            </span>
+          </button>
+
+        </nav>
+
+
+        <div class="sidebar-event">
+
+          <div class="sidebar-event-top">
+            <span class="section-label">
+              Gathering
+            </span>
+
+            <span class="event-live">
+              <span class="status-dot"></span>
+              Active
+            </span>
+          </div>
+
+          <strong id="eventNameSide">
+            Uhuru Park Gathering
+          </strong>
+
+          <p id="eventLocationSide">
+            Uhuru Park, Nairobi
+          </p>
+
+        </div>
+
+      </aside>
+
+
+      <main class="main">
+
+        <div class="mobile-page-context">
+          <span id="connectionStateText">
+            WhatsApp is not connected
+          </span>
+        </div>
+
+        <section id="home" class="tab-panel"></section>
+
+        <section id="members" class="tab-panel" hidden></section>
+
+        <section id="compose" class="tab-panel" hidden></section>
+
+        <section id="reminders" class="tab-panel" hidden></section>
+
+        <section id="whatsapp" class="tab-panel" hidden></section>
+
+        <section id="settings" class="tab-panel" hidden></section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <div id="toastHost" class="toast-host" aria-live="polite"></div>
+
+
+  <div id="modalHost" class="modal-host" hidden></div>
+
+
+  <script src="/app.js"></script>
+
+</body>
+
+</html>
