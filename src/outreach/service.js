@@ -1,10 +1,10 @@
 import { sleep, formatPhone } from "../core/utils.js";
 
-const MIN_BULK_MESSAGE_DELAY_MS = 6000;
-const BULK_JOB_COOLDOWN_MS = 30000;
-const MAX_BULK_RECIPIENTS = 40;
+const MIN_OUTBOUND_INTERVAL_MS = 6000;
+const BATCH_SIZE = 50;
+const BATCH_DELAY_MS = 10 * 60 * 1000;
 const MAX_CONSECUTIVE_FAILURES = 3;
-const CRITICAL_FAILURE_COOLDOWN_MS = 60000;
+const FAILURE_COOLDOWN_MS = 60000;
 
 export class OutreachService {
   constructor({ whatsapp, members, config, settings }) {
@@ -14,7 +14,7 @@ export class OutreachService {
     this.settings = settings;
 
     this.queueTail = Promise.resolve();
-    this.lastSendAt = 0;
+    this.lastSendStartedAt = 0;
     this.cooldownUntil = 0;
   }
 
@@ -23,7 +23,6 @@ export class OutreachService {
 
     return {
       kind: "interactive",
-
       text:
         `Greetings from ${s.churchName}.\n\n` +
         `This message confirms that your name is on our current member list.\n\n` +
@@ -32,9 +31,7 @@ export class OutreachService {
         `Reference: ${member.code}\n\n` +
         `Please keep your reference for future coordination.\n\n` +
         `${s.transportNotice}`,
-
       footer: s.botFooter,
-
       buttons: [
         this.whatsapp.renderer.copyButton(
           "Copy reference",
@@ -54,14 +51,11 @@ export class OutreachService {
 
     return {
       kind: "interactive",
-
       text:
         `Greetings from ${settings.churchName}.\n\n` +
         `${missing}\n\n` +
         `Please send ${settings.keyword} in a private chat and choose Update details to complete your record.`,
-
       footer: settings.botFooter,
-
       buttons: [
         this.whatsapp.renderer.quickReply(
           "Open menu",
@@ -76,7 +70,7 @@ export class OutreachService {
       ? members.filter((member) => member?.phone)
       : [];
 
-    return this.#queueBulk(
+    return this.#enqueueBulk(
       targets,
       async (member) => {
         const jid = await this.whatsapp.resolveUserJid(member.phone);
@@ -88,27 +82,18 @@ export class OutreachService {
 
         return {
           memberId: member.id,
-
           code: member.code,
-
           ok: true,
-
           jid: sent?.key?.remoteJid || jid,
-
           messageId: sent?.messageId || sent?.key?.id || null,
         };
       },
-      {
-        buildFailureResult: (member, error) => ({
-          memberId: member.id,
-
-          code: member.code,
-
-          ok: false,
-
-          error: error instanceof Error ? error.message : String(error),
-        }),
-      },
+      (member, error) => ({
+        memberId: member.id,
+        code: member.code,
+        ok: false,
+        error: error instanceof Error ? error.message : String(error),
+      }),
     );
   }
 
@@ -120,40 +105,31 @@ export class OutreachService {
     ) {
       const groups = await this.whatsapp.groups();
 
+      const ids = Array.isArray(targetIds) ? targetIds : [];
+
       const chosen =
         targetType === "all_groups"
           ? groups
-          : groups.filter(
-              (group) =>
-                Array.isArray(targetIds) && targetIds.includes(group.id),
-            );
+          : groups.filter((group) => ids.includes(group.id));
 
-      return this.#queueBulk(
+      return this.#enqueueBulk(
         chosen,
         async (group) => {
           const sent = await this.whatsapp.sendToJid(group.id, payload);
 
           return {
             target: group.id,
-
             name: group.subject,
-
             ok: true,
-
             messageId: sent?.messageId || sent?.key?.id || null,
           };
         },
-        {
-          buildFailureResult: (group, error) => ({
-            target: group.id,
-
-            name: group.subject,
-
-            ok: false,
-
-            error: error instanceof Error ? error.message : String(error),
-          }),
-        },
+        (group, error) => ({
+          target: group.id,
+          name: group.subject,
+          ok: false,
+          error: error instanceof Error ? error.message : String(error),
+        }),
       );
     }
 
@@ -174,7 +150,7 @@ export class OutreachService {
         .filter((member) => member.phone);
     }
 
-    return this.#queueBulk(
+    return this.#enqueueBulk(
       targets,
       async (member) => {
         const jid = await this.whatsapp.resolveUserJid(member.phone);
@@ -183,186 +159,132 @@ export class OutreachService {
 
         return {
           target: jid,
-
           memberId: member.id,
-
           code: member.code,
-
           ok: true,
-
           messageId: sent?.messageId || sent?.key?.id || null,
         };
       },
-      {
-        buildFailureResult: (member, error) => ({
-          target: member.phone,
-
-          memberId: member.id,
-
-          code: member.code,
-
-          ok: false,
-
-          error: error instanceof Error ? error.message : String(error),
-        }),
-      },
+      (member, error) => ({
+        target: member.phone,
+        memberId: member.id,
+        code: member.code,
+        ok: false,
+        error: error instanceof Error ? error.message : String(error),
+      }),
     );
   }
 
-  #minimumInterval() {
-    const configured = Number(this.config?.outboundDelayMs);
+  async #enqueueBulk(targets, sender, failureResult) {
+    const unique = this.#deduplicate(targets);
 
-    if (
-      Number.isFinite(configured) &&
-      configured >= MIN_BULK_MESSAGE_DELAY_MS
-    ) {
-      return configured;
-    }
-
-    return MIN_BULK_MESSAGE_DELAY_MS;
-  }
-
-  async #queueBulk(targets, sender, { buildFailureResult }) {
-    if (!Array.isArray(targets) || targets.length === 0) {
-      return [];
-    }
-
-    if (MAX_BULK_RECIPIENTS > 0 && targets.length > MAX_BULK_RECIPIENTS) {
-      throw new Error(
-        `Bulk recipient count ${targets.length} exceeds the configured maximum of ${MAX_BULK_RECIPIENTS}.`,
-      );
-    }
-
-    const uniqueTargets = this.#deduplicateTargets(targets);
-
-    if (uniqueTargets.length === 0) {
+    if (!unique.length) {
       return [];
     }
 
     const job = this.queueTail
       .catch(() => {})
-      .then(() =>
-        this.#runBulk(uniqueTargets, sender, {
-          buildFailureResult,
-        }),
-      );
+      .then(() => this.#runBulk(unique, sender, failureResult));
 
     this.queueTail = job.catch(() => {});
 
     return job;
   }
 
-  #deduplicateTargets(targets) {
+  #deduplicate(targets) {
     const seen = new Set();
-
-    const unique = [];
+    const result = [];
 
     for (const target of targets) {
       const key = this.#targetKey(target);
 
-      if (!key) {
-        continue;
-      }
-
-      if (seen.has(key)) {
+      if (!key || seen.has(key)) {
         continue;
       }
 
       seen.add(key);
-
-      unique.push(target);
+      result.push(target);
     }
 
-    return unique;
+    return result;
   }
 
   #targetKey(target) {
     if (target && typeof target === "object") {
       return String(
-        target.jid || target.id || target.whatsappJid || target.phone || "",
+        target.jid || target.whatsappJid || target.id || target.phone || "",
       ).trim();
     }
 
     return String(target || "").trim();
   }
 
-  async #runBulk(targets, sender, { buildFailureResult }) {
-    const minimumInterval = this.#minimumInterval();
-
-    const cooldownRemaining = this.cooldownUntil - Date.now();
-
-    if (cooldownRemaining > 0) {
-      await sleep(cooldownRemaining);
-    }
-
+  async #runBulk(targets, sender, failureResult) {
     const results = [];
 
-    let consecutiveFailures = 0;
+    const batches = [];
 
-    for (let index = 0; index < targets.length; index += 1) {
-      const target = targets[index];
-
-      const elapsed = Date.now() - this.lastSendAt;
-
-      const remaining = minimumInterval - elapsed;
-
-      if (this.lastSendAt > 0 && remaining > 0) {
-        await sleep(remaining);
-      }
-
-      const currentCooldown = this.cooldownUntil - Date.now();
-
-      if (currentCooldown > 0) {
-        await sleep(currentCooldown);
-      }
-
-      this.lastSendAt = Date.now();
-
-      try {
-        const result = await sender(target, index);
-
-        results.push(result);
-
-        consecutiveFailures = 0;
-      } catch (error) {
-        consecutiveFailures += 1;
-
-        const result =
-          typeof buildFailureResult === "function"
-            ? buildFailureResult(target, error)
-            : {
-                ok: false,
-
-                error: error instanceof Error ? error.message : String(error),
-              };
-
-        results.push(result);
-
-        if (this.#isCriticalError(error)) {
-          this.cooldownUntil = Math.max(
-            this.cooldownUntil,
-            Date.now() + CRITICAL_FAILURE_COOLDOWN_MS,
-          );
-
-          break;
-        }
-
-        if (consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
-          this.cooldownUntil = Math.max(
-            this.cooldownUntil,
-            Date.now() + CRITICAL_FAILURE_COOLDOWN_MS,
-          );
-
-          break;
-        }
-      }
+    for (let index = 0; index < targets.length; index += BATCH_SIZE) {
+      batches.push(targets.slice(index, index + BATCH_SIZE));
     }
 
-    if (this.lastSendAt > 0) {
-      this.cooldownUntil = Math.max(
-        this.cooldownUntil,
-        this.lastSendAt + BULK_JOB_COOLDOWN_MS,
-      );
+    const initialCooldown = this.cooldownUntil - Date.now();
+
+    if (initialCooldown > 0) {
+      await sleep(initialCooldown);
+    }
+
+    for (let batchIndex = 0; batchIndex < batches.length; batchIndex += 1) {
+      const batch = batches[batchIndex];
+
+      let consecutiveFailures = 0;
+
+      for (let index = 0; index < batch.length; index += 1) {
+        const target = batch[index];
+
+        if (this.lastSendStartedAt > 0) {
+          const elapsed = Date.now() - this.lastSendStartedAt;
+
+          const remaining = MIN_OUTBOUND_INTERVAL_MS - elapsed;
+
+          if (remaining > 0) {
+            await sleep(remaining);
+          }
+        }
+
+        if (this.cooldownUntil > Date.now()) {
+          await sleep(this.cooldownUntil - Date.now());
+        }
+
+        this.lastSendStartedAt = Date.now();
+
+        try {
+          const result = await sender(target, index);
+
+          results.push(result);
+
+          consecutiveFailures = 0;
+        } catch (error) {
+          consecutiveFailures += 1;
+
+          results.push(failureResult(target, error));
+
+          if (
+            this.#isCriticalError(error) ||
+            consecutiveFailures >= MAX_CONSECUTIVE_FAILURES
+          ) {
+            this.cooldownUntil = Date.now() + FAILURE_COOLDOWN_MS;
+
+            return results;
+          }
+        }
+      }
+
+      const hasAnotherBatch = batchIndex < batches.length - 1;
+
+      if (hasAnotherBatch) {
+        await sleep(BATCH_DELAY_MS);
+      }
     }
 
     return results;
@@ -379,19 +301,17 @@ export class OutreachService {
 
     const message = String(error?.message || error || "").toLowerCase();
 
-    const criticalPatterns = [
+    return [
       "rate limit",
       "too many requests",
       "logged out",
       "unauthorized",
       "forbidden",
       "not-authorized",
-      "session",
       "connection closed",
       "connection was closed",
       "baileys socket",
-    ];
-
-    return criticalPatterns.some((pattern) => message.includes(pattern));
+      "session",
+    ].some((pattern) => message.includes(pattern));
   }
 }
