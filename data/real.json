@@ -1,0 +1,6686 @@
+{
+  "generatedAt": "2026-09-22T19:18:12+03:00",
+  "sourceFiles": [
+    "members.seed(1).json",
+    "Pasted text(20260922-150729).txt",
+    "User-provided final registration list (2026-09-22)"
+  ],
+  "codePrefix": "GC",
+  "deduplication": {
+    "strategy": "normalized WhatsApp phone number is the primary duplicate key; first retained record kept; phone-less records retained because no reliable phone was provided",
+    "finalMembers": 392,
+    "finalUniquePhoneNumbers": 387,
+    "remainingPhoneLessMembers": 5,
+    "duplicatePhoneNumbers": 0,
+    "duplicateMemberCodes": 0,
+    "lastSourceEntryAdded": "Manases Kimurgor (0114754287)",
+    "verification": "All valid phone numbers extracted from the final supplied registration list are represented; existing seed-only members were preserved."
+  },
+  "members": [
+    {
+      "sourceNumber": null,
+      "sourceText": "O.Emmanuel Ngewa...0790769063",
+      "fullName": "O Emmanuel Ngewa",
+      "firstName": "O",
+      "lastName": "Emmanuel Ngewa",
+      "phone": "254790769063",
+      "rawPhone": "0790769063",
+      "code": "GC001",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790769063@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 1,
+      "sourceText": "1.Kanini Davis...0143576305",
+      "fullName": "Kanini Davis",
+      "firstName": "Kanini",
+      "lastName": "Davis",
+      "phone": "254143576305",
+      "rawPhone": "0143576305",
+      "code": "GC002",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254143576305@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 2,
+      "sourceText": "2.Rose Nzalambi-0791781234",
+      "fullName": "Rose Nzalambi",
+      "firstName": "Rose",
+      "lastName": "Nzalambi",
+      "phone": "254791781234",
+      "rawPhone": "0791781234",
+      "code": "GC003",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791781234@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 3,
+      "sourceText": "3.Brian Lumbasi-0724529132",
+      "fullName": "Brian Lumbasi",
+      "firstName": "Brian",
+      "lastName": "Lumbasi",
+      "phone": "254724529132",
+      "rawPhone": "0724529132",
+      "code": "GC004",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254724529132@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 4,
+      "sourceText": "4.Liana Nyaga-0758295578",
+      "fullName": "Liana Nyaga",
+      "firstName": "Liana",
+      "lastName": "Nyaga",
+      "phone": "254758295578",
+      "rawPhone": "0758295578",
+      "code": "GC005",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758295578@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 5,
+      "sourceText": "5.Emmanuel Masha -0780290945",
+      "fullName": "Emmanuel Masha",
+      "firstName": "Emmanuel",
+      "lastName": "Masha",
+      "phone": "254780290945",
+      "rawPhone": "0780290945",
+      "code": "GC006",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254780290945@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 6,
+      "sourceText": "6.Lilian Mwende-0794068818",
+      "fullName": "Lilian Mwende",
+      "firstName": "Lilian",
+      "lastName": "Mwende",
+      "phone": "254794068818",
+      "rawPhone": "0794068818",
+      "code": "GC007",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794068818@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 7,
+      "sourceText": "7.Baraka Gramstone -0713157800",
+      "fullName": "Baraka Gramstone",
+      "firstName": "Baraka",
+      "lastName": "Gramstone",
+      "phone": "254713157800",
+      "rawPhone": "0713157800",
+      "code": "GC008",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713157800@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 8,
+      "sourceText": "8.David wambua - 0708150143",
+      "fullName": "David wambua",
+      "firstName": "David",
+      "lastName": "wambua",
+      "phone": "254708150143",
+      "rawPhone": "0708150143",
+      "code": "GC009",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708150143@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 9,
+      "sourceText": "9.Givinalis -0780088559",
+      "fullName": "Givinalis",
+      "firstName": "Givinalis",
+      "lastName": "",
+      "phone": "254780088559",
+      "rawPhone": "0780088559",
+      "code": "GC010",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254780088559@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 10,
+      "sourceText": "10.Joshua Francis -0111587768",
+      "fullName": "Joshua Francis",
+      "firstName": "Joshua",
+      "lastName": "Francis",
+      "phone": "254111587768",
+      "rawPhone": "0111587768",
+      "code": "GC011",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254111587768@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 11,
+      "sourceText": "11.Truman Hayes-0706568292",
+      "fullName": "Truman Hayes",
+      "firstName": "Truman",
+      "lastName": "Hayes",
+      "phone": "254706568292",
+      "rawPhone": "0706568292",
+      "code": "GC012",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254706568292@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 12,
+      "sourceText": "12.Timothy - 0712684295",
+      "fullName": "Timothy",
+      "firstName": "Timothy",
+      "lastName": "",
+      "phone": "254712684295",
+      "rawPhone": "0712684295",
+      "code": "GC013",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254712684295@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 13,
+      "sourceText": "13.Livingstone- 0110443080",
+      "fullName": "Livingstone",
+      "firstName": "Livingstone",
+      "lastName": "",
+      "phone": "254110443080",
+      "rawPhone": "0110443080",
+      "code": "GC014",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254110443080@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 14,
+      "sourceText": "14.Wayne - 0769122359",
+      "fullName": "Wayne",
+      "firstName": "Wayne",
+      "lastName": "",
+      "phone": "254769122359",
+      "rawPhone": "0769122359",
+      "code": "GC015",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769122359@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 15,
+      "sourceText": "15.Willie - 0784354722",
+      "fullName": "Willie",
+      "firstName": "Willie",
+      "lastName": "",
+      "phone": "254784354722",
+      "rawPhone": "0784354722",
+      "code": "GC016",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254784354722@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 16,
+      "sourceText": "16.Jane Faith-0115145272",
+      "fullName": "Jane Faith",
+      "firstName": "Jane",
+      "lastName": "Faith",
+      "phone": "254115145272",
+      "rawPhone": "0115145272",
+      "code": "GC017",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115145272@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 17,
+      "sourceText": "17.Benson -0717394386",
+      "fullName": "Benson",
+      "firstName": "Benson",
+      "lastName": "",
+      "phone": "254717394386",
+      "rawPhone": "0717394386",
+      "code": "GC018",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717394386@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 18,
+      "sourceText": "18.Ted_0116024049",
+      "fullName": "Ted",
+      "firstName": "Ted",
+      "lastName": "",
+      "phone": "254116024049",
+      "rawPhone": "0116024049",
+      "code": "GC019",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116024049@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 19,
+      "sourceText": "19.Wairobi -0711646706",
+      "fullName": "Wairobi",
+      "firstName": "Wairobi",
+      "lastName": "",
+      "phone": "254711646706",
+      "rawPhone": "0711646706",
+      "code": "GC020",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254711646706@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 20,
+      "sourceText": "20.Joseph Reuben 0701167083",
+      "fullName": "Joseph Reuben",
+      "firstName": "Joseph",
+      "lastName": "Reuben",
+      "phone": "254701167083",
+      "rawPhone": "0701167083",
+      "code": "GC021",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254701167083@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 21,
+      "sourceText": "21.Irene - 0115280347",
+      "fullName": "Irene",
+      "firstName": "Irene",
+      "lastName": "",
+      "phone": "254115280347",
+      "rawPhone": "0115280347",
+      "code": "GC022",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115280347@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 22,
+      "sourceText": "22.Angelo -0702444048",
+      "fullName": "Angelo",
+      "firstName": "Angelo",
+      "lastName": "",
+      "phone": "254702444048",
+      "rawPhone": "0702444048",
+      "code": "GC023",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702444048@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 23,
+      "sourceText": "23.Moses Mkenya -0719666060",
+      "fullName": "Moses Mkenya",
+      "firstName": "Moses",
+      "lastName": "Mkenya",
+      "phone": "254719666060",
+      "rawPhone": "0719666060",
+      "code": "GC024",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254719666060@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 24,
+      "sourceText": "24.Amy Muema-0700580233",
+      "fullName": "Amy Muema",
+      "firstName": "Amy",
+      "lastName": "Muema",
+      "phone": "254700580233",
+      "rawPhone": "0700580233",
+      "code": "GC025",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700580233@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 25,
+      "sourceText": "25.vivian kibetu-0704312506",
+      "fullName": "Vivian Kibetu",
+      "firstName": "Vivian",
+      "lastName": "Kibetu",
+      "phone": "254704312506",
+      "rawPhone": "0704312506",
+      "code": "GC026",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704312506@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 26,
+      "sourceText": "26.Peter Kyalo-0791248817",
+      "fullName": "Peter Kyalo",
+      "firstName": "Peter",
+      "lastName": "Kyalo",
+      "phone": "254791248817",
+      "rawPhone": "0791248817",
+      "code": "GC027",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791248817@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 27,
+      "sourceText": "27.Peter kitili-0705227087",
+      "fullName": "Peter kitili",
+      "firstName": "Peter",
+      "lastName": "kitili",
+      "phone": "254705227087",
+      "rawPhone": "0705227087",
+      "code": "GC028",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254705227087@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 28,
+      "sourceText": "28.susan mueni -0715451977",
+      "fullName": "Susan Mueni",
+      "firstName": "Susan",
+      "lastName": "Mueni",
+      "phone": "254715451977",
+      "rawPhone": "0715451977",
+      "code": "GC029",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254715451977@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 29,
+      "sourceText": "29.Grace -0113703128",
+      "fullName": "Grace",
+      "firstName": "Grace",
+      "lastName": "",
+      "phone": "254113703128",
+      "rawPhone": "0113703128",
+      "code": "GC030",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254113703128@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 30,
+      "sourceText": "30.Nickson Mabele  0700508049",
+      "fullName": "Nickson Mabele",
+      "firstName": "Nickson",
+      "lastName": "Mabele",
+      "phone": "254700508049",
+      "rawPhone": "0700508049",
+      "code": "GC031",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700508049@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 31,
+      "sourceText": "31.Kennedy kasrimi-0782308989",
+      "fullName": "Kennedy kasrimi",
+      "firstName": "Kennedy",
+      "lastName": "kasrimi",
+      "phone": "254782308989",
+      "rawPhone": "0782308989",
+      "code": "GC032",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254782308989@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 32,
+      "sourceText": "32.josiah Jacob 0117267626",
+      "fullName": "josiah Jacob",
+      "firstName": "josiah",
+      "lastName": "Jacob",
+      "phone": "254117267626",
+      "rawPhone": "0117267626",
+      "code": "GC033",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117267626@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 33,
+      "sourceText": "33.Staisy simiyu -G11/09644/22",
+      "fullName": "Staisy simiyu -G",
+      "firstName": "Staisy",
+      "lastName": "simiyu -G",
+      "phone": null,
+      "rawPhone": "11/09644/22",
+      "code": "GC034",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": null,
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_or_invalid_phone"]
+      }
+    },
+    {
+      "sourceNumber": 34,
+      "sourceText": "34.Monicah Wanjiru 0795321630",
+      "fullName": "Monicah Wanjiru",
+      "firstName": "Monicah",
+      "lastName": "Wanjiru",
+      "phone": "254795321630",
+      "rawPhone": "0795321630",
+      "code": "GC035",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254795321630@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 35,
+      "sourceText": "35.Robert_0798014703",
+      "fullName": "Robert",
+      "firstName": "Robert",
+      "lastName": "",
+      "phone": "254798014703",
+      "rawPhone": "0798014703",
+      "code": "GC036",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254798014703@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 36,
+      "sourceText": "36.Mercy Njeri -0799893003",
+      "fullName": "Mercy Njeri",
+      "firstName": "Mercy",
+      "lastName": "Njeri",
+      "phone": "254799893003",
+      "rawPhone": "0799893003",
+      "code": "GC037",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799893003@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 37,
+      "sourceText": "37.Victor mwangi-0759839748",
+      "fullName": "Victor mwangi",
+      "firstName": "Victor",
+      "lastName": "mwangi",
+      "phone": "254759839748",
+      "rawPhone": "0759839748",
+      "code": "GC038",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759839748@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 38,
+      "sourceText": "38.Alpha.mike-0116323847",
+      "fullName": "Alpha mike",
+      "firstName": "Alpha",
+      "lastName": "mike",
+      "phone": "254116323847",
+      "rawPhone": "0116323847",
+      "code": "GC039",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116323847@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 39,
+      "sourceText": "39.Rose Wanjiku 0113288538",
+      "fullName": "Rose Wanjiku",
+      "firstName": "Rose",
+      "lastName": "Wanjiku",
+      "phone": "254113288538",
+      "rawPhone": "0113288538",
+      "code": "GC040",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254113288538@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 40,
+      "sourceText": "40.Ronnie Dian -0728518123",
+      "fullName": "Ronnie Dian",
+      "firstName": "Ronnie",
+      "lastName": "Dian",
+      "phone": "254728518123",
+      "rawPhone": "0728518123",
+      "code": "GC041",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254728518123@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 41,
+      "sourceText": "41.Clare -+254 725 310469",
+      "fullName": "Clare",
+      "firstName": "Clare",
+      "lastName": "",
+      "phone": "254725310469",
+      "rawPhone": "0725310469",
+      "code": "GC042",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254725310469@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 42,
+      "sourceText": "42.Diana Mokami 0759638316",
+      "fullName": "Diana Mokami",
+      "firstName": "Diana",
+      "lastName": "Mokami",
+      "phone": "254759638316",
+      "rawPhone": "0759638316",
+      "code": "GC043",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759638316@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 43,
+      "sourceText": "43.Purity 0748911220",
+      "fullName": "Purity",
+      "firstName": "Purity",
+      "lastName": "",
+      "phone": "254748911220",
+      "rawPhone": "0748911220",
+      "code": "GC044",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748911220@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 44,
+      "sourceText": "44.Valon 0702222926",
+      "fullName": "Valon",
+      "firstName": "Valon",
+      "lastName": "",
+      "phone": "254702222926",
+      "rawPhone": "0702222926",
+      "code": "GC045",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702222926@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 45,
+      "sourceText": "45.Macharia Mary -0746526032",
+      "fullName": "Macharia Mary",
+      "firstName": "Macharia",
+      "lastName": "Mary",
+      "phone": "254746526032",
+      "rawPhone": "0746526032",
+      "code": "GC046",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254746526032@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 46,
+      "sourceText": "46.Purity 0757573007",
+      "fullName": "Purity",
+      "firstName": "Purity",
+      "lastName": "",
+      "phone": "254757573007",
+      "rawPhone": "0757573007",
+      "code": "GC047",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757573007@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 47,
+      "sourceText": "47.velice  0741418370",
+      "fullName": "Velice",
+      "firstName": "Velice",
+      "lastName": "",
+      "phone": "254741418370",
+      "rawPhone": "0741418370",
+      "code": "GC048",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741418370@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 48,
+      "sourceText": "48.Tabitha- 0799658090",
+      "fullName": "Tabitha",
+      "firstName": "Tabitha",
+      "lastName": "",
+      "phone": "254799658090",
+      "rawPhone": "0799658090",
+      "code": "GC049",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799658090@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 49,
+      "sourceText": "49.Jesse Miruni -0798979859",
+      "fullName": "Jesse Miruni",
+      "firstName": "Jesse",
+      "lastName": "Miruni",
+      "phone": "254798979859",
+      "rawPhone": "0798979859",
+      "code": "GC050",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254798979859@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 50,
+      "sourceText": "50.Joan Mucemi_0143741232.",
+      "fullName": "Joan Mucemi",
+      "firstName": "Joan",
+      "lastName": "Mucemi",
+      "phone": "254143741232",
+      "rawPhone": "0143741232",
+      "code": "GC051",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254143741232@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 51,
+      "sourceText": "51.Gidion kamau -0745856465",
+      "fullName": "Gidion kamau",
+      "firstName": "Gidion",
+      "lastName": "kamau",
+      "phone": "254745856465",
+      "rawPhone": "0745856465",
+      "code": "GC052",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745856465@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 52,
+      "sourceText": "52.Solomon - 0740063072",
+      "fullName": "Solomon",
+      "firstName": "Solomon",
+      "lastName": "",
+      "phone": "254740063072",
+      "rawPhone": "0740063072",
+      "code": "GC053",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740063072@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 53,
+      "sourceText": "53.Sikuku Elly 0757374508",
+      "fullName": "Sikuku Elly",
+      "firstName": "Sikuku",
+      "lastName": "Elly",
+      "phone": "254757374508",
+      "rawPhone": "0757374508",
+      "code": "GC054",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757374508@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 54,
+      "sourceText": "54.Monica Akuyen _0113273498",
+      "fullName": "Monica Akuyen",
+      "firstName": "Monica",
+      "lastName": "Akuyen",
+      "phone": "254113273498",
+      "rawPhone": "0113273498",
+      "code": "GC055",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254113273498@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 55,
+      "sourceText": "55.Esther mwoti- 0740631966",
+      "fullName": "Esther mwoti",
+      "firstName": "Esther",
+      "lastName": "mwoti",
+      "phone": "254740631966",
+      "rawPhone": "0740631966",
+      "code": "GC056",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740631966@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 56,
+      "sourceText": "56.Mary mutheu- 0796339401",
+      "fullName": "Mary mutheu",
+      "firstName": "Mary",
+      "lastName": "mutheu",
+      "phone": "254796339401",
+      "rawPhone": "0796339401",
+      "code": "GC057",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254796339401@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 57,
+      "sourceText": "57.David kuria - 0797819117",
+      "fullName": "David kuria",
+      "firstName": "David",
+      "lastName": "kuria",
+      "phone": "254797819117",
+      "rawPhone": "0797819117",
+      "code": "GC058",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254797819117@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 58,
+      "sourceText": "58.Wilkister Andabwa -0758681654",
+      "fullName": "Wilkister Andabwa",
+      "firstName": "Wilkister",
+      "lastName": "Andabwa",
+      "phone": "254758681654",
+      "rawPhone": "0758681654",
+      "code": "GC059",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758681654@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": null,
+      "sourceText": ".Sheila Chebon - 0708663295",
+      "fullName": "Sheila Chebon",
+      "firstName": "Sheila",
+      "lastName": "Chebon",
+      "phone": "254708663295",
+      "rawPhone": "0708663295",
+      "code": "GC060",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708663295@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 59,
+      "sourceText": "59.Levi karanja-0791917685",
+      "fullName": "Levi karanja",
+      "firstName": "Levi",
+      "lastName": "karanja",
+      "phone": "254791917685",
+      "rawPhone": "0791917685",
+      "code": "GC061",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791917685@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 60,
+      "sourceText": "60.Alicia Mirriam - 0727767780",
+      "fullName": "Alicia Mirriam",
+      "firstName": "Alicia",
+      "lastName": "Mirriam",
+      "phone": "254727767780",
+      "rawPhone": "0727767780",
+      "code": "GC062",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254727767780@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 61,
+      "sourceText": "61.Zaddock Maloba-0114685576",
+      "fullName": "Zaddock Maloba",
+      "firstName": "Zaddock",
+      "lastName": "Maloba",
+      "phone": "254114685576",
+      "rawPhone": "0114685576",
+      "code": "GC063",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114685576@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 62,
+      "sourceText": "62.Diana Grace..0708235772",
+      "fullName": "Diana Grace",
+      "firstName": "Diana",
+      "lastName": "Grace",
+      "phone": "254708235772",
+      "rawPhone": "0708235772",
+      "code": "GC064",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708235772@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 63,
+      "sourceText": "63.Allan Kiprop - 0794674186",
+      "fullName": "Allan Kiprop",
+      "firstName": "Allan",
+      "lastName": "Kiprop",
+      "phone": "254794674186",
+      "rawPhone": "0794674186",
+      "code": "GC065",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794674186@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 64,
+      "sourceText": "64.Gloriah Mutheu - 0715626115",
+      "fullName": "Gloriah Mutheu",
+      "firstName": "Gloriah",
+      "lastName": "Mutheu",
+      "phone": "254715626115",
+      "rawPhone": "0715626115",
+      "code": "GC066",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254715626115@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 65,
+      "sourceText": "65.Marion Becky-0729776840",
+      "fullName": "Marion Becky",
+      "firstName": "Marion",
+      "lastName": "Becky",
+      "phone": "254729776840",
+      "rawPhone": "0729776840",
+      "code": "GC067",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254729776840@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 66,
+      "sourceText": "66.Beyonce Musyoka-0742017527",
+      "fullName": "Beyonce Musyoka",
+      "firstName": "Beyonce",
+      "lastName": "Musyoka",
+      "phone": "254742017527",
+      "rawPhone": "0742017527",
+      "code": "GC068",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742017527@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 67,
+      "sourceText": "67.Lawrence Maina - 0746-603-326",
+      "fullName": "Lawrence Maina",
+      "firstName": "Lawrence",
+      "lastName": "Maina",
+      "phone": "254746603326",
+      "rawPhone": "0746603326",
+      "code": "GC069",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254746603326@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 68,
+      "sourceText": "68.Mark.maingi.  -0743763220",
+      "fullName": "Mark maingi",
+      "firstName": "Mark",
+      "lastName": "maingi",
+      "phone": "254743763220",
+      "rawPhone": "0743763220",
+      "code": "GC070",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254743763220@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 69,
+      "sourceText": "69.Lucy Clementine-0769197600",
+      "fullName": "Lucy Clementine",
+      "firstName": "Lucy",
+      "lastName": "Clementine",
+      "phone": "254769197600",
+      "rawPhone": "0769197600",
+      "code": "GC071",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769197600@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 70,
+      "sourceText": "70.Georgina Kanyaa-0714148925",
+      "fullName": "Georgina Kanyaa",
+      "firstName": "Georgina",
+      "lastName": "Kanyaa",
+      "phone": "254714148925",
+      "rawPhone": "0714148925",
+      "code": "GC072",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714148925@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 71,
+      "sourceText": "71.David maina 0791444009",
+      "fullName": "David maina",
+      "firstName": "David",
+      "lastName": "maina",
+      "phone": "254791444009",
+      "rawPhone": "0791444009",
+      "code": "GC073",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791444009@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 72,
+      "sourceText": "72.Sabrinah Njeri  0115971572",
+      "fullName": "Sabrinah Njeri",
+      "firstName": "Sabrinah",
+      "lastName": "Njeri",
+      "phone": "254115971572",
+      "rawPhone": "0115971572",
+      "code": "GC074",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115971572@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 73,
+      "sourceText": "73.Gerald 0700714032",
+      "fullName": "Gerald",
+      "firstName": "Gerald",
+      "lastName": "",
+      "phone": "254700714032",
+      "rawPhone": "0700714032",
+      "code": "GC075",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700714032@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 74,
+      "sourceText": "74.Ivy Roseline Otieno 0791800697",
+      "fullName": "Ivy Roseline Otieno",
+      "firstName": "Ivy",
+      "lastName": "Roseline Otieno",
+      "phone": "254791800697",
+      "rawPhone": "0791800697",
+      "code": "GC076",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791800697@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 75,
+      "sourceText": "75.Olive Ngei 0768393069",
+      "fullName": "Olive Ngei",
+      "firstName": "Olive",
+      "lastName": "Ngei",
+      "phone": "254768393069",
+      "rawPhone": "0768393069",
+      "code": "GC077",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768393069@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 76,
+      "sourceText": "76.Faith Museo 0117416976",
+      "fullName": "Faith Museo",
+      "firstName": "Faith",
+      "lastName": "Museo",
+      "phone": "254117416976",
+      "rawPhone": "0117416976",
+      "code": "GC078",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117416976@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 77,
+      "sourceText": "77.Lettie-0718476883",
+      "fullName": "Lettie",
+      "firstName": "Lettie",
+      "lastName": "",
+      "phone": "254718476883",
+      "rawPhone": "0718476883",
+      "code": "GC079",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718476883@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 78,
+      "sourceText": "78.Wisdom kariuki - 0142836986",
+      "fullName": "Wisdom kariuki",
+      "firstName": "Wisdom",
+      "lastName": "kariuki",
+      "phone": "254142836986",
+      "rawPhone": "0142836986",
+      "code": "GC080",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254142836986@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 79,
+      "sourceText": "79.Charity Nekapi- 0708803702",
+      "fullName": "Charity Nekapi",
+      "firstName": "Charity",
+      "lastName": "Nekapi",
+      "phone": "254708803702",
+      "rawPhone": "0708803702",
+      "code": "GC081",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708803702@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 80,
+      "sourceText": "80.Sharon Kananu-0116 925873",
+      "fullName": "Sharon Kananu",
+      "firstName": "Sharon",
+      "lastName": "Kananu",
+      "phone": "254116925873",
+      "rawPhone": "0116925873",
+      "code": "GC082",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116925873@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 81,
+      "sourceText": "81.Kennedy wanzala.. 0112029673",
+      "fullName": "Kennedy wanzala",
+      "firstName": "Kennedy",
+      "lastName": "wanzala",
+      "phone": "254112029673",
+      "rawPhone": "0112029673",
+      "code": "GC083",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254112029673@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 82,
+      "sourceText": "82.Victor - 0799347165",
+      "fullName": "Victor",
+      "firstName": "Victor",
+      "lastName": "",
+      "phone": "254799347165",
+      "rawPhone": "0799347165",
+      "code": "GC084",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799347165@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 83,
+      "sourceText": "83.Mwende-0713046223",
+      "fullName": "Mwende",
+      "firstName": "Mwende",
+      "lastName": "",
+      "phone": "254713046223",
+      "rawPhone": "0713046223",
+      "code": "GC085",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713046223@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 84,
+      "sourceText": "84.Muthoni -0713277428",
+      "fullName": "Muthoni",
+      "firstName": "Muthoni",
+      "lastName": "",
+      "phone": "254713277428",
+      "rawPhone": "0713277428",
+      "code": "GC086",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713277428@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 85,
+      "sourceText": "85.Chris Nguu-0702687818",
+      "fullName": "Chris Nguu",
+      "firstName": "Chris",
+      "lastName": "Nguu",
+      "phone": "254702687818",
+      "rawPhone": "0702687818",
+      "code": "GC087",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702687818@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 86,
+      "sourceText": "86.Brian -0713215517",
+      "fullName": "Brian",
+      "firstName": "Brian",
+      "lastName": "",
+      "phone": "254713215517",
+      "rawPhone": "0713215517",
+      "code": "GC088",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713215517@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 87,
+      "sourceText": "87.Bonny-0759160463",
+      "fullName": "Bonny",
+      "firstName": "Bonny",
+      "lastName": "",
+      "phone": "254759160463",
+      "rawPhone": "0759160463",
+      "code": "GC089",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759160463@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 88,
+      "sourceText": "88.Caleb-0741127915",
+      "fullName": "Caleb",
+      "firstName": "Caleb",
+      "lastName": "",
+      "phone": "254741127915",
+      "rawPhone": "0741127915",
+      "code": "GC090",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741127915@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 89,
+      "sourceText": "89.Rex - 0748111346",
+      "fullName": "Rex",
+      "firstName": "Rex",
+      "lastName": "",
+      "phone": "254748111346",
+      "rawPhone": "0748111346",
+      "code": "GC091",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748111346@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 90,
+      "sourceText": "90.Josphine Wanjiru -0723055725",
+      "fullName": "Josphine Wanjiru",
+      "firstName": "Josphine",
+      "lastName": "Wanjiru",
+      "phone": "254723055725",
+      "rawPhone": "0723055725",
+      "code": "GC092",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254723055725@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 91,
+      "sourceText": "91.Britonios Andai -0114411407",
+      "fullName": "Britonios Andai",
+      "firstName": "Britonios",
+      "lastName": "Andai",
+      "phone": "254114411407",
+      "rawPhone": "0114411407",
+      "code": "GC093",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114411407@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 92,
+      "sourceText": "92.Bernice Wangari -0757150075",
+      "fullName": "Bernice Wangari",
+      "firstName": "Bernice",
+      "lastName": "Wangari",
+      "phone": "254757150075",
+      "rawPhone": "0757150075",
+      "code": "GC094",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757150075@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 93,
+      "sourceText": "93.Simon -0748088655",
+      "fullName": "Simon",
+      "firstName": "Simon",
+      "lastName": "",
+      "phone": "254748088655",
+      "rawPhone": "0748088655",
+      "code": "GC095",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748088655@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 94,
+      "sourceText": "94.Antony Wanjohi-0718204277",
+      "fullName": "Antony Wanjohi",
+      "firstName": "Antony",
+      "lastName": "Wanjohi",
+      "phone": "254718204277",
+      "rawPhone": "0718204277",
+      "code": "GC096",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718204277@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 95,
+      "sourceText": "95.Omondi G.A-0759774817",
+      "fullName": "Omondi G A",
+      "firstName": "Omondi",
+      "lastName": "G A",
+      "phone": "254759774817",
+      "rawPhone": "0759774817",
+      "code": "GC097",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759774817@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 96,
+      "sourceText": "96.Pauline Kimani- 0116 129260",
+      "fullName": "Pauline Kimani",
+      "firstName": "Pauline",
+      "lastName": "Kimani",
+      "phone": "254116129260",
+      "rawPhone": "0116129260",
+      "code": "GC098",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116129260@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 97,
+      "sourceText": "97.Cindy -0704862228",
+      "fullName": "Cindy",
+      "firstName": "Cindy",
+      "lastName": "",
+      "phone": "254704862228",
+      "rawPhone": "0704862228",
+      "code": "GC099",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704862228@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 98,
+      "sourceText": "98.Mitchel Shanyisa- 0794682521",
+      "fullName": "Mitchel Shanyisa",
+      "firstName": "Mitchel",
+      "lastName": "Shanyisa",
+      "phone": "254794682521",
+      "rawPhone": "0794682521",
+      "code": "GC100",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794682521@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 99,
+      "sourceText": "99.Ndanu-0111875066",
+      "fullName": "Ndanu",
+      "firstName": "Ndanu",
+      "lastName": "",
+      "phone": "254111875066",
+      "rawPhone": "0111875066",
+      "code": "GC101",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254111875066@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 100,
+      "sourceText": "100.Neema Kibii-0798189878",
+      "fullName": "Neema Kibii",
+      "firstName": "Neema",
+      "lastName": "Kibii",
+      "phone": "254798189878",
+      "rawPhone": "0798189878",
+      "code": "GC102",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254798189878@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 101,
+      "sourceText": "101.Ann Njeri- 0721144241",
+      "fullName": "Ann Njeri",
+      "firstName": "Ann",
+      "lastName": "Njeri",
+      "phone": "254721144241",
+      "rawPhone": "0721144241",
+      "code": "GC103",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254721144241@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 102,
+      "sourceText": "102.Stacy Njeri-0796071788",
+      "fullName": "Stacy Njeri",
+      "firstName": "Stacy",
+      "lastName": "Njeri",
+      "phone": "254796071788",
+      "rawPhone": "0796071788",
+      "code": "GC104",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254796071788@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 103,
+      "sourceText": "103.Alice -0745631938",
+      "fullName": "Alice",
+      "firstName": "Alice",
+      "lastName": "",
+      "phone": "254745631938",
+      "rawPhone": "0745631938",
+      "code": "GC105",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745631938@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 104,
+      "sourceText": "104.James w.njuguna:-0704164395",
+      "fullName": "James w njuguna",
+      "firstName": "James",
+      "lastName": "w njuguna",
+      "phone": "254704164395",
+      "rawPhone": "0704164395",
+      "code": "GC106",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704164395@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 105,
+      "sourceText": "105.Amos Maithya - 0746500088",
+      "fullName": "Amos Maithya",
+      "firstName": "Amos",
+      "lastName": "Maithya",
+      "phone": "254746500088",
+      "rawPhone": "0746500088",
+      "code": "GC107",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254746500088@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 106,
+      "sourceText": "106.Emmanuel Wamalwa - 0718810503",
+      "fullName": "Emmanuel Wamalwa",
+      "firstName": "Emmanuel",
+      "lastName": "Wamalwa",
+      "phone": "254718810503",
+      "rawPhone": "0718810503",
+      "code": "GC108",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718810503@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 108,
+      "sourceText": "108.Collins Mwangi-0789411275",
+      "fullName": "Collins Mwangi",
+      "firstName": "Collins",
+      "lastName": "Mwangi",
+      "phone": "254789411275",
+      "rawPhone": "0789411275",
+      "code": "GC109",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254789411275@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 109,
+      "sourceText": "109.Meshack -",
+      "fullName": "Meshack",
+      "firstName": "Meshack",
+      "lastName": "",
+      "phone": null,
+      "rawPhone": "",
+      "code": "GC110",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": null,
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name", "missing_or_invalid_phone"]
+      }
+    },
+    {
+      "sourceNumber": 110,
+      "sourceText": "110.Beatrice Wanjeri- 0705732330",
+      "fullName": "Beatrice Wanjeri",
+      "firstName": "Beatrice",
+      "lastName": "Wanjeri",
+      "phone": "254705732330",
+      "rawPhone": "0705732330",
+      "code": "GC111",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254705732330@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 111,
+      "sourceText": "111.Emily Amathi -0112450112",
+      "fullName": "Emily Amathi",
+      "firstName": "Emily",
+      "lastName": "Amathi",
+      "phone": "254112450112",
+      "rawPhone": "0112450112",
+      "code": "GC112",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254112450112@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 112,
+      "sourceText": "112.Bradon -0711482411",
+      "fullName": "Bradon",
+      "firstName": "Bradon",
+      "lastName": "",
+      "phone": "254711482411",
+      "rawPhone": "0711482411",
+      "code": "GC113",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254711482411@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 113,
+      "sourceText": "113.Saida Carolly- 0757231576",
+      "fullName": "Saida Carolly",
+      "firstName": "Saida",
+      "lastName": "Carolly",
+      "phone": "254757231576",
+      "rawPhone": "0757231576",
+      "code": "GC114",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757231576@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 114,
+      "sourceText": "114:rose mwende _0785706824",
+      "fullName": "Rose Mwende",
+      "firstName": "Rose",
+      "lastName": "Mwende",
+      "phone": "254785706824",
+      "rawPhone": "0785706824",
+      "code": "GC115",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254785706824@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 115,
+      "sourceText": "115.Claris Adhiambo-0118699553",
+      "fullName": "Claris Adhiambo",
+      "firstName": "Claris",
+      "lastName": "Adhiambo",
+      "phone": "254118699553",
+      "rawPhone": "0118699553",
+      "code": "GC116",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118699553@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": null,
+      "sourceText": ".Dorine chepkemoi 0768984407",
+      "fullName": "Dorine chepkemoi",
+      "firstName": "Dorine",
+      "lastName": "chepkemoi",
+      "phone": "254768984407",
+      "rawPhone": "0768984407",
+      "code": "GC117",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768984407@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 116,
+      "sourceText": "116.Doreen cherop 0796920643",
+      "fullName": "Doreen cherop",
+      "firstName": "Doreen",
+      "lastName": "cherop",
+      "phone": "254796920643",
+      "rawPhone": "0796920643",
+      "code": "GC118",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254796920643@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 117,
+      "sourceText": "117.Ruth muthoni 0748774046",
+      "fullName": "Ruth muthoni",
+      "firstName": "Ruth",
+      "lastName": "muthoni",
+      "phone": "254748774046",
+      "rawPhone": "0748774046",
+      "code": "GC119",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748774046@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 118,
+      "sourceText": "118. David Maina 0793390908",
+      "fullName": "David Maina",
+      "firstName": "David",
+      "lastName": "Maina",
+      "phone": "254793390908",
+      "rawPhone": "0793390908",
+      "code": "GC120",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254793390908@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 119,
+      "sourceText": "119.Emmanuel Munga0704054803",
+      "fullName": "Emmanuel Munga",
+      "firstName": "Emmanuel",
+      "lastName": "Munga",
+      "phone": "254704054803",
+      "rawPhone": "0704054803",
+      "code": "GC121",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704054803@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 120,
+      "sourceText": "120.Ajega Beryl 0118715232",
+      "fullName": "Ajega Beryl",
+      "firstName": "Ajega",
+      "lastName": "Beryl",
+      "phone": "254118715232",
+      "rawPhone": "0118715232",
+      "code": "GC122",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118715232@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 121,
+      "sourceText": "121.Ronah Njambi - 0720173039",
+      "fullName": "Ronah Njambi",
+      "firstName": "Ronah",
+      "lastName": "Njambi",
+      "phone": "254720173039",
+      "rawPhone": "0720173039",
+      "code": "GC123",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254720173039@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 122,
+      "sourceText": "122.Harun Kuria 0726299141",
+      "fullName": "Harun Kuria",
+      "firstName": "Harun",
+      "lastName": "Kuria",
+      "phone": "254726299141",
+      "rawPhone": "0726299141",
+      "code": "GC124",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254726299141@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 123,
+      "sourceText": "123.Alvin Mosee 0140363381",
+      "fullName": "Alvin Mosee",
+      "firstName": "Alvin",
+      "lastName": "Mosee",
+      "phone": "254140363381",
+      "rawPhone": "0140363381",
+      "code": "GC125",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140363381@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 124,
+      "sourceText": "124.Sharon wangui 0795991541",
+      "fullName": "Sharon wangui",
+      "firstName": "Sharon",
+      "lastName": "wangui",
+      "phone": "254795991541",
+      "rawPhone": "0795991541",
+      "code": "GC126",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254795991541@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 125,
+      "sourceText": "125.Raymond Jillo 0758520263",
+      "fullName": "Raymond Jillo",
+      "firstName": "Raymond",
+      "lastName": "Jillo",
+      "phone": "254758520263",
+      "rawPhone": "0758520263",
+      "code": "GC127",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758520263@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 126,
+      "sourceText": "126. Samwel Njendo -0708795458",
+      "fullName": "Samwel Njendo",
+      "firstName": "Samwel",
+      "lastName": "Njendo",
+      "phone": "254708795458",
+      "rawPhone": "0708795458",
+      "code": "GC128",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708795458@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 127,
+      "sourceText": "127. Natasha Jevita 0758103291",
+      "fullName": "Natasha Jevita",
+      "firstName": "Natasha",
+      "lastName": "Jevita",
+      "phone": "254758103291",
+      "rawPhone": "0758103291",
+      "code": "GC129",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758103291@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 128,
+      "sourceText": "128.Grace Sidi - 0111737736",
+      "fullName": "Grace Sidi",
+      "firstName": "Grace",
+      "lastName": "Sidi",
+      "phone": "254111737736",
+      "rawPhone": "0111737736",
+      "code": "GC130",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254111737736@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 129,
+      "sourceText": "129.Irene David - 0708021549",
+      "fullName": "Irene David",
+      "firstName": "Irene",
+      "lastName": "David",
+      "phone": "254708021549",
+      "rawPhone": "0708021549",
+      "code": "GC131",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708021549@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 130,
+      "sourceText": "130. Irwin Malika- 0768829796",
+      "fullName": "Irwin Malika",
+      "firstName": "Irwin",
+      "lastName": "Malika",
+      "phone": "254768829796",
+      "rawPhone": "0768829796",
+      "code": "GC132",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768829796@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 131,
+      "sourceText": "131.Shanice Chepkirui -0703500480",
+      "fullName": "Shanice Chepkirui",
+      "firstName": "Shanice",
+      "lastName": "Chepkirui",
+      "phone": "254703500480",
+      "rawPhone": "0703500480",
+      "code": "GC133",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254703500480@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 132,
+      "sourceText": "132.Emmanuel Baretiet-0728217724",
+      "fullName": "Emmanuel Baretiet",
+      "firstName": "Emmanuel",
+      "lastName": "Baretiet",
+      "phone": "254728217724",
+      "rawPhone": "0728217724",
+      "code": "GC134",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254728217724@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 133,
+      "sourceText": "133.Hillary munene-0742049906",
+      "fullName": "Hillary munene",
+      "firstName": "Hillary",
+      "lastName": "munene",
+      "phone": "254742049906",
+      "rawPhone": "0742049906",
+      "code": "GC135",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742049906@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 134,
+      "sourceText": "134. Natasha Jevita - 0142829193",
+      "fullName": "Natasha Jevita",
+      "firstName": "Natasha",
+      "lastName": "Jevita",
+      "phone": "254142829193",
+      "rawPhone": "0142829193",
+      "code": "GC136",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254142829193@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 135,
+      "sourceText": "135. Rose Muchiri - 0116016465",
+      "fullName": "Rose Muchiri",
+      "firstName": "Rose",
+      "lastName": "Muchiri",
+      "phone": "254116016465",
+      "rawPhone": "0116016465",
+      "code": "GC137",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116016465@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 136,
+      "sourceText": "136.Abigael Bella - 0799124593",
+      "fullName": "Abigael Bella",
+      "firstName": "Abigael",
+      "lastName": "Bella",
+      "phone": "254799124593",
+      "rawPhone": "0799124593",
+      "code": "GC138",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799124593@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 137,
+      "sourceText": "137.Loise Marita-0742782897",
+      "fullName": "Loise Marita",
+      "firstName": "Loise",
+      "lastName": "Marita",
+      "phone": "254742782897",
+      "rawPhone": "0742782897",
+      "code": "GC139",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742782897@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 138,
+      "sourceText": "138.Dolphine Adhiambo-0708955759",
+      "fullName": "Dolphine Adhiambo",
+      "firstName": "Dolphine",
+      "lastName": "Adhiambo",
+      "phone": "254708955759",
+      "rawPhone": "0708955759",
+      "code": "GC140",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708955759@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 139,
+      "sourceText": "139. Moses owino- 0757279988",
+      "fullName": "Moses owino",
+      "firstName": "Moses",
+      "lastName": "owino",
+      "phone": "254757279988",
+      "rawPhone": "0757279988",
+      "code": "GC141",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757279988@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 140,
+      "sourceText": "140.Festus Muli 0729535861",
+      "fullName": "Festus Muli",
+      "firstName": "Festus",
+      "lastName": "Muli",
+      "phone": "254729535861",
+      "rawPhone": "0729535861",
+      "code": "GC142",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254729535861@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 141,
+      "sourceText": "141.Jael toto-0743384942",
+      "fullName": "Jael toto",
+      "firstName": "Jael",
+      "lastName": "toto",
+      "phone": "254743384942",
+      "rawPhone": "0743384942",
+      "code": "GC143",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254743384942@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 142,
+      "sourceText": "142. Annastansia Magoma 0741564071",
+      "fullName": "Annastansia Magoma",
+      "firstName": "Annastansia",
+      "lastName": "Magoma",
+      "phone": "254741564071",
+      "rawPhone": "0741564071",
+      "code": "GC144",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741564071@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 143,
+      "sourceText": "143. Carvin mwangangi 0704687081",
+      "fullName": "Carvin mwangangi",
+      "firstName": "Carvin",
+      "lastName": "mwangangi",
+      "phone": "254704687081",
+      "rawPhone": "0704687081",
+      "code": "GC145",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704687081@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 144,
+      "sourceText": "144.clementine 0794112065",
+      "fullName": "Clementine",
+      "firstName": "Clementine",
+      "lastName": "",
+      "phone": "254794112065",
+      "rawPhone": "0794112065",
+      "code": "GC146",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794112065@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 145,
+      "sourceText": "145.Deevans 0768 604663",
+      "fullName": "Deevans",
+      "firstName": "Deevans",
+      "lastName": "",
+      "phone": "254768604663",
+      "rawPhone": "0768604663",
+      "code": "GC147",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768604663@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 146,
+      "sourceText": "146.Joseph Simiyu 0703228423",
+      "fullName": "Joseph Simiyu",
+      "firstName": "Joseph",
+      "lastName": "Simiyu",
+      "phone": "254703228423",
+      "rawPhone": "0703228423",
+      "code": "GC148",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254703228423@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 147,
+      "sourceText": "147.Hillary Waga 0115929262",
+      "fullName": "Hillary Waga",
+      "firstName": "Hillary",
+      "lastName": "Waga",
+      "phone": "254115929262",
+      "rawPhone": "0115929262",
+      "code": "GC149",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115929262@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 148,
+      "sourceText": "148.Dimares 0716124809",
+      "fullName": "Dimares",
+      "firstName": "Dimares",
+      "lastName": "",
+      "phone": "254716124809",
+      "rawPhone": "0716124809",
+      "code": "GC150",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254716124809@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 149,
+      "sourceText": "149.Charity Chebet 0785357025",
+      "fullName": "Charity Chebet",
+      "firstName": "Charity",
+      "lastName": "Chebet",
+      "phone": "254785357025",
+      "rawPhone": "0785357025",
+      "code": "GC151",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254785357025@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 150,
+      "sourceText": "150.Cheryl 0758922111",
+      "fullName": "Cheryl",
+      "firstName": "Cheryl",
+      "lastName": "",
+      "phone": "254758922111",
+      "rawPhone": "0758922111",
+      "code": "GC152",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758922111@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 151,
+      "sourceText": "151.Enoch 0769768885",
+      "fullName": "Enoch",
+      "firstName": "Enoch",
+      "lastName": "",
+      "phone": "254769768885",
+      "rawPhone": "0769768885",
+      "code": "GC153",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769768885@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 152,
+      "sourceText": "152. Gabriel....0727036044",
+      "fullName": "Gabriel",
+      "firstName": "Gabriel",
+      "lastName": "",
+      "phone": "254727036044",
+      "rawPhone": "0727036044",
+      "code": "GC154",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254727036044@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 153,
+      "sourceText": "153.Simon Kamunyo..0180187572",
+      "fullName": "Simon Kamunyo",
+      "firstName": "Simon",
+      "lastName": "Kamunyo",
+      "phone": "254180187572",
+      "rawPhone": "0180187572",
+      "code": "GC155",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254180187572@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 154,
+      "sourceText": "154. Samuel.... ---0791914735",
+      "fullName": "Samuel",
+      "firstName": "Samuel",
+      "lastName": "",
+      "phone": "254791914735",
+      "rawPhone": "0791914735",
+      "code": "GC156",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791914735@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 155,
+      "sourceText": "155.Ann 0789501338.",
+      "fullName": "Ann",
+      "firstName": "Ann",
+      "lastName": "",
+      "phone": "254789501338",
+      "rawPhone": "0789501338",
+      "code": "GC157",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254789501338@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 156,
+      "sourceText": "156.Lowen Gabby-0115968356",
+      "fullName": "Lowen Gabby",
+      "firstName": "Lowen",
+      "lastName": "Gabby",
+      "phone": "254115968356",
+      "rawPhone": "0115968356",
+      "code": "GC158",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115968356@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 157,
+      "sourceText": "157.Edgar Samuel 0742212572",
+      "fullName": "Edgar Samuel",
+      "firstName": "Edgar",
+      "lastName": "Samuel",
+      "phone": "254742212572",
+      "rawPhone": "0742212572",
+      "code": "GC159",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742212572@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 158,
+      "sourceText": "158.Blessing ruto 0780762323",
+      "fullName": "Blessing ruto",
+      "firstName": "Blessing",
+      "lastName": "ruto",
+      "phone": "254780762323",
+      "rawPhone": "0780762323",
+      "code": "GC160",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254780762323@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 159,
+      "sourceText": "159.Fabian Mwita 0746700440",
+      "fullName": "Fabian Mwita",
+      "firstName": "Fabian",
+      "lastName": "Mwita",
+      "phone": "254746700440",
+      "rawPhone": "0746700440",
+      "code": "GC161",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254746700440@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 160,
+      "sourceText": "160.Esther Amani 0116532452",
+      "fullName": "Esther Amani",
+      "firstName": "Esther",
+      "lastName": "Amani",
+      "phone": "254116532452",
+      "rawPhone": "0116532452",
+      "code": "GC162",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116532452@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 161,
+      "sourceText": "161.Gideon Matheka 0792248751",
+      "fullName": "Gideon Matheka",
+      "firstName": "Gideon",
+      "lastName": "Matheka",
+      "phone": "254792248751",
+      "rawPhone": "0792248751",
+      "code": "GC163",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254792248751@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 162,
+      "sourceText": "162. Gideon Mbuli 0731835379",
+      "fullName": "Gideon Mbuli",
+      "firstName": "Gideon",
+      "lastName": "Mbuli",
+      "phone": "254731835379",
+      "rawPhone": "0731835379",
+      "code": "GC164",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254731835379@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 163,
+      "sourceText": "163. Sharlyne Nzilani 0700093730",
+      "fullName": "Sharlyne Nzilani",
+      "firstName": "Sharlyne",
+      "lastName": "Nzilani",
+      "phone": "254700093730",
+      "rawPhone": "0700093730",
+      "code": "GC165",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700093730@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 164,
+      "sourceText": "164.Kutur3 0713420009",
+      "fullName": "Kutur",
+      "firstName": "Kutur",
+      "lastName": "",
+      "phone": "254713420009",
+      "rawPhone": "0713420009",
+      "code": "GC166",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713420009@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 165,
+      "sourceText": "165.Samson  0706268860",
+      "fullName": "Samson",
+      "firstName": "Samson",
+      "lastName": "",
+      "phone": "254706268860",
+      "rawPhone": "0706268860",
+      "code": "GC167",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254706268860@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 166,
+      "sourceText": "166.Claire benson 0740345274",
+      "fullName": "Claire benson",
+      "firstName": "Claire",
+      "lastName": "benson",
+      "phone": "254740345274",
+      "rawPhone": "0740345274",
+      "code": "GC168",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740345274@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 167,
+      "sourceText": "167.Maureen Kungu 0714590917",
+      "fullName": "Maureen Kungu",
+      "firstName": "Maureen",
+      "lastName": "Kungu",
+      "phone": "254714590917",
+      "rawPhone": "0714590917",
+      "code": "GC169",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714590917@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 168,
+      "sourceText": "168.Collins Mwangi 0745929592",
+      "fullName": "Collins Mwangi",
+      "firstName": "Collins",
+      "lastName": "Mwangi",
+      "phone": "254745929592",
+      "rawPhone": "0745929592",
+      "code": "GC170",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745929592@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 170,
+      "sourceText": "170.Meshack 0748688542",
+      "fullName": "Meshack",
+      "firstName": "Meshack",
+      "lastName": "",
+      "phone": "254748688542",
+      "rawPhone": "0748688542",
+      "code": "GC171",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748688542@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 171,
+      "sourceText": "171.Vera Magero 0791878856",
+      "fullName": "Vera Magero",
+      "firstName": "Vera",
+      "lastName": "Magero",
+      "phone": "254791878856",
+      "rawPhone": "0791878856",
+      "code": "GC172",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791878856@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 172,
+      "sourceText": "172.Mayaka edwin 0118338005/0118338005",
+      "fullName": "Mayaka edwin",
+      "firstName": "Mayaka",
+      "lastName": "edwin",
+      "phone": "254118338005",
+      "rawPhone": "0118338005",
+      "code": "GC173",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118338005@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 173,
+      "sourceText": "173.Joan Ondieki 0794621710",
+      "fullName": "Joan Ondieki",
+      "firstName": "Joan",
+      "lastName": "Ondieki",
+      "phone": "254794621710",
+      "rawPhone": "0794621710",
+      "code": "GC174",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794621710@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 174,
+      "sourceText": "174.Nancy Maina 0716713881",
+      "fullName": "Nancy Maina",
+      "firstName": "Nancy",
+      "lastName": "Maina",
+      "phone": "254716713881",
+      "rawPhone": "0716713881",
+      "code": "GC175",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254716713881@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 175,
+      "sourceText": "175.Nicole Ngina 0717901301",
+      "fullName": "Nicole Ngina",
+      "firstName": "Nicole",
+      "lastName": "Ngina",
+      "phone": "254717901301",
+      "rawPhone": "0717901301",
+      "code": "GC176",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717901301@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 176,
+      "sourceText": "176.Purity Muchiri 0717591433",
+      "fullName": "Purity Muchiri",
+      "firstName": "Purity",
+      "lastName": "Muchiri",
+      "phone": "254717591433",
+      "rawPhone": "0717591433",
+      "code": "GC177",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717591433@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 180,
+      "sourceText": "180.Nataliie Naswa 0723161432",
+      "fullName": "Nataliie Naswa",
+      "firstName": "Nataliie",
+      "lastName": "Naswa",
+      "phone": "254723161432",
+      "rawPhone": "0723161432",
+      "code": "GC178",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254723161432@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 181,
+      "sourceText": "181.Mary christine 0799037663",
+      "fullName": "Mary christine",
+      "firstName": "Mary",
+      "lastName": "christine",
+      "phone": "254799037663",
+      "rawPhone": "0799037663",
+      "code": "GC179",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799037663@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 182,
+      "sourceText": "182.Emmanuel ollo 0740696933",
+      "fullName": "Emmanuel ollo",
+      "firstName": "Emmanuel",
+      "lastName": "ollo",
+      "phone": "254740696933",
+      "rawPhone": "0740696933",
+      "code": "GC180",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740696933@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 183,
+      "sourceText": "183.Alvin Muli- 0702961106",
+      "fullName": "Alvin Muli",
+      "firstName": "Alvin",
+      "lastName": "Muli",
+      "phone": "254702961106",
+      "rawPhone": "0702961106",
+      "code": "GC181",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702961106@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 184,
+      "sourceText": "184.Tessie kerubo-0781600673",
+      "fullName": "Tessie kerubo",
+      "firstName": "Tessie",
+      "lastName": "kerubo",
+      "phone": "254781600673",
+      "rawPhone": "0781600673",
+      "code": "GC182",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254781600673@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 185,
+      "sourceText": "185.Ian kyalo-0704540106",
+      "fullName": "Ian kyalo",
+      "firstName": "Ian",
+      "lastName": "kyalo",
+      "phone": "254704540106",
+      "rawPhone": "0704540106",
+      "code": "GC183",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704540106@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 186,
+      "sourceText": "186.Angel Ann-0787656280",
+      "fullName": "Angel Ann",
+      "firstName": "Angel",
+      "lastName": "Ann",
+      "phone": "254787656280",
+      "rawPhone": "0787656280",
+      "code": "GC184",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254787656280@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 187,
+      "sourceText": "187.Pretty Angela 0758348639",
+      "fullName": "Pretty Angela",
+      "firstName": "Pretty",
+      "lastName": "Angela",
+      "phone": "254758348639",
+      "rawPhone": "0758348639",
+      "code": "GC185",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758348639@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 188,
+      "sourceText": "188.Gladys Maroa 0703903599",
+      "fullName": "Gladys Maroa",
+      "firstName": "Gladys",
+      "lastName": "Maroa",
+      "phone": "254703903599",
+      "rawPhone": "0703903599",
+      "code": "GC186",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254703903599@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 371,
+      "sourceText": "371.Eugene Lime 075749961",
+      "fullName": "Eugene Lime",
+      "firstName": "Eugene",
+      "lastName": "Lime",
+      "phone": null,
+      "rawPhone": "075749961",
+      "code": "GC187",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": null,
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_or_invalid_phone"]
+      }
+    },
+    {
+      "sourceNumber": 372,
+      "sourceText": "372.Alvin 0729052878",
+      "fullName": "Alvin",
+      "firstName": "Alvin",
+      "lastName": "",
+      "phone": "254729052878",
+      "rawPhone": "0729052878",
+      "code": "GC188",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254729052878@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 373,
+      "sourceText": "373.Jose 0768672690",
+      "fullName": "Jose",
+      "firstName": "Jose",
+      "lastName": "",
+      "phone": "254768672690",
+      "rawPhone": "0768672690",
+      "code": "GC189",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768672690@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 374,
+      "sourceText": "374.Philip Amani 0793038540",
+      "fullName": "Philip Amani",
+      "firstName": "Philip",
+      "lastName": "Amani",
+      "phone": "254793038540",
+      "rawPhone": "0793038540",
+      "code": "GC190",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254793038540@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 375,
+      "sourceText": "375.winnie muleli",
+      "fullName": "Winnie Muleli",
+      "firstName": "Winnie",
+      "lastName": "Muleli",
+      "phone": null,
+      "rawPhone": "",
+      "code": "GC191",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": null,
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_or_invalid_phone"]
+      }
+    },
+    {
+      "sourceNumber": 376,
+      "sourceText": "376.Dorine Omondi_0700464385",
+      "fullName": "Dorine Omondi",
+      "firstName": "Dorine",
+      "lastName": "Omondi",
+      "phone": "254700464385",
+      "rawPhone": "0700464385",
+      "code": "GC192",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700464385@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 377,
+      "sourceText": "377. Macey Razoa 0792939389",
+      "fullName": "Macey Razoa",
+      "firstName": "Macey",
+      "lastName": "Razoa",
+      "phone": "254792939389",
+      "rawPhone": "0792939389",
+      "code": "GC193",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254792939389@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 378,
+      "sourceText": "378.Ian_0759800440",
+      "fullName": "Ian",
+      "firstName": "Ian",
+      "lastName": "",
+      "phone": "254759800440",
+      "rawPhone": "0759800440",
+      "code": "GC194",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759800440@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 379,
+      "sourceText": "379.Frank_0141755770",
+      "fullName": "Frank",
+      "firstName": "Frank",
+      "lastName": "",
+      "phone": "254141755770",
+      "rawPhone": "0141755770",
+      "code": "GC195",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254141755770@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 380,
+      "sourceText": "380.fadhili simiyu_0714268872",
+      "fullName": "Fadhili Simiyu",
+      "firstName": "Fadhili",
+      "lastName": "Simiyu",
+      "phone": "254714268872",
+      "rawPhone": "0714268872",
+      "code": "GC196",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714268872@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 381,
+      "sourceText": "381.Dan wamalwa 0718276471",
+      "fullName": "Dan wamalwa",
+      "firstName": "Dan",
+      "lastName": "wamalwa",
+      "phone": "254718276471",
+      "rawPhone": "0718276471",
+      "code": "GC197",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718276471@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 382,
+      "sourceText": "382.Danson wekesa 0741535673",
+      "fullName": "Danson wekesa",
+      "firstName": "Danson",
+      "lastName": "wekesa",
+      "phone": "254741535673",
+      "rawPhone": "0741535673",
+      "code": "GC198",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741535673@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 383,
+      "sourceText": "383.Cynthia Cherwon 0751722184",
+      "fullName": "Cynthia Cherwon",
+      "firstName": "Cynthia",
+      "lastName": "Cherwon",
+      "phone": "254751722184",
+      "rawPhone": "0751722184",
+      "code": "GC199",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254751722184@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 384,
+      "sourceText": "384.Sylvia Mwanje 0799194926",
+      "fullName": "Sylvia Mwanje",
+      "firstName": "Sylvia",
+      "lastName": "Mwanje",
+      "phone": "254799194926",
+      "rawPhone": "0799194926",
+      "code": "GC200",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799194926@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 385,
+      "sourceText": "385.Idah Akinyi 0758429270",
+      "fullName": "Idah Akinyi",
+      "firstName": "Idah",
+      "lastName": "Akinyi",
+      "phone": "254758429270",
+      "rawPhone": "0758429270",
+      "code": "GC201",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254758429270@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 386,
+      "sourceText": "386.Mercyline wanyonyi 0736119798",
+      "fullName": "Mercyline wanyonyi",
+      "firstName": "Mercyline",
+      "lastName": "wanyonyi",
+      "phone": "254736119798",
+      "rawPhone": "0736119798",
+      "code": "GC202",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254736119798@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 387,
+      "sourceText": "387.Yvonne simiyu 0768074704",
+      "fullName": "Yvonne simiyu",
+      "firstName": "Yvonne",
+      "lastName": "simiyu",
+      "phone": "254768074704",
+      "rawPhone": "0768074704",
+      "code": "GC203",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768074704@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 388,
+      "sourceText": "388.Festus 0742631944",
+      "fullName": "Festus",
+      "firstName": "Festus",
+      "lastName": "",
+      "phone": "254742631944",
+      "rawPhone": "0742631944",
+      "code": "GC204",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742631944@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 389,
+      "sourceText": "389.Vera anne 0119418712",
+      "fullName": "Vera anne",
+      "firstName": "Vera",
+      "lastName": "anne",
+      "phone": "254119418712",
+      "rawPhone": "0119418712",
+      "code": "GC205",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254119418712@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 390,
+      "sourceText": "390.Victory kaniro 0728330919",
+      "fullName": "Victory kaniro",
+      "firstName": "Victory",
+      "lastName": "kaniro",
+      "phone": "254728330919",
+      "rawPhone": "0728330919",
+      "code": "GC206",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254728330919@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 391,
+      "sourceText": "391.Joice Nzai 0712642297",
+      "fullName": "Joice Nzai",
+      "firstName": "Joice",
+      "lastName": "Nzai",
+      "phone": "254712642297",
+      "rawPhone": "0712642297",
+      "code": "GC207",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254712642297@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 392,
+      "sourceText": "392.Victor Moses 0704726949",
+      "fullName": "Victor Moses",
+      "firstName": "Victor",
+      "lastName": "Moses",
+      "phone": "254704726949",
+      "rawPhone": "0704726949",
+      "code": "GC208",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704726949@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 393,
+      "sourceText": "393Grace 0703374261",
+      "fullName": "Grace",
+      "firstName": "Grace",
+      "lastName": "",
+      "phone": "254703374261",
+      "rawPhone": "0703374261",
+      "code": "GC209",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254703374261@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 394,
+      "sourceText": "394Queen 0759642738",
+      "fullName": "Queen",
+      "firstName": "Queen",
+      "lastName": "",
+      "phone": "254759642738",
+      "rawPhone": "0759642738",
+      "code": "GC210",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759642738@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 395,
+      "sourceText": "395 Brian 0704029347",
+      "fullName": "Brian",
+      "firstName": "Brian",
+      "lastName": "",
+      "phone": "254704029347",
+      "rawPhone": "0704029347",
+      "code": "GC211",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704029347@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 396,
+      "sourceText": "396Huba 0701800746",
+      "fullName": "Huba",
+      "firstName": "Huba",
+      "lastName": "",
+      "phone": "254701800746",
+      "rawPhone": "0701800746",
+      "code": "GC212",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254701800746@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 397,
+      "sourceText": "397.Jackson Migwi 0707322299",
+      "fullName": "Jackson Migwi",
+      "firstName": "Jackson",
+      "lastName": "Migwi",
+      "phone": "254707322299",
+      "rawPhone": "0707322299",
+      "code": "GC213",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254707322299@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 398,
+      "sourceText": "398.dennis kitheka- 0717451754",
+      "fullName": "Dennis Kitheka",
+      "firstName": "Dennis",
+      "lastName": "Kitheka",
+      "phone": "254717451754",
+      "rawPhone": "0717451754",
+      "code": "GC214",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717451754@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 399,
+      "sourceText": "399. Lizy Okech 0707185485",
+      "fullName": "Lizy Okech",
+      "firstName": "Lizy",
+      "lastName": "Okech",
+      "phone": "254707185485",
+      "rawPhone": "0707185485",
+      "code": "GC215",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254707185485@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 400,
+      "sourceText": "400.Brighton 0797856839",
+      "fullName": "Brighton",
+      "firstName": "Brighton",
+      "lastName": "",
+      "phone": "254797856839",
+      "rawPhone": "0797856839",
+      "code": "GC216",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254797856839@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 401,
+      "sourceText": "401.Winfred Manyi 0716253767",
+      "fullName": "Winfred Manyi",
+      "firstName": "Winfred",
+      "lastName": "Manyi",
+      "phone": "254716253767",
+      "rawPhone": "0716253767",
+      "code": "GC217",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254716253767@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 402,
+      "sourceText": "402.Maureen Njeri 0140562441",
+      "fullName": "Maureen Njeri",
+      "firstName": "Maureen",
+      "lastName": "Njeri",
+      "phone": "254140562441",
+      "rawPhone": "0140562441",
+      "code": "GC218",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140562441@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 403,
+      "sourceText": "403. Juma. 0759773117",
+      "fullName": "Juma",
+      "firstName": "Juma",
+      "lastName": "",
+      "phone": "254759773117",
+      "rawPhone": "0759773117",
+      "code": "GC219",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759773117@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 404,
+      "sourceText": "404. Moses Charo 0727691765",
+      "fullName": "Moses Charo",
+      "firstName": "Moses",
+      "lastName": "Charo",
+      "phone": "254727691765",
+      "rawPhone": "0727691765",
+      "code": "GC220",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254727691765@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 405,
+      "sourceText": "405.Titus muthuri 0702077090",
+      "fullName": "Titus muthuri",
+      "firstName": "Titus",
+      "lastName": "muthuri",
+      "phone": "254702077090",
+      "rawPhone": "0702077090",
+      "code": "GC221",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702077090@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 406,
+      "sourceText": "406.Bonface 0768 548300",
+      "fullName": "Bonface",
+      "firstName": "Bonface",
+      "lastName": "",
+      "phone": "254768548300",
+      "rawPhone": "0768548300",
+      "code": "GC222",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254768548300@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 407,
+      "sourceText": "407.Viona Maina 0702180342",
+      "fullName": "Viona Maina",
+      "firstName": "Viona",
+      "lastName": "Maina",
+      "phone": "254702180342",
+      "rawPhone": "0702180342",
+      "code": "GC223",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702180342@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 408,
+      "sourceText": "408.Mary Riziki-0714593103",
+      "fullName": "Mary Riziki",
+      "firstName": "Mary",
+      "lastName": "Riziki",
+      "phone": "254714593103",
+      "rawPhone": "0714593103",
+      "code": "GC224",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714593103@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 409,
+      "sourceText": "409. Purity Mutheu -0706746286",
+      "fullName": "Purity Mutheu",
+      "firstName": "Purity",
+      "lastName": "Mutheu",
+      "phone": "254706746286",
+      "rawPhone": "0706746286",
+      "code": "GC225",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254706746286@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 410,
+      "sourceText": "410.John kamotho 0142900002",
+      "fullName": "John kamotho",
+      "firstName": "John",
+      "lastName": "kamotho",
+      "phone": "254142900002",
+      "rawPhone": "0142900002",
+      "code": "GC226",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254142900002@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 412,
+      "sourceText": "412.clement 0119795587",
+      "fullName": "Clement",
+      "firstName": "Clement",
+      "lastName": "",
+      "phone": "254119795587",
+      "rawPhone": "0119795587",
+      "code": "GC227",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254119795587@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 413,
+      "sourceText": "413.peter.0143644434",
+      "fullName": "Peter",
+      "firstName": "Peter",
+      "lastName": "",
+      "phone": "254143644434",
+      "rawPhone": "0143644434",
+      "code": "GC228",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254143644434@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 414,
+      "sourceText": "414.Racheal Maina0741754449",
+      "fullName": "Racheal Maina",
+      "firstName": "Racheal",
+      "lastName": "Maina",
+      "phone": "254741754449",
+      "rawPhone": "0741754449",
+      "code": "GC229",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741754449@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 415,
+      "sourceText": "415.Collins Muchiri 0746929920",
+      "fullName": "Collins Muchiri",
+      "firstName": "Collins",
+      "lastName": "Muchiri",
+      "phone": "254746929920",
+      "rawPhone": "0746929920",
+      "code": "GC230",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254746929920@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 416,
+      "sourceText": "416.sam simiyu 0113596227",
+      "fullName": "Sam Simiyu",
+      "firstName": "Sam",
+      "lastName": "Simiyu",
+      "phone": "254113596227",
+      "rawPhone": "0113596227",
+      "code": "GC231",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254113596227@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 417,
+      "sourceText": "417.olick Veronica 0740470641",
+      "fullName": "olick Veronica",
+      "firstName": "olick",
+      "lastName": "Veronica",
+      "phone": "254740470641",
+      "rawPhone": "0740470641",
+      "code": "GC232",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740470641@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 418,
+      "sourceText": "418.sheila chepkemoi 0703989209",
+      "fullName": "Sheila Chepkemoi",
+      "firstName": "Sheila",
+      "lastName": "Chepkemoi",
+      "phone": "254703989209",
+      "rawPhone": "0703989209",
+      "code": "GC233",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254703989209@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 419,
+      "sourceText": "419.finellis 0742195424",
+      "fullName": "Finellis",
+      "firstName": "Finellis",
+      "lastName": "",
+      "phone": "254742195424",
+      "rawPhone": "0742195424",
+      "code": "GC234",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742195424@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 420,
+      "sourceText": "420.Lindah.0736392252",
+      "fullName": "Lindah",
+      "firstName": "Lindah",
+      "lastName": "",
+      "phone": "254736392252",
+      "rawPhone": "0736392252",
+      "code": "GC235",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254736392252@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 421,
+      "sourceText": "421.Ian Muvera 0116369378",
+      "fullName": "Ian Muvera",
+      "firstName": "Ian",
+      "lastName": "Muvera",
+      "phone": "254116369378",
+      "rawPhone": "0116369378",
+      "code": "GC236",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116369378@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 422,
+      "sourceText": "422.Mwongo Moses 0794557214",
+      "fullName": "Mwongo Moses",
+      "firstName": "Mwongo",
+      "lastName": "Moses",
+      "phone": "254794557214",
+      "rawPhone": "0794557214",
+      "code": "GC237",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794557214@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 423,
+      "sourceText": "423.Eugene Lime 0757749961.",
+      "fullName": "Eugene Lime",
+      "firstName": "Eugene",
+      "lastName": "Lime",
+      "phone": "254757749961",
+      "rawPhone": "0757749961",
+      "code": "GC238",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757749961@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 424,
+      "sourceText": "424 Kumbe -0797299668",
+      "fullName": "Kumbe",
+      "firstName": "Kumbe",
+      "lastName": "",
+      "phone": "254797299668",
+      "rawPhone": "0797299668",
+      "code": "GC239",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254797299668@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 425,
+      "sourceText": "425.joy 0745924153",
+      "fullName": "Joy",
+      "firstName": "Joy",
+      "lastName": "",
+      "phone": "254745924153",
+      "rawPhone": "0745924153",
+      "code": "GC240",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745924153@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 426,
+      "sourceText": "426.brian 0705238243",
+      "fullName": "Brian",
+      "firstName": "Brian",
+      "lastName": "",
+      "phone": "254705238243",
+      "rawPhone": "0705238243",
+      "code": "GC241",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254705238243@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 427,
+      "sourceText": "427.david 0115138157",
+      "fullName": "David",
+      "firstName": "David",
+      "lastName": "",
+      "phone": "254115138157",
+      "rawPhone": "0115138157",
+      "code": "GC242",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115138157@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 428,
+      "sourceText": "428.kasi sheila 0745307312",
+      "fullName": "Kasi Sheila",
+      "firstName": "Kasi",
+      "lastName": "Sheila",
+      "phone": "254745307312",
+      "rawPhone": "0745307312",
+      "code": "GC243",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745307312@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 429,
+      "sourceText": "429.Nehemiah 0757190084",
+      "fullName": "Nehemiah",
+      "firstName": "Nehemiah",
+      "lastName": "",
+      "phone": "254757190084",
+      "rawPhone": "0757190084",
+      "code": "GC244",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757190084@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 430,
+      "sourceText": "430.Reginah-0741124877",
+      "fullName": "Reginah",
+      "firstName": "Reginah",
+      "lastName": "",
+      "phone": "254741124877",
+      "rawPhone": "0741124877",
+      "code": "GC245",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741124877@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 431,
+      "sourceText": "431Vivian-0700271597",
+      "fullName": "Vivian",
+      "firstName": "Vivian",
+      "lastName": "",
+      "phone": "254700271597",
+      "rawPhone": "0700271597",
+      "code": "GC246",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700271597@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 432,
+      "sourceText": "432.Faith -+254798568571",
+      "fullName": "Faith",
+      "firstName": "Faith",
+      "lastName": "",
+      "phone": "254798568571",
+      "rawPhone": "0798568571",
+      "code": "GC247",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254798568571@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 433,
+      "sourceText": "433.Esther kamau-0795829812",
+      "fullName": "Esther kamau",
+      "firstName": "Esther",
+      "lastName": "kamau",
+      "phone": "254795829812",
+      "rawPhone": "0795829812",
+      "code": "GC248",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254795829812@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 434,
+      "sourceText": "434. Jairus wekesa -0796816200",
+      "fullName": "Jairus wekesa",
+      "firstName": "Jairus",
+      "lastName": "wekesa",
+      "phone": "254796816200",
+      "rawPhone": "0796816200",
+      "code": "GC249",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254796816200@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 435,
+      "sourceText": "435. Brigitte Omara -0702337907",
+      "fullName": "Brigitte Omara",
+      "firstName": "Brigitte",
+      "lastName": "Omara",
+      "phone": "254702337907",
+      "rawPhone": "0702337907",
+      "code": "GC250",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254702337907@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 436,
+      "sourceText": "436.Deborah kirwa -0713049589",
+      "fullName": "Deborah kirwa",
+      "firstName": "Deborah",
+      "lastName": "kirwa",
+      "phone": "254713049589",
+      "rawPhone": "0713049589",
+      "code": "GC251",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713049589@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 437,
+      "sourceText": "437.joab kiplangat -0107172061",
+      "fullName": "Joab Kiplangat",
+      "firstName": "Joab",
+      "lastName": "Kiplangat",
+      "phone": "254107172061",
+      "rawPhone": "0107172061",
+      "code": "GC252",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254107172061@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 439,
+      "sourceText": "439.Elias kimutai--0701843283",
+      "fullName": "Elias kimutai",
+      "firstName": "Elias",
+      "lastName": "kimutai",
+      "phone": "254701843283",
+      "rawPhone": "0701843283",
+      "code": "GC253",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254701843283@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 440,
+      "sourceText": "440.Domnic Ochieng 0769747742",
+      "fullName": "Domnic Ochieng",
+      "firstName": "Domnic",
+      "lastName": "Ochieng",
+      "phone": "254769747742",
+      "rawPhone": "0769747742",
+      "code": "GC254",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769747742@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 441,
+      "sourceText": "441. Ouma Dora - 0114130057",
+      "fullName": "Ouma Dora",
+      "firstName": "Ouma",
+      "lastName": "Dora",
+      "phone": "254114130057",
+      "rawPhone": "0114130057",
+      "code": "GC255",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114130057@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 442,
+      "sourceText": "442.Lewis Muhambe 0115211641",
+      "fullName": "Lewis Muhambe",
+      "firstName": "Lewis",
+      "lastName": "Muhambe",
+      "phone": "254115211641",
+      "rawPhone": "0115211641",
+      "code": "GC256",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115211641@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 443,
+      "sourceText": "443.Alfred Wanyonyi 0742088533",
+      "fullName": "Alfred Wanyonyi",
+      "firstName": "Alfred",
+      "lastName": "Wanyonyi",
+      "phone": "254742088533",
+      "rawPhone": "0742088533",
+      "code": "GC257",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254742088533@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 444,
+      "sourceText": "444.Teresia Ndukuyio 0743167103",
+      "fullName": "Teresia Ndukuyio",
+      "firstName": "Teresia",
+      "lastName": "Ndukuyio",
+      "phone": "254743167103",
+      "rawPhone": "0743167103",
+      "code": "GC258",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254743167103@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 445,
+      "sourceText": "445.Jackson Kavayi 0140532224",
+      "fullName": "Jackson Kavayi",
+      "firstName": "Jackson",
+      "lastName": "Kavayi",
+      "phone": "254140532224",
+      "rawPhone": "0140532224",
+      "code": "GC259",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140532224@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 446,
+      "sourceText": "446.Henrick Opiyo 0114446909",
+      "fullName": "Henrick Opiyo",
+      "firstName": "Henrick",
+      "lastName": "Opiyo",
+      "phone": "254114446909",
+      "rawPhone": "0114446909",
+      "code": "GC260",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114446909@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 447,
+      "sourceText": "447.Mary Wambui 0707964527",
+      "fullName": "Mary Wambui",
+      "firstName": "Mary",
+      "lastName": "Wambui",
+      "phone": "254707964527",
+      "rawPhone": "0707964527",
+      "code": "GC261",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254707964527@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 448,
+      "sourceText": "448.Austine Migoste 0746871633",
+      "fullName": "Austine Migoste",
+      "firstName": "Austine",
+      "lastName": "Migoste",
+      "phone": "254746871633",
+      "rawPhone": "0746871633",
+      "code": "GC262",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254746871633@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 449,
+      "sourceText": "449.Veronicah Kariuki 0113870808",
+      "fullName": "Veronicah Kariuki",
+      "firstName": "Veronicah",
+      "lastName": "Kariuki",
+      "phone": "254113870808",
+      "rawPhone": "0113870808",
+      "code": "GC263",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254113870808@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 450,
+      "sourceText": "450.Amos Mburu 0112090754",
+      "fullName": "Amos Mburu",
+      "firstName": "Amos",
+      "lastName": "Mburu",
+      "phone": "254112090754",
+      "rawPhone": "0112090754",
+      "code": "GC264",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254112090754@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 451,
+      "sourceText": "451.Frankline Langat 0710392885",
+      "fullName": "Frankline Langat",
+      "firstName": "Frankline",
+      "lastName": "Langat",
+      "phone": "254710392885",
+      "rawPhone": "0710392885",
+      "code": "GC265",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254710392885@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 452,
+      "sourceText": "452.Susan Mwikila 0728503355",
+      "fullName": "Susan Mwikila",
+      "firstName": "Susan",
+      "lastName": "Mwikila",
+      "phone": "254728503355",
+      "rawPhone": "0728503355",
+      "code": "GC266",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254728503355@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 453,
+      "sourceText": "453.Sheryl Chepkwemoi 0713259233",
+      "fullName": "Sheryl Chepkwemoi",
+      "firstName": "Sheryl",
+      "lastName": "Chepkwemoi",
+      "phone": "254713259233",
+      "rawPhone": "0713259233",
+      "code": "GC267",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713259233@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 454,
+      "sourceText": "454.Naomi Chepkirui 0712837732",
+      "fullName": "Naomi Chepkirui",
+      "firstName": "Naomi",
+      "lastName": "Chepkirui",
+      "phone": "254712837732",
+      "rawPhone": "0712837732",
+      "code": "GC268",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254712837732@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 455,
+      "sourceText": "455.Charity Alango 0714008777",
+      "fullName": "Charity Alango",
+      "firstName": "Charity",
+      "lastName": "Alango",
+      "phone": "254714008777",
+      "rawPhone": "0714008777",
+      "code": "GC269",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714008777@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 456,
+      "sourceText": "456.Lydia Akuma 07 10866245",
+      "fullName": "Lydia Akuma",
+      "firstName": "Lydia",
+      "lastName": "Akuma",
+      "phone": "254710866245",
+      "rawPhone": "0710866245",
+      "code": "GC270",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254710866245@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 458,
+      "sourceText": "458.Wayne 0790745121",
+      "fullName": "Wayne",
+      "firstName": "Wayne",
+      "lastName": "",
+      "phone": "254790745121",
+      "rawPhone": "0790745121",
+      "code": "GC271",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790745121@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 459,
+      "sourceText": "459.Joy 0798344883.",
+      "fullName": "Joy",
+      "firstName": "Joy",
+      "lastName": "",
+      "phone": "254798344883",
+      "rawPhone": "0798344883",
+      "code": "GC272",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254798344883@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 500,
+      "sourceText": "500.Jackson kalonzo 0769964323",
+      "fullName": "Jackson kalonzo",
+      "firstName": "Jackson",
+      "lastName": "kalonzo",
+      "phone": "254769964323",
+      "rawPhone": "0769964323",
+      "code": "GC273",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769964323@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 501,
+      "sourceText": "501. Precious Kombo 0116793860",
+      "fullName": "Precious Kombo",
+      "firstName": "Precious",
+      "lastName": "Kombo",
+      "phone": "254116793860",
+      "rawPhone": "0116793860",
+      "code": "GC274",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116793860@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 502,
+      "sourceText": "502.joshua.0769034626",
+      "fullName": "Joshua",
+      "firstName": "Joshua",
+      "lastName": "",
+      "phone": "254769034626",
+      "rawPhone": "0769034626",
+      "code": "GC275",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769034626@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 504,
+      "sourceText": "504.Rabin 0714416435",
+      "fullName": "Rabin",
+      "firstName": "Rabin",
+      "lastName": "",
+      "phone": "254714416435",
+      "rawPhone": "0714416435",
+      "code": "GC276",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714416435@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 505,
+      "sourceText": "505.Innocent Awino .0140981119",
+      "fullName": "Innocent Awino",
+      "firstName": "Innocent",
+      "lastName": "Awino",
+      "phone": "254140981119",
+      "rawPhone": "0140981119",
+      "code": "GC277",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140981119@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 506,
+      "sourceText": "506.Ruth Wanjiku .0118698013",
+      "fullName": "Ruth Wanjiku",
+      "firstName": "Ruth",
+      "lastName": "Wanjiku",
+      "phone": "254118698013",
+      "rawPhone": "0118698013",
+      "code": "GC278",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118698013@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 507,
+      "sourceText": "507.Purity Musimari 0117313695",
+      "fullName": "Purity Musimari",
+      "firstName": "Purity",
+      "lastName": "Musimari",
+      "phone": "254117313695",
+      "rawPhone": "0117313695",
+      "code": "GC279",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117313695@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 508,
+      "sourceText": "508. Gift Moses 0117073664",
+      "fullName": "Gift Moses",
+      "firstName": "Gift",
+      "lastName": "Moses",
+      "phone": "254117073664",
+      "rawPhone": "0117073664",
+      "code": "GC280",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117073664@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 509,
+      "sourceText": "509. O'Neil Abulala 0140413966",
+      "fullName": "O'Neil Abulala",
+      "firstName": "O'Neil",
+      "lastName": "Abulala",
+      "phone": "254140413966",
+      "rawPhone": "0140413966",
+      "code": "GC281",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140413966@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 510,
+      "sourceText": "510. Topister Auma -0718674895",
+      "fullName": "Topister Auma",
+      "firstName": "Topister",
+      "lastName": "Auma",
+      "phone": "254718674895",
+      "rawPhone": "0718674895",
+      "code": "GC282",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718674895@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 511,
+      "sourceText": "511 Abigael cherono 0707472888",
+      "fullName": "Abigael cherono",
+      "firstName": "Abigael",
+      "lastName": "cherono",
+      "phone": "254707472888",
+      "rawPhone": "0707472888",
+      "code": "GC283",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254707472888@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 512,
+      "sourceText": "512 Daisy chepkirui 0717918187",
+      "fullName": "Daisy chepkirui",
+      "firstName": "Daisy",
+      "lastName": "chepkirui",
+      "phone": "254717918187",
+      "rawPhone": "0717918187",
+      "code": "GC284",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717918187@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 513,
+      "sourceText": "513 Faith chepkoech 0794130771",
+      "fullName": "Faith chepkoech",
+      "firstName": "Faith",
+      "lastName": "chepkoech",
+      "phone": "254794130771",
+      "rawPhone": "0794130771",
+      "code": "GC285",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794130771@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 515,
+      "sourceText": "515. Victor Okumu - 0706235820",
+      "fullName": "Victor Okumu",
+      "firstName": "Victor",
+      "lastName": "Okumu",
+      "phone": "254706235820",
+      "rawPhone": "0706235820",
+      "code": "GC286",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254706235820@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 516,
+      "sourceText": "516. Ivince Chepkoech.  0748661934",
+      "fullName": "Ivince Chepkoech",
+      "firstName": "Ivince",
+      "lastName": "Chepkoech",
+      "phone": "254748661934",
+      "rawPhone": "0748661934",
+      "code": "GC287",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748661934@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 517,
+      "sourceText": "517.Emma 0769343703",
+      "fullName": "Emma",
+      "firstName": "Emma",
+      "lastName": "",
+      "phone": "254769343703",
+      "rawPhone": "0769343703",
+      "code": "GC288",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769343703@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 518,
+      "sourceText": "518Zappy 0754107233",
+      "fullName": "Zappy",
+      "firstName": "Zappy",
+      "lastName": "",
+      "phone": "254754107233",
+      "rawPhone": "0754107233",
+      "code": "GC289",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254754107233@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 519,
+      "sourceText": "519.Vincent kosgei 0748863822",
+      "fullName": "Vincent kosgei",
+      "firstName": "Vincent",
+      "lastName": "kosgei",
+      "phone": "254748863822",
+      "rawPhone": "0748863822",
+      "code": "GC290",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254748863822@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 520,
+      "sourceText": "520.Kipruto kosgei.0790747842",
+      "fullName": "Kipruto kosgei",
+      "firstName": "Kipruto",
+      "lastName": "kosgei",
+      "phone": "254790747842",
+      "rawPhone": "0790747842",
+      "code": "GC291",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790747842@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 521,
+      "sourceText": "521.Ruth Kemunto 0711521536",
+      "fullName": "Ruth Kemunto",
+      "firstName": "Ruth",
+      "lastName": "Kemunto",
+      "phone": "254711521536",
+      "rawPhone": "0711521536",
+      "code": "GC292",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254711521536@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 523,
+      "sourceText": "523.Purity Monari-0114984932",
+      "fullName": "Purity Monari",
+      "firstName": "Purity",
+      "lastName": "Monari",
+      "phone": "254114984932",
+      "rawPhone": "0114984932",
+      "code": "GC293",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114984932@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 525,
+      "sourceText": "525.Orwa Mishel -0140338823",
+      "fullName": "Orwa Mishel",
+      "firstName": "Orwa",
+      "lastName": "Mishel",
+      "phone": "254140338823",
+      "rawPhone": "0140338823",
+      "code": "GC294",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140338823@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 526,
+      "sourceText": "526. Wendy Muhonja 0794974441",
+      "fullName": "Wendy Muhonja",
+      "firstName": "Wendy",
+      "lastName": "Muhonja",
+      "phone": "254794974441",
+      "rawPhone": "0794974441",
+      "code": "GC295",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794974441@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 527,
+      "sourceText": "527. Samwel Ngugi -0704154295",
+      "fullName": "Samwel Ngugi",
+      "firstName": "Samwel",
+      "lastName": "Ngugi",
+      "phone": "254704154295",
+      "rawPhone": "0704154295",
+      "code": "GC296",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704154295@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 528,
+      "sourceText": "528. Kimathi Faith - 0716586886",
+      "fullName": "Kimathi Faith",
+      "firstName": "Kimathi",
+      "lastName": "Faith",
+      "phone": "254716586886",
+      "rawPhone": "0716586886",
+      "code": "GC297",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254716586886@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 529,
+      "sourceText": "529.Yulia 0140586012",
+      "fullName": "Yulia",
+      "firstName": "Yulia",
+      "lastName": "",
+      "phone": "254140586012",
+      "rawPhone": "0140586012",
+      "code": "GC298",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254140586012@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 532,
+      "sourceText": "532.Irene 0795932263",
+      "fullName": "Irene",
+      "firstName": "Irene",
+      "lastName": "",
+      "phone": "254795932263",
+      "rawPhone": "0795932263",
+      "code": "GC299",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254795932263@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 533,
+      "sourceText": "533.Denice simba-0790479694",
+      "fullName": "Denice simba",
+      "firstName": "Denice",
+      "lastName": "simba",
+      "phone": "254790479694",
+      "rawPhone": "0790479694",
+      "code": "GC300",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790479694@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 535,
+      "sourceText": "535.Ezekiel Omosa 0711609373",
+      "fullName": "Ezekiel Omosa",
+      "firstName": "Ezekiel",
+      "lastName": "Omosa",
+      "phone": "254711609373",
+      "rawPhone": "0711609373",
+      "code": "GC301",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254711609373@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 537,
+      "sourceText": "537.Jacklyne 0799056929",
+      "fullName": "Jacklyne",
+      "firstName": "Jacklyne",
+      "lastName": "",
+      "phone": "254799056929",
+      "rawPhone": "0799056929",
+      "code": "GC302",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799056929@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 538,
+      "sourceText": "538. Caren Ijayi 0141401575",
+      "fullName": "Caren Ijayi",
+      "firstName": "Caren",
+      "lastName": "Ijayi",
+      "phone": "254141401575",
+      "rawPhone": "0141401575",
+      "code": "GC303",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254141401575@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 539,
+      "sourceText": "539.Philip Nyabaro 0700868277",
+      "fullName": "Philip Nyabaro",
+      "firstName": "Philip",
+      "lastName": "Nyabaro",
+      "phone": "254700868277",
+      "rawPhone": "0700868277",
+      "code": "GC304",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254700868277@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 539,
+      "sourceText": "539.Annah Peter -0704439806",
+      "fullName": "Annah Peter",
+      "firstName": "Annah",
+      "lastName": "Peter",
+      "phone": "254704439806",
+      "rawPhone": "0704439806",
+      "code": "GC305",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704439806@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 540,
+      "sourceText": "540.brian kiplagat +254 791 014205",
+      "fullName": "Brian Kiplagat",
+      "firstName": "Brian",
+      "lastName": "Kiplagat",
+      "phone": "254791014205",
+      "rawPhone": "0791014205",
+      "code": "GC306",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791014205@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 541,
+      "sourceText": "541.Juliet Atieno 0794957823",
+      "fullName": "Juliet Atieno",
+      "firstName": "Juliet",
+      "lastName": "Atieno",
+      "phone": "254794957823",
+      "rawPhone": "0794957823",
+      "code": "GC307",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794957823@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 542,
+      "sourceText": "542.Eugine omondi 0118014572",
+      "fullName": "Eugine omondi",
+      "firstName": "Eugine",
+      "lastName": "omondi",
+      "phone": "254118014572",
+      "rawPhone": "0118014572",
+      "code": "GC308",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118014572@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 543,
+      "sourceText": "543.Boaz onditi 0707233894",
+      "fullName": "Boaz onditi",
+      "firstName": "Boaz",
+      "lastName": "onditi",
+      "phone": "254707233894",
+      "rawPhone": "0707233894",
+      "code": "GC309",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254707233894@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 544,
+      "sourceText": "544. Beatrice Kiio 0759311552",
+      "fullName": "Beatrice Kiio",
+      "firstName": "Beatrice",
+      "lastName": "Kiio",
+      "phone": "254759311552",
+      "rawPhone": "0759311552",
+      "code": "GC310",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759311552@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 545,
+      "sourceText": "545.peter0117526787",
+      "fullName": "Peter",
+      "firstName": "Peter",
+      "lastName": "",
+      "phone": "254117526787",
+      "rawPhone": "0117526787",
+      "code": "GC311",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117526787@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 546,
+      "sourceText": "546. Janet Salim - 0745578395",
+      "fullName": "Janet Salim",
+      "firstName": "Janet",
+      "lastName": "Salim",
+      "phone": "254745578395",
+      "rawPhone": "0745578395",
+      "code": "GC312",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745578395@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 547,
+      "sourceText": "547.Hope_+254 719 187730",
+      "fullName": "Hope",
+      "firstName": "Hope",
+      "lastName": "",
+      "phone": "254719187730",
+      "rawPhone": "0719187730",
+      "code": "GC313",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254719187730@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 548,
+      "sourceText": "548.Priscah_+254 717 625291",
+      "fullName": "Priscah",
+      "firstName": "Priscah",
+      "lastName": "",
+      "phone": "254717625291",
+      "rawPhone": "0717625291",
+      "code": "GC314",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717625291@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 549,
+      "sourceText": "549 Gladoh 0117293547",
+      "fullName": "Gladoh",
+      "firstName": "Gladoh",
+      "lastName": "",
+      "phone": "254117293547",
+      "rawPhone": "0117293547",
+      "code": "GC315",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117293547@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 550,
+      "sourceText": "550Haron mwalimu 0743473852",
+      "fullName": "Haron mwalimu",
+      "firstName": "Haron",
+      "lastName": "mwalimu",
+      "phone": "254743473852",
+      "rawPhone": "0743473852",
+      "code": "GC316",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254743473852@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 551,
+      "sourceText": "551.Onesmus 0741769356",
+      "fullName": "Onesmus",
+      "firstName": "Onesmus",
+      "lastName": "",
+      "phone": "254741769356",
+      "rawPhone": "0741769356",
+      "code": "GC317",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254741769356@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 552,
+      "sourceText": "552.josphat Ngetich 0791320932",
+      "fullName": "josphat Ngetich",
+      "firstName": "josphat",
+      "lastName": "Ngetich",
+      "phone": "254791320932",
+      "rawPhone": "0791320932",
+      "code": "GC318",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791320932@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 553,
+      "sourceText": "553 oloo Maurice 0740936370",
+      "fullName": "oloo Maurice",
+      "firstName": "oloo",
+      "lastName": "Maurice",
+      "phone": "254740936370",
+      "rawPhone": "0740936370",
+      "code": "GC319",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740936370@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 554,
+      "sourceText": "554 Wamalwa kevin",
+      "fullName": "Wamalwa kevin",
+      "firstName": "Wamalwa",
+      "lastName": "kevin",
+      "phone": null,
+      "rawPhone": "",
+      "code": "GC320",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": null,
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_or_invalid_phone"]
+      }
+    },
+    {
+      "sourceNumber": 555,
+      "sourceText": "555 Frankline Walusala 0716300806",
+      "fullName": "Frankline Walusala",
+      "firstName": "Frankline",
+      "lastName": "Walusala",
+      "phone": "254716300806",
+      "rawPhone": "0716300806",
+      "code": "GC321",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254716300806@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 556,
+      "sourceText": "556:Dorcas Moraa-0757831265",
+      "fullName": "Dorcas Moraa",
+      "firstName": "Dorcas",
+      "lastName": "Moraa",
+      "phone": "254757831265",
+      "rawPhone": "0757831265",
+      "code": "GC322",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757831265@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 557,
+      "sourceText": "557:Meares Were 0708948380",
+      "fullName": "Meares Were",
+      "firstName": "Meares",
+      "lastName": "Were",
+      "phone": "254708948380",
+      "rawPhone": "0708948380",
+      "code": "GC323",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254708948380@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 558,
+      "sourceText": "558.Bedan Karanja.0795483028",
+      "fullName": "Bedan Karanja",
+      "firstName": "Bedan",
+      "lastName": "Karanja",
+      "phone": "254795483028",
+      "rawPhone": "0795483028",
+      "code": "GC324",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254795483028@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 559,
+      "sourceText": "559.Christine Saoke_0119752333",
+      "fullName": "Christine Saoke",
+      "firstName": "Christine",
+      "lastName": "Saoke",
+      "phone": "254119752333",
+      "rawPhone": "0119752333",
+      "code": "GC325",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254119752333@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 660,
+      "sourceText": "660.Millicent Chepsergon_0725889353",
+      "fullName": "Millicent Chepsergon",
+      "firstName": "Millicent",
+      "lastName": "Chepsergon",
+      "phone": "254725889353",
+      "rawPhone": "0725889353",
+      "code": "GC326",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254725889353@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 661,
+      "sourceText": "661.chrisphen_+254 717 357008",
+      "fullName": "Chrisphen",
+      "firstName": "Chrisphen",
+      "lastName": "",
+      "phone": "254717357008",
+      "rawPhone": "0717357008",
+      "code": "GC327",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717357008@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 662,
+      "sourceText": "662.Rozina Mumo0142119298",
+      "fullName": "Rozina Mumo",
+      "firstName": "Rozina",
+      "lastName": "Mumo",
+      "phone": "254142119298",
+      "rawPhone": "0142119298",
+      "code": "GC328",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254142119298@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 663,
+      "sourceText": "663.Franklin Kimutai 0716472278",
+      "fullName": "Franklin Kimutai",
+      "firstName": "Franklin",
+      "lastName": "Kimutai",
+      "phone": "254716472278",
+      "rawPhone": "0716472278",
+      "code": "GC329",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254716472278@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 664,
+      "sourceText": "664.Eugene Kelvin_0713060683",
+      "fullName": "Eugene Kelvin",
+      "firstName": "Eugene",
+      "lastName": "Kelvin",
+      "phone": "254713060683",
+      "rawPhone": "0713060683",
+      "code": "GC330",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254713060683@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 665,
+      "sourceText": "665.Bonface Ndege 0118284173",
+      "fullName": "Bonface Ndege",
+      "firstName": "Bonface",
+      "lastName": "Ndege",
+      "phone": "254118284173",
+      "rawPhone": "0118284173",
+      "code": "GC331",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118284173@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 666,
+      "sourceText": "666.Seniorcaptain _0115630633",
+      "fullName": "Seniorcaptain",
+      "firstName": "Seniorcaptain",
+      "lastName": "",
+      "phone": "254115630633",
+      "rawPhone": "0115630633",
+      "code": "GC332",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254115630633@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 667,
+      "sourceText": "667.Kennedy okumu 0143176434",
+      "fullName": "Kennedy okumu",
+      "firstName": "Kennedy",
+      "lastName": "okumu",
+      "phone": "254143176434",
+      "rawPhone": "0143176434",
+      "code": "GC333",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254143176434@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 668,
+      "sourceText": "668. samwel nyariki_0717254536",
+      "fullName": "Samwel Nyariki",
+      "firstName": "Samwel",
+      "lastName": "Nyariki",
+      "phone": "254717254536",
+      "rawPhone": "0717254536",
+      "code": "GC334",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717254536@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 669,
+      "sourceText": "669.Brian mawira -0720399335",
+      "fullName": "Brian mawira",
+      "firstName": "Brian",
+      "lastName": "mawira",
+      "phone": "254720399335",
+      "rawPhone": "0720399335",
+      "code": "GC335",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254720399335@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 670,
+      "sourceText": "670.Bradox Odhiambo_0757082873",
+      "fullName": "Bradox Odhiambo",
+      "firstName": "Bradox",
+      "lastName": "Odhiambo",
+      "phone": "254757082873",
+      "rawPhone": "0757082873",
+      "code": "GC336",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254757082873@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 671,
+      "sourceText": "671.0119711068 add Rihanns Angila",
+      "fullName": "Rihanns Angila",
+      "firstName": "Rihanns",
+      "lastName": "Angila",
+      "phone": "254119711068",
+      "rawPhone": "0119711068",
+      "code": "GC337",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254119711068@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 672,
+      "sourceText": "672.0704927654 Sharon Chepeng'at",
+      "fullName": "Sharon Chepeng'at",
+      "firstName": "Sharon",
+      "lastName": "Chepeng'at",
+      "phone": "254704927654",
+      "rawPhone": "0704927654",
+      "code": "GC338",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254704927654@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 678,
+      "sourceText": "678 . Sharon Otieno - 0750823814",
+      "fullName": "Sharon Otieno",
+      "firstName": "Sharon",
+      "lastName": "Otieno",
+      "phone": "254750823814",
+      "rawPhone": "0750823814",
+      "code": "GC339",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254750823814@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 679,
+      "sourceText": "679 .Shanty Otieno 0119593211",
+      "fullName": "Shanty Otieno",
+      "firstName": "Shanty",
+      "lastName": "Otieno",
+      "phone": "254119593211",
+      "rawPhone": "0119593211",
+      "code": "GC340",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254119593211@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 680,
+      "sourceText": "680. Jackson. 0118506487",
+      "fullName": "Jackson",
+      "firstName": "Jackson",
+      "lastName": "",
+      "phone": "254118506487",
+      "rawPhone": "0118506487",
+      "code": "GC341",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118506487@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 681,
+      "sourceText": "681.lucy kyalo 0119818864",
+      "fullName": "Lucy Kyalo",
+      "firstName": "Lucy",
+      "lastName": "Kyalo",
+      "phone": "254119818864",
+      "rawPhone": "0119818864",
+      "code": "GC342",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254119818864@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 682,
+      "sourceText": "682 .mayaka samwuel 0715 791021",
+      "fullName": "Mayaka Samwuel",
+      "firstName": "Mayaka",
+      "lastName": "Samwuel",
+      "phone": "254715791021",
+      "rawPhone": "0715791021",
+      "code": "GC343",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254715791021@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 383,
+      "sourceText": "383. Shem Edward+254 701 251561",
+      "fullName": "Shem Edward",
+      "firstName": "Shem",
+      "lastName": "Edward",
+      "phone": "254701251561",
+      "rawPhone": "0701251561",
+      "code": "GC344",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254701251561@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 683,
+      "sourceText": "683.carolynejoy mumbi - 0116787682",
+      "fullName": "Carolynejoy Mumbi",
+      "firstName": "Carolynejoy",
+      "lastName": "Mumbi",
+      "phone": "254116787682",
+      "rawPhone": "0116787682",
+      "code": "GC345",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116787682@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 684,
+      "sourceText": "684. Favour Wesonga-0759406008",
+      "fullName": "Favour Wesonga",
+      "firstName": "Favour",
+      "lastName": "Wesonga",
+      "phone": "254759406008",
+      "rawPhone": "0759406008",
+      "code": "GC346",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759406008@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 685,
+      "sourceText": "685.Deborah Kwamboka-0769624648",
+      "fullName": "Deborah Kwamboka",
+      "firstName": "Deborah",
+      "lastName": "Kwamboka",
+      "phone": "254769624648",
+      "rawPhone": "0769624648",
+      "code": "GC347",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769624648@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 686,
+      "sourceText": "686. Monica waithera-0111464152",
+      "fullName": "Monica waithera",
+      "firstName": "Monica",
+      "lastName": "waithera",
+      "phone": "254111464152",
+      "rawPhone": "0111464152",
+      "code": "GC348",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254111464152@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 190,
+      "sourceText": "190. Mary k- 0117 327695",
+      "fullName": "Mary k",
+      "firstName": "Mary",
+      "lastName": "k",
+      "phone": "254117327695",
+      "rawPhone": "0117327695",
+      "code": "GC349",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117327695@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 683,
+      "sourceText": "683.Fidel Ochieng  0759462578",
+      "fullName": "Fidel Ochieng",
+      "firstName": "Fidel",
+      "lastName": "Ochieng",
+      "phone": "254759462578",
+      "rawPhone": "0759462578",
+      "code": "GC350",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759462578@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 684,
+      "sourceText": "684.Sheila Akinyi +254794151156",
+      "fullName": "Sheila Akinyi",
+      "firstName": "Sheila",
+      "lastName": "Akinyi",
+      "phone": "254794151156",
+      "rawPhone": "0794151156",
+      "code": "GC351",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254794151156@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 685,
+      "sourceText": "685. Joseph wamaitha - 0726982097",
+      "fullName": "Joseph wamaitha",
+      "firstName": "Joseph",
+      "lastName": "wamaitha",
+      "phone": "254726982097",
+      "rawPhone": "0726982097",
+      "code": "GC352",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254726982097@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 686,
+      "sourceText": "686.Moses mwarari 0141869902",
+      "fullName": "Moses mwarari",
+      "firstName": "Moses",
+      "lastName": "mwarari",
+      "phone": "254141869902",
+      "rawPhone": "0141869902",
+      "code": "GC353",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254141869902@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 687,
+      "sourceText": "687.Camila Lyan 0745936924",
+      "fullName": "Camila Lyan",
+      "firstName": "Camila",
+      "lastName": "Lyan",
+      "phone": "254745936924",
+      "rawPhone": "0745936924",
+      "code": "GC354",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254745936924@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 688,
+      "sourceText": "688.Lovian Achieng 0790726557",
+      "fullName": "Lovian Achieng",
+      "firstName": "Lovian",
+      "lastName": "Achieng",
+      "phone": "254790726557",
+      "rawPhone": "0790726557",
+      "code": "GC355",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790726557@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 689,
+      "sourceText": "689.Clinton Joseph 0723651634",
+      "fullName": "Clinton Joseph",
+      "firstName": "Clinton",
+      "lastName": "Joseph",
+      "phone": "254723651634",
+      "rawPhone": "0723651634",
+      "code": "GC356",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254723651634@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 690,
+      "sourceText": "690. Tabitha musenya 0792505432",
+      "fullName": "Tabitha musenya",
+      "firstName": "Tabitha",
+      "lastName": "musenya",
+      "phone": "254792505432",
+      "rawPhone": "0792505432",
+      "code": "GC357",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254792505432@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 691,
+      "sourceText": "691.Becky cheruto 0727221079",
+      "fullName": "Becky cheruto",
+      "firstName": "Becky",
+      "lastName": "cheruto",
+      "phone": "254727221079",
+      "rawPhone": "0727221079",
+      "code": "GC358",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254727221079@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 692,
+      "sourceText": "692.Olivia chemutai 0718018399",
+      "fullName": "Olivia chemutai",
+      "firstName": "Olivia",
+      "lastName": "chemutai",
+      "phone": "254718018399",
+      "rawPhone": "0718018399",
+      "code": "GC359",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718018399@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 560,
+      "sourceText": "Daudi 0114313301",
+      "fullName": "Daudi",
+      "firstName": "Daudi",
+      "lastName": "",
+      "phone": "254114313301",
+      "rawPhone": "0114313301",
+      "code": "GC360",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114313301@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 561,
+      "sourceText": "Mathias 0759188479",
+      "fullName": "Mathias",
+      "firstName": "Mathias",
+      "lastName": "",
+      "phone": "254759188479",
+      "rawPhone": "0759188479",
+      "code": "GC361",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759188479@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 687,
+      "sourceText": "Flavian Maube_0714603913",
+      "fullName": "Flavian Maube",
+      "firstName": "Flavian",
+      "lastName": "Maube",
+      "phone": "254714603913",
+      "rawPhone": "0714603913",
+      "code": "GC362",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254714603913@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 688,
+      "sourceText": "Joy Wambui-0711562248",
+      "fullName": "Joy Wambui",
+      "firstName": "Joy",
+      "lastName": "Wambui",
+      "phone": "254711562248",
+      "rawPhone": "0711562248",
+      "code": "GC363",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254711562248@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 689,
+      "sourceText": "LAWRENCE NYABENDE 0116288282",
+      "fullName": "Lawrence Nyabende",
+      "firstName": "Lawrence",
+      "lastName": "Nyabende",
+      "phone": "254116288282",
+      "rawPhone": "0116288282",
+      "code": "GC364",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254116288282@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 670,
+      "sourceText": "David Mark - 0759848126",
+      "fullName": "David Mark",
+      "firstName": "David",
+      "lastName": "Mark",
+      "phone": "254759848126",
+      "rawPhone": "0759848126",
+      "code": "GC365",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254759848126@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 671,
+      "sourceText": "Travis - 0117238112",
+      "fullName": "Travis",
+      "firstName": "Travis",
+      "lastName": "",
+      "phone": "254117238112",
+      "rawPhone": "0117238112",
+      "code": "GC366",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117238112@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 672,
+      "sourceText": "olgah 0790271351",
+      "fullName": "Olgah",
+      "firstName": "Olgah",
+      "lastName": "",
+      "phone": "254790271351",
+      "rawPhone": "0790271351",
+      "code": "GC367",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790271351@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 673,
+      "sourceText": "samuel 0799273533",
+      "fullName": "Samuel",
+      "firstName": "Samuel",
+      "lastName": "",
+      "phone": "254799273533",
+      "rawPhone": "0799273533",
+      "code": "GC368",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254799273533@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 674,
+      "sourceText": "Nickson Masinde 0706170083",
+      "fullName": "Nickson Masinde",
+      "firstName": "Nickson",
+      "lastName": "Masinde",
+      "phone": "254706170083",
+      "rawPhone": "0706170083",
+      "code": "GC369",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254706170083@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 675,
+      "sourceText": "Abigail 0715056009",
+      "fullName": "Abigail",
+      "firstName": "Abigail",
+      "lastName": "",
+      "phone": "254715056009",
+      "rawPhone": "0715056009",
+      "code": "GC370",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254715056009@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 676,
+      "sourceText": "Davii 0769929006",
+      "fullName": "Davii",
+      "firstName": "Davii",
+      "lastName": "",
+      "phone": "254769929006",
+      "rawPhone": "0769929006",
+      "code": "GC371",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254769929006@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 677,
+      "sourceText": "Lenox odera 0790226213",
+      "fullName": "Lenox odera",
+      "firstName": "Lenox",
+      "lastName": "odera",
+      "phone": "254790226213",
+      "rawPhone": "0790226213",
+      "code": "GC372",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254790226213@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 678,
+      "sourceText": "Wilford 0798594587",
+      "fullName": "Wilford",
+      "firstName": "Wilford",
+      "lastName": "",
+      "phone": "254798594587",
+      "rawPhone": "0798594587",
+      "code": "GC373",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254798594587@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 679,
+      "sourceText": "Gloria kaipoon 0793062106",
+      "fullName": "Gloria kaipoon",
+      "firstName": "Gloria",
+      "lastName": "kaipoon",
+      "phone": "254793062106",
+      "rawPhone": "0793062106",
+      "code": "GC374",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254793062106@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 680,
+      "sourceText": "Moses muriithi 0796059660",
+      "fullName": "Moses muriithi",
+      "firstName": "Moses",
+      "lastName": "muriithi",
+      "phone": "254796059660",
+      "rawPhone": "0796059660",
+      "code": "GC375",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254796059660@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 681,
+      "sourceText": "David Mugo - 0114394550",
+      "fullName": "David Mugo",
+      "firstName": "David",
+      "lastName": "Mugo",
+      "phone": "254114394550",
+      "rawPhone": "0114394550",
+      "code": "GC376",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114394550@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 682,
+      "sourceText": "Isaac Milakon -0706153802",
+      "fullName": "Isaac Milakon",
+      "firstName": "Isaac",
+      "lastName": "Milakon",
+      "phone": "254706153802",
+      "rawPhone": "0706153802",
+      "code": "GC377",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254706153802@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 693,
+      "sourceText": "Mirriam chepkirui 0791029044",
+      "fullName": "Mirriam chepkirui",
+      "firstName": "Mirriam",
+      "lastName": "chepkirui",
+      "phone": "254791029044",
+      "rawPhone": "0791029044",
+      "code": "GC378",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254791029044@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 694,
+      "sourceText": "Enock 0729041672",
+      "fullName": "Enock",
+      "firstName": "Enock",
+      "lastName": "",
+      "phone": "254729041672",
+      "rawPhone": "0729041672",
+      "code": "GC379",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254729041672@s.whatsapp.net",
+      "validation": {
+        "isValid": false,
+        "issues": ["missing_second_name"]
+      }
+    },
+    {
+      "sourceNumber": 695,
+      "sourceText": "Joshua muema 0796257595",
+      "fullName": "Joshua muema",
+      "firstName": "Joshua",
+      "lastName": "muema",
+      "phone": "254796257595",
+      "rawPhone": "0796257595",
+      "code": "GC380",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254796257595@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 696,
+      "sourceText": "Ceciliah Wanjiru. 0112465045",
+      "fullName": "Ceciliah Wanjiru",
+      "firstName": "Ceciliah",
+      "lastName": "Wanjiru",
+      "phone": "254112465045",
+      "rawPhone": "0112465045",
+      "code": "GC381",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254112465045@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 697,
+      "sourceText": "Enock kipkemboi -0717256702",
+      "fullName": "Enock kipkemboi",
+      "firstName": "Enock",
+      "lastName": "kipkemboi",
+      "phone": "254717256702",
+      "rawPhone": "0717256702",
+      "code": "GC382",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254717256702@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 698,
+      "sourceText": "Ezekiel kiprop 0118554871",
+      "fullName": "Ezekiel kiprop",
+      "firstName": "Ezekiel",
+      "lastName": "kiprop",
+      "phone": "254118554871",
+      "rawPhone": "0118554871",
+      "code": "GC383",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118554871@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 699,
+      "sourceText": "Edward kipchirchir-0142605001",
+      "fullName": "Edward kipchirchir",
+      "firstName": "Edward",
+      "lastName": "kipchirchir",
+      "phone": "254142605001",
+      "rawPhone": "0142605001",
+      "code": "GC384",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254142605001@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 700,
+      "sourceText": "Marques Tristan. -0797976175",
+      "fullName": "Marques Tristan",
+      "firstName": "Marques",
+      "lastName": "Tristan",
+      "phone": "254797976175",
+      "rawPhone": "0797976175",
+      "code": "GC385",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254797976175@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 702,
+      "sourceText": "Claire Kimani.+254 780 265694",
+      "fullName": "Claire Kimani",
+      "firstName": "Claire",
+      "lastName": "Kimani",
+      "phone": "254780265694",
+      "rawPhone": "0780265694",
+      "code": "GC386",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254780265694@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 703,
+      "sourceText": "Ian Nduta. 0118844378",
+      "fullName": "Ian Nduta",
+      "firstName": "Ian",
+      "lastName": "Nduta",
+      "phone": "254118844378",
+      "rawPhone": "0118844378",
+      "code": "GC387",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254118844378@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 704,
+      "sourceText": "stephen Auki.-0117520185",
+      "fullName": "stephen Auki",
+      "firstName": "stephen",
+      "lastName": "Auki",
+      "phone": "254117520185",
+      "rawPhone": "0117520185",
+      "code": "GC388",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254117520185@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 705,
+      "sourceText": "Purity Ng'ang'a - 0740422846",
+      "fullName": "Purity Ng'ang'a",
+      "firstName": "Purity",
+      "lastName": "Ng'ang'a",
+      "phone": "254740422846",
+      "rawPhone": "0740422846",
+      "code": "GC389",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254740422846@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 706,
+      "sourceText": "Florence Wanjiru -0718875438",
+      "fullName": "Florence Wanjiru",
+      "firstName": "Florence",
+      "lastName": "Wanjiru",
+      "phone": "254718875438",
+      "rawPhone": "0718875438",
+      "code": "GC390",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254718875438@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 707,
+      "sourceText": "Nicholas kipkirui 0112542880",
+      "fullName": "Nicholas kipkirui",
+      "firstName": "Nicholas",
+      "lastName": "kipkirui",
+      "phone": "254112542880",
+      "rawPhone": "0112542880",
+      "code": "GC391",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254112542880@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    },
+    {
+      "sourceNumber": 708,
+      "sourceText": "708.Manases kimurgor-0114754287",
+      "fullName": "Manases Kimurgor",
+      "firstName": "Manases",
+      "lastName": "Kimurgor",
+      "phone": "254114754287",
+      "rawPhone": "0114754287",
+      "code": "GC392",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114754287@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
+    }
+  ],
+  "updatedAt": "2026-09-22T19:18:12+03:00"
+}

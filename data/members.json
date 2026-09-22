@@ -1,4 +1,6 @@
 {
+  "version": 1,
+  "updatedAt": "2026-09-22T16:36:54.733Z",
   "members": [
     {
       "sourceNumber": null,
@@ -15,7 +17,8 @@
       "validation": {
         "isValid": true,
         "issues": []
-      }
+      },
+      "id": "d34861d7-15a9-4a9b-86b3-d3df59581ef1"
     },
     {
       "sourceNumber": null,
@@ -32,7 +35,8 @@
       "validation": {
         "isValid": true,
         "issues": []
-      }
+      },
+      "id": "a53bf04d-9900-480e-94ee-3b70cf34d693"
     },
     {
       "sourceNumber": null,
@@ -49,7 +53,8 @@
       "validation": {
         "isValid": true,
         "issues": []
-      }
+      },
+      "id": "2b72b210-d02a-4df4-8f8e-9d078a269c48"
     }
   ]
 }

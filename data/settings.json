@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-22T16:42:40.521Z",
+  "settings": {
+    "keyword": "gracehelp",
+    "churchName": "GRACE ARENA MINISTRY",
+    "eventName": "GRACE ENCOUNTER NAIROBI 2026",
+    "eventLocation": "UHURU PARK NAIROBI",
+    "transportNotice": "Free transport from Nakuru to Nairobi for the Uhuru Park gathering.",
+    "botFooter": "Grace Encounter Members",
+    "menuTitle": "Member Menu",
+    "menuIntro": "Please choose a service below."
+  }
+}
