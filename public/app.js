@@ -570,7 +570,7 @@ function renderHome() {
         </div>
 
         <h2>
-          Good morning, ${esc(state.settings?.churchName || "Grace Encounter")}.
+          Hello, ${esc(state.settings?.churchName || "Grace Encounter")}.
         </h2>
 
         <p class="subtle page-description">
