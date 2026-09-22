@@ -2,7 +2,7 @@ import { isPnUser, jidNormalizedUser } from "@whiskeysockets/baileys";
 
 import { cleanText, isGroupJid } from "../core/utils.js";
 
-const BULK_MESSAGE_DELAY_MS = 10000;
+const BULK_MESSAGE_DELAY_MS = 20000;
 
 function sleep(ms) {
   return new Promise((resolve) => {
