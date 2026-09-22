@@ -1,17 +1,20 @@
 {
-  "generatedAt": "2026-09-21T21:12:00+03:00",
-  "sourceFiles": ["members.seed(1).json", "Pasted text(20260922-150729).txt"],
+  "generatedAt": "2026-09-22T19:18:12+03:00",
+  "sourceFiles": [
+    "members.seed(1).json",
+    "Pasted text(20260922-150729).txt",
+    "User-provided final registration list (2026-09-22)"
+  ],
   "codePrefix": "GC",
   "deduplication": {
-    "strategy": "normalized WhatsApp phone number is the primary duplicate key; duplicate phone records are removed by keeping the existing seed record; incomplete records without a valid phone are retained rather than assigned invented numbers",
-    "seedMembers": 359,
-    "rawRecordsParsed": 388,
-    "seedDuplicatePhonesRemoved": 0,
-    "phoneRecordsRepairedFromRaw": 6,
-    "newUniquePhoneRecordsAdded": 32,
-    "finalMembers": 391,
-    "finalUniquePhoneNumbers": 386,
-    "remainingPhoneLessMembers": 5
+    "strategy": "normalized WhatsApp phone number is the primary duplicate key; first retained record kept; phone-less records retained because no reliable phone was provided",
+    "finalMembers": 392,
+    "finalUniquePhoneNumbers": 387,
+    "remainingPhoneLessMembers": 5,
+    "duplicatePhoneNumbers": 0,
+    "duplicateMemberCodes": 0,
+    "lastSourceEntryAdded": "Manases Kimurgor (0114754287)",
+    "verification": "All valid phone numbers extracted from the final supplied registration list are represented; existing seed-only members were preserved."
   },
   "members": [
     {
@@ -6660,7 +6663,24 @@
         "isValid": true,
         "issues": []
       }
+    },
+    {
+      "sourceNumber": 708,
+      "sourceText": "708.Manases kimurgor-0114754287",
+      "fullName": "Manases Kimurgor",
+      "firstName": "Manases",
+      "lastName": "Kimurgor",
+      "phone": "254114754287",
+      "rawPhone": "0114754287",
+      "code": "GC392",
+      "status": "active",
+      "remindersEnabled": true,
+      "whatsappJid": "254114754287@s.whatsapp.net",
+      "validation": {
+        "isValid": true,
+        "issues": []
+      }
     }
   ],
-  "updatedAt": "2026-09-22T18:00:00+03:00"
+  "updatedAt": "2026-09-22T19:18:12+03:00"
 }
