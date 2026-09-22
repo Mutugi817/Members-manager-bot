@@ -2,7 +2,7 @@ import { isPnUser, jidNormalizedUser } from "@whiskeysockets/baileys";
 
 import { cleanText, isGroupJid } from "../core/utils.js";
 
-const BULK_MESSAGE_DELAY_MS = 20000;
+const BULK_MESSAGE_DELAY_MS = 6000;
 
 function sleep(ms) {
   return new Promise((resolve) => {
@@ -18,6 +18,20 @@ export class MessageHandler {
     this.menu = menu;
     this.whatsapp = whatsapp;
     this.settings = settings;
+
+    /*
+     * Only one bulk broadcast may run at a time.
+     *
+     * This prevents two separate broadcast jobs from doing:
+     *
+     * Job A -> recipient 1
+     * Job B -> recipient 1
+     * Job A -> recipient 2
+     * Job B -> recipient 2
+     *
+     * which would defeat the intended delay.
+     */
+    this.bulkSending = false;
   }
 
   async handle(message) {
@@ -113,9 +127,15 @@ export class MessageHandler {
    *      ↓
    * Recipient 3
    *
-   * This method intentionally does NOT use Promise.all().
+   * IMPORTANT:
    *
-   * The delay is applied between recipients, not before the first message.
+   * Promise.all() is deliberately NOT used.
+   *
+   * The delay can be configured to something longer than 6 seconds,
+   * but never shorter than 6 seconds.
+   *
+   * This method also prevents a second bulk operation from running
+   * concurrently with an existing one.
    *
    * `payloadFactory` may either be:
    *
@@ -141,9 +161,25 @@ export class MessageHandler {
       };
     }
 
+    if (this.bulkSending) {
+      throw new Error("A bulk message send is already in progress.");
+    }
+
+    /*
+     * Never allow a caller to reduce the delay below 6 seconds.
+     *
+     * Examples:
+     *
+     * delayMs = 0       -> 6000
+     * delayMs = 1000    -> 6000
+     * delayMs = 6000    -> 6000
+     * delayMs = 10000   -> 10000
+     */
+    const requestedDelay = Number(delayMs);
+
     const safeDelay =
-      Number.isFinite(Number(delayMs)) && Number(delayMs) >= 0
-        ? Number(delayMs)
+      Number.isFinite(requestedDelay) && requestedDelay >= BULK_MESSAGE_DELAY_MS
+        ? requestedDelay
         : BULK_MESSAGE_DELAY_MS;
 
     let sent = 0;
@@ -151,107 +187,135 @@ export class MessageHandler {
 
     const results = [];
 
-    for (let index = 0; index < recipients.length; index += 1) {
-      const originalJid = recipients[index];
+    this.bulkSending = true;
 
-      const destination = jidNormalizedUser(originalJid) || originalJid;
+    try {
+      for (let index = 0; index < recipients.length; index += 1) {
+        const originalJid = recipients[index];
 
-      if (!destination) {
-        failed += 1;
+        const destination = jidNormalizedUser(originalJid) || originalJid;
 
-        const result = {
-          index,
-          jid: originalJid,
-          success: false,
-          error: "Invalid recipient JID",
-        };
+        if (!destination) {
+          failed += 1;
 
-        results.push(result);
+          const result = {
+            index,
+            jid: originalJid,
+            success: false,
+            error: "Invalid recipient JID",
+          };
 
-        if (typeof onError === "function") {
-          try {
-            await onError(result.error, result);
-          } catch {
-            // Callback failures must never stop the bulk send.
+          results.push(result);
+
+          if (typeof onError === "function") {
+            try {
+              await onError(result.error, result);
+            } catch {
+              /*
+               * Callback failures must never stop
+               * the bulk send.
+               */
+            }
           }
+
+          continue;
         }
 
-        continue;
+        /*
+         * Wait ONLY between recipients.
+         *
+         * First recipient:
+         *   send immediately.
+         *
+         * Every following recipient:
+         *   wait at least 6 seconds,
+         *   then send.
+         */
+        if (index > 0) {
+          await sleep(safeDelay);
+        }
+
+        try {
+          const payload =
+            typeof payloadFactory === "function"
+              ? await payloadFactory(destination, index)
+              : payloadFactory;
+
+          if (!payload) {
+            throw new Error("Bulk message payload is empty");
+          }
+
+          /*
+           * Exactly ONE send operation at a time.
+           */
+          await this.#sendResult(destination, destination, payload, undefined);
+
+          sent += 1;
+
+          const result = {
+            index,
+            jid: destination,
+            success: true,
+          };
+
+          results.push(result);
+
+          if (typeof onSent === "function") {
+            try {
+              await onSent(destination, result);
+            } catch {
+              /*
+               * Callback failures must never stop
+               * the bulk send.
+               */
+            }
+          }
+        } catch (error) {
+          failed += 1;
+
+          const errorMessage =
+            error instanceof Error ? error.message : String(error);
+
+          const result = {
+            index,
+            jid: destination,
+            success: false,
+            error: errorMessage,
+          };
+
+          results.push(result);
+
+          console.error(
+            `[BulkMessage] Failed to send to ${destination}:`,
+            error,
+          );
+
+          if (typeof onError === "function") {
+            try {
+              await onError(error, result);
+            } catch {
+              /*
+               * Callback failures must never stop
+               * the bulk send.
+               */
+            }
+          }
+        }
       }
 
+      return {
+        total: recipients.length,
+        sent,
+        failed,
+        results,
+      };
+    } finally {
       /*
-       * Wait ONLY between recipients.
-       *
-       * This guarantees that the first message is sent immediately,
-       * then every following recipient starts at least `safeDelay`
-       * milliseconds after the previous recipient's attempt.
+       * Always release the bulk lock, even when an
+       * unexpected exception happens.
        */
-      if (index > 0) {
-        await sleep(safeDelay);
-      }
-
-      try {
-        const payload =
-          typeof payloadFactory === "function"
-            ? await payloadFactory(destination, index)
-            : payloadFactory;
-
-        if (!payload) {
-          throw new Error("Bulk message payload is empty");
-        }
-
-        await this.#sendResult(destination, destination, payload, undefined);
-
-        sent += 1;
-
-        const result = {
-          index,
-          jid: destination,
-          success: true,
-        };
-
-        results.push(result);
-
-        if (typeof onSent === "function") {
-          try {
-            await onSent(destination, result);
-          } catch {
-            // Callback failures must never stop the bulk send.
-          }
-        }
-      } catch (error) {
-        failed += 1;
-
-        const errorMessage =
-          error instanceof Error ? error.message : String(error);
-
-        const result = {
-          index,
-          jid: destination,
-          success: false,
-          error: errorMessage,
-        };
-
-        results.push(result);
-
-        console.error(`[BulkMessage] Failed to send to ${destination}:`, error);
-
-        if (typeof onError === "function") {
-          try {
-            await onError(error, result);
-          } catch {
-            // Callback failures must never stop the bulk send.
-          }
-        }
-      }
+      this.bulkSending = false;
     }
-
-    return {
-      total: recipients.length,
-      sent,
-      failed,
-      results,
-    };
   }
 
   async #resolveActorJid(message, remoteJid) {
